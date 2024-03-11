@@ -40,7 +40,7 @@ public class Weapon : MonoBehaviour
     private void Pistol()
     {
         
-            shooting.Shot(70, 1, 0.21f, firePoint);
+            shooting.Shot(80, 1, 0.21f, firePoint);
         
     }
 
