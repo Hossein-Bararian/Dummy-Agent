@@ -8,17 +8,20 @@ using Random = UnityEngine.Random;
 
 public class EnemyShooting : MonoBehaviour
 {
-    [Header("BoxCast")] [SerializeField] private Vector3 castOffset;
+    [Header("BoxCast")] 
+    [SerializeField] private Vector3 castOffset;
     [SerializeField] private Vector3 castSize;
 
-    [Header("Shooting")] [SerializeField] private GameObject bulletPrefab;
-    private bool _isShooting;
+    [Header("Shooting")] 
+    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletForce;
     [SerializeField] private float bulletGravity;
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform hand;
     [SerializeField] private float shotDelay;
+    
     private Animator _anim;
+    private bool _isShooting;
 
     void Start()
     {
