@@ -7,7 +7,7 @@ public class HandMovement : MonoBehaviour
     public Transform hand;
    
 
-    private void Update()
+    private void LateUpdate()
     {
        
         MouseFollower();

@@ -21,9 +21,10 @@ public class ToggleRagdoll : MonoBehaviour
     }
     public void Ragdoll(bool isRagdoll)
     { 
+        _anim.enabled = !isRagdoll;
         _selfBoxCollider.enabled = !isRagdoll;
         _selfRigidBody.simulated = !isRagdoll;
-        _anim.enabled = !isRagdoll;
+        
         foreach (var rb in rbs)
         {
             rb.simulated = isRagdoll;

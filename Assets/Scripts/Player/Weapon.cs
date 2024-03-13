@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     }
     [SerializeField] private Transform firePoint;
     [SerializeField] private WeaponsType weapon;
-    [SerializeField]private  Shooting shooting;
+    [SerializeField] private  Shooting shooting;
     
     private void LateUpdate()
     {
@@ -23,8 +23,6 @@ public class Weapon : MonoBehaviour
     }
     private void Pistol()
     {
-        
             shooting.Shot(80, 1, 0.21f, firePoint);
-        
     }
 }

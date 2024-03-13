@@ -15,13 +15,14 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         _anim = GetComponent<Animator>();
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
+        _toggleRagdoll.Ragdoll(false);
         isHeadCutted = false;
         isDead = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Bullet")||other.gameObject.CompareTag("Item"))
+        if (other.gameObject.CompareTag("PlayerBullet"))
         {
             Die();
         }

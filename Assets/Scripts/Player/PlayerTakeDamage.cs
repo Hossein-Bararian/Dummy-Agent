@@ -14,7 +14,7 @@ public class PlayerTakeDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("EnemyBullet"))
         {
             Die();
         }
