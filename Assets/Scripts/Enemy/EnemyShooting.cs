@@ -17,7 +17,7 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private float bulletGravity;
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform hand;
-    [SerializeField] private float shotDelay; 
+    [SerializeField] private float shotDelay;
     private Animator _anim;
 
     void Start()
@@ -25,23 +25,29 @@ public class EnemyShooting : MonoBehaviour
         _isShooting = false;
         _anim = GetComponent<Animator>();
     }
+
     private void LateUpdate()
     {
         CheckPlayerOnRange();
     }
+
     void CheckPlayerOnRange()
     {
         RaycastHit2D hit = Physics2D.BoxCast(transform.position + castOffset, castSize, 0, Vector2.zero);
-        if (hit.collider.CompareTag("Player") && !_isShooting)
+        if (hit.collider.gameObject != null)
         {
-            StartCoroutine(Shoot());
+            if (hit.collider.CompareTag("Player") && !_isShooting)
+            {
+                StartCoroutine(Shoot());
+            }
         }
     }
+
     IEnumerator Shoot()
     {
         _isShooting = true;
-        Vector3 randomRotation = new Vector3(0, 0,Random.Range(-85,-95));
-        hand.transform.DORotate(randomRotation,0.2f);
+        Vector3 randomRotation = new Vector3(0, 0, Random.Range(-85, -95));
+        hand.transform.DORotate(randomRotation, 0.2f);
         yield return new WaitForSeconds(0.25f);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, UnityEngine.Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
