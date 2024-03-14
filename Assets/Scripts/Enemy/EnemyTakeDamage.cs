@@ -1,28 +1,30 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 public class EnemyTakeDamage : MonoBehaviour
 {
-    public bool isDead;
-    public bool isHeadCutted;
-    [SerializeField] private ParticleSystem bloodParticle;
+   
+   
     [SerializeField] private GameObject head;
+    public bool isHeadCutted;
+    private EnemyManager _enemyManager;
     private ToggleRagdoll _toggleRagdoll;
     private Animator _anim;
 
-    private void Awake()
+   
+    private void Start()
     {
-        _anim = GetComponent<Animator>();
+
+        _enemyManager = GetComponent<EnemyManager>();
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
         _toggleRagdoll.Ragdoll(false);
+        _anim = GetComponent<Animator>();
         isHeadCutted = false;
-        isDead = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("PlayerBullet"))
+        if (other.gameObject.CompareTag("PlayerBullet") && !EnemyManager.IsDead)
         {
             Die();
         }
@@ -30,8 +32,9 @@ public class EnemyTakeDamage : MonoBehaviour
 
     private void Die()
     {
+        EnemyManager.IsDead = true;
         _toggleRagdoll.Ragdoll(true);
-        isDead = true;
+       // _enemyManager.DeActiveScripts();
         // dead face anim
         //cant shooting  
     }

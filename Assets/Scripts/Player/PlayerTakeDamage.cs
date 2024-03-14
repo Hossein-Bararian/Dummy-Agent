@@ -3,18 +3,17 @@ using UnityEngine;
 
 public class PlayerTakeDamage : MonoBehaviour
 {
-    public bool isDead;
+    
     private ToggleRagdoll _toggleRagdoll;
     
     private void Awake()
     {
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
-        isDead = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("EnemyBullet"))
+        if (other.gameObject.CompareTag("EnemyBullet") && !PlayerManager.IsDead)
         {
             Die();
         }
@@ -23,7 +22,7 @@ public class PlayerTakeDamage : MonoBehaviour
     private void Die()
     {
         _toggleRagdoll.Ragdoll(true);
-        isDead = true;
+        PlayerManager.IsDead = true;
         // dead face anim
         //cant shooting  
     }

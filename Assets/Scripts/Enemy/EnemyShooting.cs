@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
-using Quaternion = System.Numerics.Quaternion;
 using Random = UnityEngine.Random;
 
 
@@ -48,11 +47,12 @@ public class EnemyShooting : MonoBehaviour
 
     IEnumerator Shoot()
     {
+      //  if (PlayerManager.IsDead) yield break;
         _isShooting = true;
         Vector3 randomRotation = new Vector3(0, 0, Random.Range(-85, -95));
         hand.transform.DORotate(randomRotation, 0.2f);
         yield return new WaitForSeconds(0.25f);
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, UnityEngine.Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.gravityScale = bulletGravity;
         rb.AddForce(bulletForce * firePoint.right, ForceMode2D.Impulse);
