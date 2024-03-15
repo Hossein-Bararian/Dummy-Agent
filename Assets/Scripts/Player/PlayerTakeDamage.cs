@@ -5,9 +5,11 @@ public class PlayerTakeDamage : MonoBehaviour
 {
     
     private ToggleRagdoll _toggleRagdoll;
+    private PlayerManager _playerManager;
     
     private void Awake()
     {
+        _playerManager = GetComponent<PlayerManager>();
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
     }
 
@@ -23,7 +25,7 @@ public class PlayerTakeDamage : MonoBehaviour
     {
         _toggleRagdoll.Ragdoll(true);
         PlayerManager.IsDead = true;
+        _playerManager.DeActiveScripts();
         // dead face anim
-        //cant shooting  
     }
 }
