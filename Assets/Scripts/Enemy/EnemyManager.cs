@@ -11,21 +11,14 @@ public class EnemyManager : MonoBehaviour
         IsDead = false;
     }
 
-    private void Update()
-    {
-    }
-
     public void DeActiveScripts()
     {
-        var enemyScripts = GetComponents<Component>();
+        var enemyScripts = GetComponents<MonoBehaviour>();
         foreach (var script in enemyScripts)
         {
-            if (script is MonoBehaviour)
-            {
-                if (script is EnemyTakeDamage)
-                    continue;
-                Destroy(script);
-            }
+            if (script is EnemyTakeDamage)
+                continue;
+            Destroy(script);
         }
     }
 }

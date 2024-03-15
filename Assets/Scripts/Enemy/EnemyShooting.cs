@@ -47,7 +47,6 @@ public class EnemyShooting : MonoBehaviour
 
     IEnumerator Shoot()
     {
-      //  if (PlayerManager.IsDead) yield break;
         _isShooting = true;
         Vector3 randomRotation = new Vector3(0, 0, Random.Range(-85, -95));
         hand.transform.DORotate(randomRotation, 0.2f);
