@@ -14,7 +14,6 @@ public class EnemyTakeDamage : MonoBehaviour
    
     private void Start()
     {
-
         _enemyManager = GetComponent<EnemyManager>();
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
         _toggleRagdoll.Ragdoll(false);
@@ -33,10 +32,9 @@ public class EnemyTakeDamage : MonoBehaviour
     private void Die()
     {
         EnemyManager.IsDead = true;
+       _enemyManager.DeActiveScripts();
         _toggleRagdoll.Ragdoll(true);
-       // _enemyManager.DeActiveScripts();
         // dead face anim
-        //cant shooting  
     }
 
     public void CutHead()
