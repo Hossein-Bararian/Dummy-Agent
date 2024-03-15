@@ -1638,7 +1638,7 @@ Transform:
   m_GameObject: {fileID: 338509470}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.88, y: -5.11, z: 0}
+  m_LocalPosition: {x: -25.86, y: -5.11, z: 0}
   m_LocalScale: {x: 0.4, y: 0.44, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1730,7 +1730,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338509470}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bcdb6781c16e494bb4b3e9ce7d14a42, type: 3}
   m_Name: 
@@ -1738,7 +1738,7 @@ MonoBehaviour:
   castOffset: {x: 0, y: 2.94, z: 0}
   castSize: {x: 45, y: 6.4, z: 0}
   bulletPrefab: {fileID: 279176457771732945, guid: dbd1d214eb3d6ce4686d85a267b53c78, type: 3}
-  bulletForce: 40
+  bulletForce: 45
   bulletGravity: 1
   firePoint: {fileID: 333749189}
   hand: {fileID: 655614087}
@@ -2472,8 +2472,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 195
+    m_LowerAngle: 210
+    m_UpperAngle: -30
 --- !u!1 &449936891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,7 +2872,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1016655, y: 0.9499998, z: -10}
+  m_LocalPosition: {x: -29.5, y: 0.9499998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3997,8 +3997,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -197.09
-    m_UpperAngle: 30
+    m_LowerAngle: -180
+    m_UpperAngle: 0
 --- !u!70 &869855403
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4513,7 +4513,7 @@ MonoBehaviour:
   m_YDamping: 2
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: -0.35000002
+  m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 1
@@ -5376,8 +5376,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -25
-    m_UpperAngle: 100
+    m_LowerAngle: -20
+    m_UpperAngle: 200
 --- !u!1 &1148315881
 GameObject:
   m_ObjectHideFlags: 0
@@ -5725,8 +5725,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 3
-    m_UpperAngle: 185
+    m_LowerAngle: 0
+    m_UpperAngle: 180
 --- !u!1 &1204842691
 GameObject:
   m_ObjectHideFlags: 0
@@ -6144,7 +6144,7 @@ Transform:
   m_GameObject: {fileID: 1272261453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1016655, y: 0.9499998, z: -10}
+  m_LocalPosition: {x: -29.5, y: 0.9499998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6639,7 +6639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f106b22dee32a4bb4118d0e56873de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 6
+  runSpeed: 0
   jumpForce: 10
   originRay: {fileID: 1648174194}
   layerMask:
@@ -7324,8 +7324,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 3
-    m_UpperAngle: 185
+    m_LowerAngle: 0
+    m_UpperAngle: 180
 --- !u!1 &1725984332
 GameObject:
   m_ObjectHideFlags: 0
@@ -7499,8 +7499,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 195
+    m_LowerAngle: 210
+    m_UpperAngle: -30
 --- !u!1 &1744127864
 GameObject:
   m_ObjectHideFlags: 0
@@ -7926,8 +7926,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -25
-    m_UpperAngle: 215
+    m_LowerAngle: -20
+    m_UpperAngle: 200
 --- !u!1 &1776577661
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class PlayerTakeDamage : MonoBehaviour
@@ -11,6 +12,19 @@ public class PlayerTakeDamage : MonoBehaviour
     {
         _playerManager = GetComponent<PlayerManager>();
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            _toggleRagdoll.Ragdoll(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            _toggleRagdoll.Ragdoll(false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

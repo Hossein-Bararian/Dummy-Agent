@@ -51,7 +51,7 @@ public class EnemyShooting : MonoBehaviour
         Vector3 randomRotation = new Vector3(0, 0, Random.Range(-85, -95));
         hand.transform.DORotate(randomRotation, 0.2f);
         yield return new WaitForSeconds(0.25f);
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, hand.transform.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.gravityScale = bulletGravity;
         rb.AddForce(bulletForce * firePoint.right, ForceMode2D.Impulse);
