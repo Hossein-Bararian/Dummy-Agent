@@ -10,13 +10,9 @@ public class CameraShake : MonoBehaviour
         if (Instance == null)
             Instance = this;
     }
-    
-     public  void Shake(CinemachineImpulseSource impulseSource, float impulseForce)
-     {
-         impulseSource.GenerateImpulseWithForce(impulseForce);
-     }
-    
-   
-    
-   
+
+    public void Shake(CinemachineImpulseSource impulseSource, float impulseForce)
+    {
+        impulseSource.GenerateImpulseWithForce(impulseForce);
+    }
 }
