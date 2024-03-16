@@ -1,15 +1,26 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class SlowMotionMechanic : MonoBehaviour
 {
+    private bool _isOnSlowMotion;
+
     [SerializeField] private float slowTime;
     [SerializeField] private float slowTimeEffect;
     [SerializeField] private Volume volume;
     private float _startScaleTime;
     private float _startFixedDeltaTime;
+
+
+    [Header("SlowMotion Bar")] [SerializeField]
+    private Slider slowMotionBar;
+
+    [SerializeField] private float increaseSlowValue;
+    [SerializeField] private float decreaseSlowValue;
 
 
     private void Awake()
@@ -21,6 +32,12 @@ public class SlowMotionMechanic : MonoBehaviour
 
     private void Update()
     {
+        //bug     این وقتی مقدار اسلوموشن تموم میشه از حالت اهسته در میاد ولی یه حالتی بازم انگار اهسته هست نمیدونم داستان چیه .  به تایم اسکیل که داره پرینت میشه هم دقت کن جالبه 
+        print(Time.timeScale);
+        if (slowMotionBar.value < 100 && !_isOnSlowMotion)
+        {
+            RecoverSlowMotionBar();
+        }
         CheckInputs();
     }
 
@@ -28,7 +45,7 @@ public class SlowMotionMechanic : MonoBehaviour
     {
         if (Input.GetButton("SlowMotion"))
         {
-            SlowMotion(slowTime);
+            StartSlowMotion(slowTime);
         }
 
         if (Input.GetButtonUp("SlowMotion"))
@@ -37,19 +54,36 @@ public class SlowMotionMechanic : MonoBehaviour
         }
     }
 
-    private void SlowMotion(float time)
+    private void StartSlowMotion(float time)
     {
+        _isOnSlowMotion = true;
+        if (slowMotionBar.value <= 0)
+        {
+            StopSlowMotion();
+            return;
+        }
+        UseSlowMotionBar();
         Time.timeScale = time;
         Time.fixedDeltaTime = time * _startFixedDeltaTime;
         SlowMotionEffects(true);
-        // slow sound and music
     }
 
     private void StopSlowMotion()
     {
-        SlowMotionEffects(false);
+        _isOnSlowMotion = false;
         Time.timeScale = _startScaleTime;
         Time.fixedDeltaTime = _startFixedDeltaTime;
+        SlowMotionEffects(false);
+    }
+
+    private void RecoverSlowMotionBar()
+    {
+        slowMotionBar.value += increaseSlowValue * Time.unscaledDeltaTime;
+    }
+
+    private void UseSlowMotionBar()
+    {
+        slowMotionBar.value -= decreaseSlowValue * Time.unscaledDeltaTime;
     }
 
     private void SlowMotionEffects(bool active)
