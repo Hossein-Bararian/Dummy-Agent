@@ -7,6 +7,7 @@ public class PlayerTakeDamage : MonoBehaviour
     
     private ToggleRagdoll _toggleRagdoll;
     private PlayerManager _playerManager;
+    [SerializeField]private GameOverManager gameOverManager;
     
     private void Awake()
     {
@@ -32,6 +33,8 @@ public class PlayerTakeDamage : MonoBehaviour
         if (other.gameObject.CompareTag("EnemyBullet") && !PlayerManager.IsDead)
         {
             Die();
+            gameOverManager.ActiveGameOverPanel(true);
+            
         }
     }
 

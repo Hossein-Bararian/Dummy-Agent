@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -11,10 +12,11 @@ public class SlowMotionMechanic : MonoBehaviour
     private float _startFixedDeltaTime;
 
 
-    private void Start()
+    private void Awake()
     {
-        _startScaleTime = Time.timeScale;
-        _startFixedDeltaTime = Time.fixedDeltaTime;
+        _startScaleTime = 1;
+        _startFixedDeltaTime = 0.02f;
+        StopSlowMotion();
     }
 
     private void Update()
