@@ -14,6 +14,7 @@ public class SlowMotionMechanic : MonoBehaviour
     [SerializeField] private Volume volume;
     private float _startScaleTime;
     private float _startFixedDeltaTime;
+    
     [Header("SlowMotion Bar")] [SerializeField]
     private Slider slowMotionBar;
     [SerializeField] private float increaseSlowValue;
@@ -22,18 +23,18 @@ public class SlowMotionMechanic : MonoBehaviour
 
     private void Start()
     {
-        _startScaleTime = Time.timeScale; 
-        _startFixedDeltaTime = Time.fixedDeltaTime;
+        _startScaleTime =1; 
+        _startFixedDeltaTime =0.02f;
         StopSlowMotion();
     }
 
     private void Update()
     {
-        CheckInputs();
         if (slowMotionBar.value < 100 && !_isOnSlowMotion)
         {
             RecoverSlowMotionBar();
         }
+        CheckInputs();
     }
 
     private void CheckInputs()
@@ -51,7 +52,7 @@ public class SlowMotionMechanic : MonoBehaviour
 
     private void StartSlowMotion(float time)
     {
-        _isOnSlowMotion = true;
+        _isOnSlowMotion = true; 
         Time.timeScale = time;
         Time.fixedDeltaTime = time * _startFixedDeltaTime;
         UseSlowMotionBar();
@@ -59,6 +60,7 @@ public class SlowMotionMechanic : MonoBehaviour
         if (slowMotionBar.value <= 0)
         {
             StopSlowMotion();
+            return;
         }
         
     }
