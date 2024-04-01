@@ -14,31 +14,26 @@ public class SlowMotionMechanic : MonoBehaviour
     [SerializeField] private Volume volume;
     private float _startScaleTime;
     private float _startFixedDeltaTime;
-
-
     [Header("SlowMotion Bar")] [SerializeField]
     private Slider slowMotionBar;
-
     [SerializeField] private float increaseSlowValue;
     [SerializeField] private float decreaseSlowValue;
 
 
-    private void Awake()
+    private void Start()
     {
-        _startScaleTime = 1;
-        _startFixedDeltaTime = 0.02f;
+        _startScaleTime = Time.timeScale; 
+        _startFixedDeltaTime = Time.fixedDeltaTime;
         StopSlowMotion();
     }
 
     private void Update()
     {
-        //bug     این وقتی مقدار اسلوموشن تموم میشه از حالت اهسته در میاد ولی یه حالتی بازم انگار اهسته هست نمیدونم داستان چیه .  به تایم اسکیل که داره پرینت میشه هم دقت کن جالبه 
-        print(Time.timeScale);
+        CheckInputs();
         if (slowMotionBar.value < 100 && !_isOnSlowMotion)
         {
             RecoverSlowMotionBar();
         }
-        CheckInputs();
     }
 
     private void CheckInputs()
@@ -57,15 +52,15 @@ public class SlowMotionMechanic : MonoBehaviour
     private void StartSlowMotion(float time)
     {
         _isOnSlowMotion = true;
+        Time.timeScale = time;
+        Time.fixedDeltaTime = time * _startFixedDeltaTime;
+        UseSlowMotionBar();
+        SlowMotionEffects(true);
         if (slowMotionBar.value <= 0)
         {
             StopSlowMotion();
-            return;
         }
-        UseSlowMotionBar();
-        Time.timeScale = time;
-        Time.fixedDeltaTime = time * _startFixedDeltaTime;
-        SlowMotionEffects(true);
+        
     }
 
     private void StopSlowMotion()
