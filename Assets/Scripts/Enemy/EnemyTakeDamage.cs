@@ -23,7 +23,7 @@ public class EnemyTakeDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("PlayerBullet") && !EnemyManager.IsDead)
+        if (other.gameObject.CompareTag("PlayerBullet") && !_enemyManager.isDead)
         {
             Die();
         }
@@ -31,7 +31,7 @@ public class EnemyTakeDamage : MonoBehaviour
 
     private void Die()
     {
-        EnemyManager.IsDead = true;
+        _enemyManager.isDead = true;
        _enemyManager.DeActiveScripts();
         _toggleRagdoll.Ragdoll(true);
         // dead face anim

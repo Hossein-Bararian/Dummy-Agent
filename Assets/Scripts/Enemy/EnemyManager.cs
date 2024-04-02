@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public static bool IsDead;
+    public bool isDead;
 
     private void Awake()
     {
-        IsDead = false;
+        isDead = false;
     }
 
     public void DeActiveScripts()
