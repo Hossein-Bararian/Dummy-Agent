@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 148209c06fd3c9340bfb047cee693c78
+guid: 17e941431f8aeac4c9f1ba32680332c9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -110,34 +110,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Head
+      name: Dummy_0
       rect:
         serializedVersion: 2
-        x: 170
-        y: 978
-        width: 161
-        height: 207
+        x: 55
+        y: 276
+        width: 59
+        height: 106
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.5100307, y: 0.031005284}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5143b406fc6651e4ba9b3c3985a182b3
-      internalID: 1694460241
+      spriteID: 3a47efe49c46c6341889949c8442b5e4
+      internalID: 260036099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Body
+      name: Dummy_1
       rect:
         serializedVersion: 2
-        x: 635
-        y: 688
-        width: 215
-        height: 471
+        x: 68
+        y: 216
+        width: 30
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,281 +145,197 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b57c2d29aef36a4181336de1c8404fd
-      internalID: 1468260469
+      spriteID: 2dc1bacb8c59a8746891748294ced1bf
+      internalID: -779721211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neck
-      rect:
-        serializedVersion: 2
-        x: 235
-        y: 923
-        width: 28
-        height: 28
-      alignment: 9
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 655739a6f95f4474788ea8c77821e94d
-      internalID: -2098710075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LeftUpArm
+      name: Dummy_2
       rect:
         serializedVersion: 2
         x: 151
-        y: 626
-        width: 65
-        height: 246
+        y: 124
+        width: 114
+        height: 151
       alignment: 9
-      pivot: {x: 0.6, y: 0.9}
+      pivot: {x: 0.49480826, y: 0.9683648}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 728c132b5ae8123499af8b503264c903
-      internalID: 1994219504
+      spriteID: 92eddefacdf7b4c458e3abdc87ecd2f5
+      internalID: -801650808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightUpArm
+      name: Dummy_Arm
       rect:
         serializedVersion: 2
-        x: 251
-        y: 627
-        width: 65
-        height: 244
+        x: 43
+        y: 177
+        width: 76
+        height: 31
       alignment: 9
-      pivot: {x: 0.6, y: 0.9}
+      pivot: {x: 0.9399756, y: 0.49045342}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 234734c06687daf4fa51f231fa933bd3
-      internalID: 480014872
+      spriteID: add3da7acfe0d534396a9ddee0ab8afa
+      internalID: -356136881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftLowArm
+      name: Dummy_4
       rect:
         serializedVersion: 2
-        x: 151
-        y: 451
-        width: 65
-        height: 157
-      alignment: 9
-      pivot: {x: 0.5, y: 1}
+        x: 46
+        y: 117
+        width: 43
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5b27c7fceaa4cb4086a86890b2cd9f0
-      internalID: -1675693200
+      spriteID: 21075edefbe8f5148861b5d5092d2fa8
+      internalID: 598419093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightLowArm
+      name: Dummy_UpLeg
       rect:
         serializedVersion: 2
-        x: 251
-        y: 451
-        width: 65
-        height: 157
-      alignment: 9
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edcacaafa61425741845b893ee6c9c52
-      internalID: 718746871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LeftUpFoot
-      rect:
-        serializedVersion: 2
-        x: 526
-        y: 354
-        width: 59
-        height: 192
-      alignment: 9
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb9bf148561e85c43b7cf032a9829137
-      internalID: 1778524468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RightUpFoot
-      rect:
-        serializedVersion: 2
-        x: 699
-        y: 356
-        width: 59
-        height: 192
-      alignment: 9
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b812370974a1a6b4a91e66f034ebf9c8
-      internalID: -1168313527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LeftHand
-      rect:
-        serializedVersion: 2
-        x: 169
-        y: 244
-        width: 46
+        x: 113
+        y: 112
+        width: 18
         height: 53
       alignment: 9
-      pivot: {x: 0.5, y: 1}
+      pivot: {x: 0.5422126, y: 0.019762436}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e46003ecd6896b14dae4a05f31aae41d
-      internalID: 643540313
+      spriteID: 55b720d6431af1240a79144bb8f2a8e4
+      internalID: 5574278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightHand
+      name: Dummy_6
       rect:
         serializedVersion: 2
-        x: 264
-        y: 244
-        width: 46
+        x: 76
+        y: 83
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52300128e9273fa41b27c71c1823ee03
+      internalID: 157463899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy_DownLeg
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 51
+        width: 20
         height: 53
       alignment: 9
-      pivot: {x: 0.5, y: 1}
+      pivot: {x: 0.4113598, y: 0.977849}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 181a4428aa923f34c8206b86d664f7a3
-      internalID: -657575194
+      spriteID: 96b0d9e79a902f54eb2379501f80f419
+      internalID: 580948411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftLowFoot
+      name: Dummy_8
       rect:
         serializedVersion: 2
-        x: 526
-        y: 211
-        width: 59
-        height: 118
-      alignment: 9
-      pivot: {x: 0.5, y: 1}
+        x: 73
+        y: 51
+        width: 21
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e545ae813e4b8341ab88ec3b93d97a9
-      internalID: 1297444881
+      spriteID: fa41c92174f41ee48a62921d4a251857
+      internalID: 98112488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightLowFoot
+      name: Dummy_9
       rect:
         serializedVersion: 2
-        x: 697
-        y: 211
-        width: 59
-        height: 118
-      alignment: 9
-      pivot: {x: 0.5, y: 1}
+        x: 78
+        y: 40
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ed46069311fe3b41966a601ac8ffa47
-      internalID: 1064849342
+      spriteID: aebdf6a332bc1ac43bb74982f0197277
+      internalID: 706248425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftFoot
+      name: Dummy_10
       rect:
         serializedVersion: 2
-        x: 515
-        y: 135
-        width: 82
-        height: 29
+        x: 125
+        y: 23
+        width: 26
+        height: 17
       alignment: 9
-      pivot: {x: 0.5, y: 1}
+      pivot: {x: 0.44155592, y: 0.90968525}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a71319bd49f5d6d4a9353ba7853a8ae6
-      internalID: 1429673020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RightFoot
-      rect:
-        serializedVersion: 2
-        x: 686
-        y: 135
-        width: 82
-        height: 29
-      alignment: 9
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f0d081fe1b853947bebdb532c11a271
-      internalID: -1753408921
+      spriteID: 9ef27f7a1a5fbc04aa49a5728f4f57fa
+      internalID: 1811806862
       vertices: []
       indices: 
       edges: []
@@ -435,21 +351,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Body: 1468260469
-      Head: 1694460241
-      LeftFoot: 1429673020
-      LeftHand: 643540313
-      LeftLowArm: -1675693200
-      LeftLowFoot: 1297444881
-      LeftUpArm: 1994219504
-      LeftUpFoot: 1778524468
-      Neck: -2098710075
-      RightFoot: -1753408921
-      RightHand: -657575194
-      RightLowArm: 718746871
-      RightLowFoot: 1064849342
-      RightUpArm: 480014872
-      RightUpFoot: -1168313527
+      Dummy_0: 260036099
+      Dummy_1: -779721211
+      Dummy_10: 1811806862
+      Dummy_2: -801650808
+      Dummy_4: 598419093
+      Dummy_6: 157463899
+      Dummy_8: 98112488
+      Dummy_9: 706248425
+      Dummy_Arm: -356136881
+      Dummy_DownLeg: 580948411
+      Dummy_UpLeg: 5574278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

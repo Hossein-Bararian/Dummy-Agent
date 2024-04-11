@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5a2e6e293f3f33409404e9bc9d4487b
+guid: c37a0c81c0fa452488b8edeb36ddf0e4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hitman-tools_4
+      name: Slow-Motion-bar_0
       rect:
         serializedVersion: 2
-        x: 339
-        y: 1105
-        width: 65
-        height: 9
+        x: 12
+        y: 104
+        width: 55
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 900cdc876bbdb1345807993bdaf98229
-      internalID: 412751703
+      spriteID: 29e1f7e1e3ace3a4bbe0ae27ee0a20d3
+      internalID: -1749273187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hitman-tools_5
+      name: Slow-Motion-bar_2
       rect:
         serializedVersion: 2
-        x: 418
-        y: 1030
-        width: 144
-        height: 94
+        x: 79
+        y: 97
+        width: 363
+        height: 67
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a22a26f9419118147bbb4489037ff01c
-      internalID: 1331330245
+      spriteID: e55896d044f4f3a41a3561e7cec374e5
+      internalID: 2111800467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hitman-tools_17
+      name: Slow-Motion-bar_6
       rect:
         serializedVersion: 2
-        x: 60
-        y: 742
-        width: 126
-        height: 82
+        x: 75
+        y: 10
+        width: 363
+        height: 67
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8317e9b5eeb0fbc478a2004610e72045
-      internalID: -221512860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hitman-tools_30
-      rect:
-        serializedVersion: 2
-        x: 825
-        y: 0
-        width: 67
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d4a180a3d68b4f49a820db17dc51bad
-      internalID: 645256993
+      spriteID: 40c4fe191b070d145828e23a1d7d6ddf
+      internalID: 2018801189
       vertices: []
       indices: 
       edges: []
@@ -204,39 +183,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hitman-tools_0: -667166930
-      Hitman-tools_1: 256703674
-      Hitman-tools_10: 493746029
-      Hitman-tools_11: 879119535
-      Hitman-tools_12: -12631236
-      Hitman-tools_13: 1596217651
-      Hitman-tools_14: 2101315416
-      Hitman-tools_15: 1944092630
-      Hitman-tools_16: 1704888202
-      Hitman-tools_17: -221512860
-      Hitman-tools_18: -1255064413
-      Hitman-tools_19: -267291440
-      Hitman-tools_2: 1448575929
-      Hitman-tools_20: -1668817917
-      Hitman-tools_21: 1355852884
-      Hitman-tools_22: -1017329343
-      Hitman-tools_23: 2102252528
-      Hitman-tools_24: 1665317631
-      Hitman-tools_25: 1248670763
-      Hitman-tools_26: -1281345578
-      Hitman-tools_27: 1672133019
-      Hitman-tools_28: -1024423748
-      Hitman-tools_29: 286654880
-      Hitman-tools_3: -763591115
-      Hitman-tools_30: 645256993
-      Hitman-tools_31: -1700699606
-      Hitman-tools_32: -1096976929
-      Hitman-tools_4: 412751703
-      Hitman-tools_5: 1331330245
-      Hitman-tools_6: 2106855569
-      Hitman-tools_7: -1453216596
-      Hitman-tools_8: 2134876755
-      Hitman-tools_9: -1567533112
+      Slow-Motion-bar_0: -1749273187
+      Slow-Motion-bar_1: -1101638303
+      Slow-Motion-bar_2: 2111800467
+      Slow-Motion-bar_3: -2035841423
+      Slow-Motion-bar_4: 663085573
+      Slow-Motion-bar_5: -1326787735
+      Slow-Motion-bar_6: 2018801189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
