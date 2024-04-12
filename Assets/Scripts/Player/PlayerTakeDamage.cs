@@ -38,7 +38,7 @@ public class PlayerTakeDamage : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         _toggleRagdoll.Ragdoll(true);
         PlayerManager.IsDead = true;
