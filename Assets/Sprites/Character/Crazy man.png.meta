@@ -256,6 +256,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Crazy man_7
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 24
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680461a7b04ce5f4dbc1ea2c191e6f8b
+      internalID: -2033244003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -274,6 +295,7 @@ TextureImporter:
       Crazy man_4: 1795414802
       Crazy man_5: -2120975935
       Crazy man_6: 1240379078
+      Crazy man_7: -2033244003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

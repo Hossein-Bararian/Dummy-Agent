@@ -134,12 +134,12 @@ TextureImporter:
       name: Nigga_1
       rect:
         serializedVersion: 2
-        x: 93
-        y: 199
-        width: 21
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 161
+        y: 253
+        width: 30
+        height: 58
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Nigga_2
       rect:
         serializedVersion: 2
-        x: 17
-        y: 170
-        width: 27
-        height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 93
+        y: 199
+        width: 21
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: Nigga_3
       rect:
         serializedVersion: 2
-        x: 99
-        y: 180
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 165
+        y: 195
+        width: 16
+        height: 52
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -198,9 +198,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 17
-        y: 91
+        y: 170
         width: 27
-        height: 75
+        height: 29
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,12 +218,12 @@ TextureImporter:
       name: Nigga_5
       rect:
         serializedVersion: 2
-        x: 62
-        y: 18
-        width: 114
-        height: 151
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 99
+        y: 180
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,6 +239,69 @@ TextureImporter:
       name: Nigga_6
       rect:
         serializedVersion: 2
+        x: 160
+        y: 170
+        width: 26
+        height: 18
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2091a16d8a8c941b1b58f1c736496c
+      internalID: 2062923389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nigga_7
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 91
+        width: 27
+        height: 75
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67095c744ded614a965bd3f4a2b6385
+      internalID: 1147227968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nigga_8
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 18
+        width: 114
+        height: 151
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5902eaeeb29a3324b85c0be666c05727
+      internalID: -2133454397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nigga_9
+      rect:
+        serializedVersion: 2
         x: 11
         y: 11
         width: 38
@@ -250,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad2091a16d8a8c941b1b58f1c736496c
-      internalID: 2062923389
+      spriteID: 055510e6cba818840b4910d55cc30eae
+      internalID: 2095067993
       vertices: []
       indices: 
       edges: []
@@ -274,6 +337,9 @@ TextureImporter:
       Nigga_4: -269796288
       Nigga_5: 1252791814
       Nigga_6: 2062923389
+      Nigga_7: 1147227968
+      Nigga_8: -2133454397
+      Nigga_9: 2095067993
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
