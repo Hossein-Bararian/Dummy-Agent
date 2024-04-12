@@ -9,16 +9,7 @@ public class FallDeath : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera cinemachin;
     [SerializeField]private GameOverManager gameOverManager;
     private PlayerTakeDamage _playerTakeDamage;
-    void Start()
-    {
-     
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 
     private IEnumerator OnTriggerEnter2D(Collider2D other)
     {
