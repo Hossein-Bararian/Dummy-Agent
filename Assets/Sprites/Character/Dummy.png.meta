@@ -113,12 +113,12 @@ TextureImporter:
       name: Dummy_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 276
-        width: 59
-        height: 106
-      alignment: 9
-      pivot: {x: 0.5100307, y: 0.031005284}
+        x: 10
+        y: 160
+        width: 114
+        height: 151
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,10 +134,10 @@ TextureImporter:
       name: Dummy_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 216
-        width: 30
-        height: 33
+        x: 140
+        y: 193
+        width: 43
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,12 +155,12 @@ TextureImporter:
       name: Dummy_2
       rect:
         serializedVersion: 2
-        x: 151
-        y: 124
-        width: 114
-        height: 151
-      alignment: 9
-      pivot: {x: 0.49480826, y: 0.9683648}
+        x: 148
+        y: 160
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,36 +173,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dummy_Arm
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 177
-        width: 76
-        height: 31
-      alignment: 9
-      pivot: {x: 0.9399756, y: 0.49045342}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: add3da7acfe0d534396a9ddee0ab8afa
-      internalID: -356136881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Dummy_4
       rect:
         serializedVersion: 2
-        x: 46
-        y: 117
-        width: 43
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 18
+        y: 115
+        width: 27
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,36 +194,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dummy_UpLeg
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 112
-        width: 18
-        height: 53
-      alignment: 9
-      pivot: {x: 0.5422126, y: 0.019762436}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55b720d6431af1240a79144bb8f2a8e4
-      internalID: 5574278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Dummy_6
       rect:
         serializedVersion: 2
-        x: 76
-        y: 83
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 124
+        y: 38
+        width: 67
+        height: 107
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,36 +215,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dummy_DownLeg
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 51
-        width: 20
-        height: 53
-      alignment: 9
-      pivot: {x: 0.4113598, y: 0.977849}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96b0d9e79a902f54eb2379501f80f419
-      internalID: 580948411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Dummy_8
       rect:
         serializedVersion: 2
-        x: 73
-        y: 51
-        width: 21
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 81
+        y: 38
+        width: 26
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,13 +236,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dummy_9
+      name: Dummy_3
       rect:
         serializedVersion: 2
-        x: 78
-        y: 40
-        width: 11
-        height: 10
+        x: 167
+        y: 163
+        width: 21
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,29 +250,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aebdf6a332bc1ac43bb74982f0197277
-      internalID: 706248425
+      spriteID: a391da2f26d4fa941b9d40262a9c98c7
+      internalID: -1023273393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dummy_10
+      name: Dummy_5
       rect:
         serializedVersion: 2
-        x: 125
-        y: 23
-        width: 26
-        height: 17
-      alignment: 9
-      pivot: {x: 0.44155592, y: 0.90968525}
+        x: 82
+        y: 68
+        width: 17
+        height: 53
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ef27f7a1a5fbc04aa49a5728f4f57fa
-      internalID: 1811806862
+      spriteID: 93620a211f75d2a40a5772dbb85642ec
+      internalID: 878700383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dummy_7
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 35
+        width: 27
+        height: 75
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada02ca08b60b934faab8f3bf06f0de0
+      internalID: -838806234
       vertices: []
       indices: 
       edges: []
@@ -353,15 +311,13 @@ TextureImporter:
     nameFileIdTable:
       Dummy_0: 260036099
       Dummy_1: -779721211
-      Dummy_10: 1811806862
       Dummy_2: -801650808
+      Dummy_3: -1023273393
       Dummy_4: 598419093
+      Dummy_5: 878700383
       Dummy_6: 157463899
+      Dummy_7: -838806234
       Dummy_8: 98112488
-      Dummy_9: 706248425
-      Dummy_Arm: -356136881
-      Dummy_DownLeg: 580948411
-      Dummy_UpLeg: 5574278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

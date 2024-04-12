@@ -20,7 +20,7 @@ public class HandMovement : MonoBehaviour
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var lookDir = mousePos - hand.transform.position;
             float rotateZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-            hand.DORotateQuaternion(Quaternion.Euler(0, 0, rotateZ + 180f), .35f);
+            hand.DORotateQuaternion(Quaternion.Euler(0, 0, rotateZ + 265f), .35f);
         }
     }
 }
