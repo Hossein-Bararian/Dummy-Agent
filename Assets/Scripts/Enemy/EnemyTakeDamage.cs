@@ -31,10 +31,10 @@ public class EnemyTakeDamage : MonoBehaviour
 
     private void Die()
     {
+        _anim.SetTrigger("Dead");
         _enemyManager.isDead = true;
        _enemyManager.DeActiveScripts();
         _toggleRagdoll.Ragdoll(true);
-        // dead face anim
     }
 
     public void CutHead()
