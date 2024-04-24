@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 
@@ -9,8 +10,11 @@ public class EnemyShooting : MonoBehaviour
 {
     [Header("BoxCast")] 
     [SerializeField] private Vector3 castOffset;
-    [SerializeField] private Vector3 castSize;
+    [SerializeField] private Vector3 castSize; 
+    [SerializeField] private Sprite mouthFindSprite;
 
+    [SerializeField] private GameObject mouthSprite;
+    
     [Header("Shooting")] 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletForce;
@@ -18,6 +22,8 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform hand;
     [SerializeField] private float shotDelay;
+
+   
     
     private Animator _anim;
     private bool _isShooting;
@@ -40,6 +46,7 @@ public class EnemyShooting : MonoBehaviour
         {
             if (hit.collider.CompareTag("Player") && !_isShooting)
             {
+              mouthSprite.GetComponent<SpriteRenderer>().sprite = mouthFindSprite;
                 StartCoroutine(Shoot());
             }
         }
@@ -47,6 +54,7 @@ public class EnemyShooting : MonoBehaviour
 
     IEnumerator Shoot()
     {
+        _anim.enabled = false;
         _isShooting = true;
         Vector3 randomRotation = new Vector3(0, 0, Random.Range(85, 95));
         hand.transform.DORotate(randomRotation, 0.2f);
@@ -59,6 +67,7 @@ public class EnemyShooting : MonoBehaviour
         yield return new WaitForSeconds(shotDelay);
         _isShooting = false;
     }
+    
 
     private void OnDrawGizmos()
     {

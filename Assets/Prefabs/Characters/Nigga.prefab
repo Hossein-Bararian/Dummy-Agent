@@ -706,7 +706,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.678322, y: -12.833383, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 744472852478149066}
@@ -734,7 +734,7 @@ Animator:
   m_GameObject: {fileID: 1825517669330747136}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e6ff8cb51de28c143a2c7f8beb882387, type: 2}
+  m_Controller: {fileID: 9100000, guid: 03da166256005074087dfa01b70438c5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -883,14 +883,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bcdb6781c16e494bb4b3e9ce7d14a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castOffset: {x: 0, y: 6, z: 0}
-  castSize: {x: 12, y: 8.19, z: 0}
+  castOffset: {x: 5.93, y: 4.86, z: 0}
+  castSize: {x: 16.7, y: 8.65, z: 0}
+  mouthFindSprite: {fileID: -289323735, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
+  mouthSprite: {fileID: 3061110610649835302}
   bulletPrefab: {fileID: 279176457771732945, guid: dbd1d214eb3d6ce4686d85a267b53c78, type: 3}
   bulletForce: 45
   bulletGravity: 1
   firePoint: {fileID: 6823837296633421101}
   hand: {fileID: 6091548144526373026}
-  shotDelay: 1.2
+  shotDelay: 0.5
 --- !u!114 &5686069534758843752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,6 +905,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c4a401b63a3ac41bf961792d8a9a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadEyeSprite: {fileID: 1226909339, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
+  deadMouthSprite: {fileID: 464161073, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
+  eyes:
+  - {fileID: 4332893641920078324}
+  - {fileID: 5019018840962346384}
+  mouth: {fileID: 3061110610649835302}
   head: {fileID: 8552829548595475395}
   isHeadCutted: 0
 --- !u!1 &2083073707098479221
