@@ -566,6 +566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoatMan (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5729666151492835726, guid: 742f0e7e34de2ee4fab2c393e5a62533, type: 3}
+      propertyPath: deadEyeSprite
+      value: 
+      objectReference: {fileID: 811372698, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
     - target: {fileID: 7952401538763653355, guid: 742f0e7e34de2ee4fab2c393e5a62533, type: 3}
       propertyPath: m_LocalPosition.x
       value: 225.78
@@ -1959,7 +1963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.299988, y: 4.200012}
+  m_AnchoredPosition: {x: 24.299988, y: 4.1999817}
   m_SizeDelta: {x: 179.1454, y: 36.4836}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &739261637
@@ -9219,6 +9223,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2081066458010367954, guid: d5b27038cc6858448a22cdf5dbce09ac, type: 3}
+      propertyPath: deadEyeSprite
+      value: 
+      objectReference: {fileID: 547171206, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
     - target: {fileID: 7069446352581154025, guid: d5b27038cc6858448a22cdf5dbce09ac, type: 3}
       propertyPath: m_Name
       value: HairyMan (2)
@@ -9384,6 +9392,10 @@ PrefabInstance:
       propertyPath: runSpeed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1089317939554162917, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2006224146480874003, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: volume
       value: 
@@ -9432,6 +9444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3031481509542030432, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -340579315, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
     - target: {fileID: 3815322178877480404, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -9455,6 +9471,22 @@ PrefabInstance:
     - target: {fileID: 7813509062627909156, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: m_AngleLimits.m_UpperAngle
       value: 235.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869971533291415002, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869971533291415002, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869971533291415002, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869971533291415002, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

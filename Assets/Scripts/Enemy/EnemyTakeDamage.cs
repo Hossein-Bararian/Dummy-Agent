@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyTakeDamage : MonoBehaviour
 {
@@ -9,13 +10,14 @@ public class EnemyTakeDamage : MonoBehaviour
     [SerializeField] private GameObject[] eyes;
     [SerializeField] private GameObject mouth;
 
-
+  
     [SerializeField] private GameObject head;
     public bool isHeadCutted;
     private EnemyManager _enemyManager;
     private ToggleRagdoll _toggleRagdoll;
     private Animator _anim;
-
+    private Animator _playerAnim;
+    private string[] _playerHappyFacesAnimationName={"HappyFace1","HappyFace2"};
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class EnemyTakeDamage : MonoBehaviour
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
         _toggleRagdoll.Ragdoll(false);
         _anim = GetComponent<Animator>();
+        _playerAnim = GameObject.Find("Player").GetComponent<Animator>();
         isHeadCutted = false;
     }
 
@@ -30,6 +33,12 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerBullet") && !_enemyManager.isDead)
         {
+            if (_playerAnim!=null)
+            {
+               
+                int randomIndex = Random.Range(0, _playerHappyFacesAnimationName.Length);
+                _playerAnim.Play(_playerHappyFacesAnimationName[randomIndex]);
+            }
             DeadFace();
             Die();
         }
@@ -51,6 +60,10 @@ public class EnemyTakeDamage : MonoBehaviour
 
     public void CutHead()
     {
+        if (_playerAnim != null)
+        {
+            _playerAnim.Play("PlayerCutHead"git );
+        }
         HingeJoint2D hinge = head.GetComponent<HingeJoint2D>();
         isHeadCutted = true;
         head.transform.SetParent(null);
