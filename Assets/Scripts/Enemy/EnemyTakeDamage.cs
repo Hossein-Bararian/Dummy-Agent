@@ -5,37 +5,34 @@ using Random = UnityEngine.Random;
 
 public class EnemyTakeDamage : MonoBehaviour
 {
+    private GameManager _gameManager;
     [Header("Dead Face")] [SerializeField] private Sprite deadEyeSprite;
     [SerializeField] private Sprite deadMouthSprite;
     [SerializeField] private GameObject[] eyes;
     [SerializeField] private GameObject mouth;
-
-  
-    [SerializeField] private GameObject head;
-    public bool isHeadCutted;
+    [Space(10)] [SerializeField] private GameObject head;
+    [Space(10)] public bool isHeadCutted;
     private EnemyManager _enemyManager;
     private ToggleRagdoll _toggleRagdoll;
-    private Animator _anim;
     private Animator _playerAnim;
-    private string[] _playerHappyFacesAnimationName={"HappyFace1","HappyFace2"};
+    private readonly string[] _playerHappyFacesAnimationName = { "HappyFace1", "HappyFace2" };
 
     private void Start()
     {
+        isHeadCutted = false;
         _enemyManager = GetComponent<EnemyManager>();
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
-        _toggleRagdoll.Ragdoll(false);
-        _anim = GetComponent<Animator>();
+        _gameManager = FindObjectOfType<GameManager>();
         _playerAnim = GameObject.Find("Player").GetComponent<Animator>();
-        isHeadCutted = false;
+        _toggleRagdoll.Ragdoll(false);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("PlayerBullet") && !_enemyManager.isDead)
         {
-            if (_playerAnim!=null)
+            if (_playerAnim != null)
             {
-               
                 int randomIndex = Random.Range(0, _playerHappyFacesAnimationName.Length);
                 _playerAnim.Play(_playerHappyFacesAnimationName[randomIndex]);
             }
@@ -49,6 +46,8 @@ public class EnemyTakeDamage : MonoBehaviour
         _enemyManager.isDead = true;
         _enemyManager.DeActiveScripts();
         _toggleRagdoll.Ragdoll(true);
+        if(_gameManager!=null)  
+            _gameManager.UpdateScore(1);
     }
 
     private void DeadFace()
@@ -64,10 +63,13 @@ public class EnemyTakeDamage : MonoBehaviour
         {
             _playerAnim.Play("PlayerCutHead");
         }
+
         HingeJoint2D hinge = head.GetComponent<HingeJoint2D>();
         isHeadCutted = true;
         head.transform.SetParent(null);
         hinge.enabled = false;
         head.tag = "Enemy";
+        if(_gameManager!=null)  
+            _gameManager.UpdateScore(2);
     }
 }
