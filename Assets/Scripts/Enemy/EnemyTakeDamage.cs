@@ -62,7 +62,7 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (_playerAnim != null)
         {
-            _playerAnim.Play("PlayerCutHead"git );
+            _playerAnim.Play("PlayerCutHead");
         }
         HingeJoint2D hinge = head.GetComponent<HingeJoint2D>();
         isHeadCutted = true;
