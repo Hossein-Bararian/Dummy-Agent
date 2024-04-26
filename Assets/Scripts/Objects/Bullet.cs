@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Bullet : MonoBehaviour
 {
@@ -27,7 +28,11 @@ public class Bullet : MonoBehaviour
                 _takeDamage.CutHead();
             }
         }
-
         Destroy(bullet);
+    }
+
+    private void Update()
+    {
+        Destroy(gameObject,5);
     }
 }

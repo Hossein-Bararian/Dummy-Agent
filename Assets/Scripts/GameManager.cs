@@ -16,9 +16,7 @@ public class GameManager : MonoBehaviour
         Score += value;
         txtScore.text = "Score: "+Score;
         _scoreAnimator.Play("GetScore");
-        //some effects
-        //some sounds maybe !
-        //some particles maybe @
+       
     }
 
 }

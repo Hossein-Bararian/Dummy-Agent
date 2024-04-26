@@ -43,11 +43,12 @@ public class EnemyTakeDamage : MonoBehaviour
 
     private void Die()
     {
+        if(_gameManager!=null)  
+            _gameManager.UpdateScore(1);
         _enemyManager.isDead = true;
         _enemyManager.DeActiveScripts();
         _toggleRagdoll.Ragdoll(true);
-        if(_gameManager!=null)  
-            _gameManager.UpdateScore(1);
+       
     }
 
     private void DeadFace()
@@ -63,13 +64,13 @@ public class EnemyTakeDamage : MonoBehaviour
         {
             _playerAnim.Play("PlayerCutHead");
         }
-
+        if(_gameManager!=null)  
+            _gameManager.UpdateScore(2);
         HingeJoint2D hinge = head.GetComponent<HingeJoint2D>();
         isHeadCutted = true;
         head.transform.SetParent(null);
         hinge.enabled = false;
         head.tag = "Enemy";
-        if(_gameManager!=null)  
-            _gameManager.UpdateScore(2);
+      
     }
 }
