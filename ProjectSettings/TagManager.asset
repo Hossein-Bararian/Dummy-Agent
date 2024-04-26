@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - EnemyBullet
   - PlayerBullet
+  - PlayerBulletDestroyer
   layers:
   - Default
   - TransparentFX

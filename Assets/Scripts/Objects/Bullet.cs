@@ -7,6 +7,14 @@ public class Bullet : MonoBehaviour
     [SerializeField] private ParticleManager particleManager;
     private EnemyTakeDamage _takeDamage;
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name=="BulletDestroyer")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         var bullet = gameObject;
@@ -29,10 +37,5 @@ public class Bullet : MonoBehaviour
             }
         }
         Destroy(bullet);
-    }
-
-    private void Update()
-    {
-        Destroy(gameObject,5);
     }
 }
