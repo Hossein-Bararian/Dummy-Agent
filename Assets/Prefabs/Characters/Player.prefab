@@ -381,8 +381,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 180
+    m_LowerAngle: -60.4
+    m_UpperAngle: 235.58
 --- !u!1 &789279704443584240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f106b22dee32a4bb4118d0e56873de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 6
+  runSpeed: 5
   jumpForce: 9
   originRay: {fileID: 6877434492980342910}
   layerMask:
@@ -1334,6 +1334,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220cc1affa4f67744859233566a03c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadEyeSprite: {fileID: -1882320105, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
+  deadMouthSprite: {fileID: -67430062, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
+  eyes:
+  - {fileID: 4398592398461962034}
+  - {fileID: 4107328690660709253}
+  mouth: {fileID: 4193506165874697006}
   gameOverManager: {fileID: 0}
 --- !u!114 &6923937014110635916
 MonoBehaviour:
@@ -1520,8 +1526,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 180
+    m_LowerAngle: -60.4
+    m_UpperAngle: 235.58
 --- !u!1 &4107328690660709253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,7 +1640,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.083, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7831835725462077210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1679,7 +1685,7 @@ SpriteRenderer:
   m_SortingLayerID: -977258235
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -779721211, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  m_Sprite: {fileID: -340579315, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1977,14 +1983,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4988095391160089054}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: 0.65868956, w: -0.7524149}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -2.754, y: 5.462, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6200458058613674388}
   m_Father: {fileID: 6611535221039443975}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 277.6}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &5056840195729080975
 SpriteRenderer:
   m_ObjectHideFlags: 0

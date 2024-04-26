@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c4a401b63a3ac41bf961792d8a9a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadEyeSprite: {fileID: 1226909339, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
+  deadEyeSprite: {fileID: 811372698, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
   deadMouthSprite: {fileID: -67430062, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
   eyes:
   - {fileID: 5941201841681470421}
