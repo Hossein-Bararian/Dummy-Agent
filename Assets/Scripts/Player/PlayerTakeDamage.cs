@@ -1,13 +1,18 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
 public class PlayerTakeDamage : MonoBehaviour
 {
-    
+    [Header("Dead Face")]
+    [SerializeField] private Sprite deadEyeSprite;
+    [SerializeField] private Sprite deadMouthSprite;
+    [SerializeField] private GameObject[] eyes;
+    [SerializeField] private GameObject mouth;
+    [SerializeField]private GameOverManager gameOverManager;
     private ToggleRagdoll _toggleRagdoll;
     private PlayerManager _playerManager;
-    [SerializeField]private GameOverManager gameOverManager;
     
     private void Awake()
     {
@@ -32,6 +37,7 @@ public class PlayerTakeDamage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyBullet") && !PlayerManager.IsDead)
         {
+            DeadFace();
             Die();
             gameOverManager.ActiveGameOverPanel(true);
             
@@ -43,6 +49,11 @@ public class PlayerTakeDamage : MonoBehaviour
         _toggleRagdoll.Ragdoll(true);
         PlayerManager.IsDead = true;
         _playerManager.DeActiveScripts();
-        // dead face anim
+    }
+    private void DeadFace()
+    {
+        eyes[0].GetComponent<SpriteRenderer>().sprite = deadEyeSprite;
+        eyes[1].GetComponent<SpriteRenderer>().sprite = deadEyeSprite;
+        mouth.GetComponent<SpriteRenderer>().sprite = deadMouthSprite;
     }
 }
