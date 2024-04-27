@@ -10,11 +10,12 @@ public class EnemyShooting : MonoBehaviour
 {
     [Header("BoxCast")] 
     [SerializeField] private Vector3 castOffset;
-    [SerializeField] private Vector3 castSize; 
+    [SerializeField] private Vector3 castSize;
+      [Space(30)]
+    [Header("Dead Face Sprites")]
     [SerializeField] private Sprite mouthFindSprite;
-
     [SerializeField] private GameObject mouthSprite;
-    
+    [Space(30)]
     [Header("Shooting")] 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletForce;
@@ -22,8 +23,7 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform hand;
     [SerializeField] private float shotDelay;
-
-   
+    [SerializeField] private bool isLeftSide;
     
     private Animator _anim;
     private bool _isShooting;
@@ -56,8 +56,7 @@ public class EnemyShooting : MonoBehaviour
     {
         _anim.enabled = false;
         _isShooting = true;
-        Vector3 randomRotation = new Vector3(0, 0, Random.Range(85, 95));
-        hand.transform.DORotate(randomRotation, 0.2f);
+        hand.transform.DORotate(CheckEnemySide(), 0.2f);
         yield return new WaitForSeconds(0.25f);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, hand.transform.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -66,6 +65,18 @@ public class EnemyShooting : MonoBehaviour
         _anim.Play("GunRecoil");
         yield return new WaitForSeconds(shotDelay);
         _isShooting = false;
+    }
+
+    private Vector3 CheckEnemySide()
+    {
+        if (isLeftSide)
+        {
+           return new Vector3(0, 0, Random.Range(85, 95));
+        }
+        else
+        {
+            return new Vector3(0, 0, Random.Range(-85, -95));
+        }
     }
     
 
