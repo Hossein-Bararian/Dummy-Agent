@@ -3,18 +3,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement Speed")] 
-    [SerializeField] private float runSpeed;
+    [Header("Movement Speed")] [SerializeField]
+    private float runSpeed;
+
     [SerializeField] private float jumpForce;
 
-    [Header("Ground Detect")] 
-    [SerializeField]
+    [Header("Ground Detect")] [SerializeField]
     private Transform originRay;
-    [SerializeField] private LayerMask layerMask;
 
+    [SerializeField] private LayerMask layerMask;
+    [Space(30)]
+    [SerializeField] private ParallaxSystem parallaxSystem;
     private Animator _anim;
     private Rigidbody2D _rb;
-    
+
 
     private void Start()
     {
@@ -37,17 +39,21 @@ public class PlayerMovement : MonoBehaviour
     private void Run()
     {
         _rb.velocity = new Vector2(runSpeed, _rb.velocity.y);
-        
+        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("Walk") && !parallaxSystem.enabled)
+        {
+            parallaxSystem.enabled = true;
+        }
     }
 
     private void CheckStopRunning()
     {
         if (!this.transform.hasChanged)
         {
-          _anim.Play("Idle");
+            parallaxSystem.enabled = false;
+            _anim.Play("Idle");
         }
-        transform.hasChanged = false;
        
+        transform.hasChanged = false;
     }
 
     private void CheckInputs()
