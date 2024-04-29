@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Run();
+        CheckStopRunning();
         CheckInputs();
     }
 
@@ -36,6 +37,17 @@ public class PlayerMovement : MonoBehaviour
     private void Run()
     {
         _rb.velocity = new Vector2(runSpeed, _rb.velocity.y);
+        
+    }
+
+    private void CheckStopRunning()
+    {
+        if (!this.transform.hasChanged)
+        {
+          _anim.Play("Idle");
+        }
+        transform.hasChanged = false;
+       
     }
 
     private void CheckInputs()
