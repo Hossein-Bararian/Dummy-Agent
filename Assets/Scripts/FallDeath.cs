@@ -6,10 +6,17 @@ using UnityEngine;
 
 public class FallDeath : MonoBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera cinemachin;
+    [SerializeField] private CinemachineVirtualCamera cinemachine;
     [SerializeField]private GameOverManager gameOverManager;
     private PlayerTakeDamage _playerTakeDamage;
- 
+
+
+    private void Awake()
+    {
+        cinemachine = FindObjectOfType<CinemachineVirtualCamera>();
+        gameOverManager = FindObjectOfType<GameOverManager>(true);
+
+    }
 
     private IEnumerator OnTriggerEnter2D(Collider2D other)
     {
@@ -18,7 +25,7 @@ public class FallDeath : MonoBehaviour
             if (other.GetComponent<PlayerTakeDamage>())
             {
                 _playerTakeDamage = other.GetComponent<PlayerTakeDamage>();
-                cinemachin.Follow = null;
+                cinemachine.Follow = null;
                 yield return new WaitForSeconds(1);
                 _playerTakeDamage.Die();
                 gameOverManager.ActiveGameOverPanel(true);
