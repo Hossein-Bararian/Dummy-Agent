@@ -6,8 +6,13 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    [SerializeField]private GameOverManager gameOverManager;
+    private GameOverManager _gameOverManager;
     private PlayerTakeDamage _playerTakeDamage;
+
+    private void Awake()
+    {
+        _gameOverManager = FindObjectOfType<GameOverManager>(true);
+    }
 
     private IEnumerator OnCollisionEnter2D(Collision2D other)
     {
@@ -15,13 +20,11 @@ public class Trap : MonoBehaviour
         {
             if (other.gameObject.GetComponent<PlayerTakeDamage>())
             {
-                
                 _playerTakeDamage = other.gameObject.GetComponent<PlayerTakeDamage>();
                 _playerTakeDamage.Die();
                 yield return new WaitForSeconds(1);
-                gameOverManager.ActiveGameOverPanel(true);
+                _gameOverManager.ActiveGameOverPanel(true);
             }
-
         }
     }
 }
