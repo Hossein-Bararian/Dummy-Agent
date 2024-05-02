@@ -1235,6 +1235,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  parallaxSystem: {fileID: 0}
 --- !u!114 &1479651460361055310
 MonoBehaviour:
   m_ObjectHideFlags: 0

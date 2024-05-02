@@ -23,7 +23,7 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform hand;
     [SerializeField] private float shotDelay;
-    [SerializeField] private bool isLeftSide;
+     public bool isRightSide;
     
     private Animator _anim;
     private bool _isShooting;
@@ -42,13 +42,20 @@ public class EnemyShooting : MonoBehaviour
     void CheckPlayerOnRange()
     {
         RaycastHit2D hit = Physics2D.BoxCast(transform.position + castOffset, castSize, 0, Vector2.zero);
-        if (hit.collider.gameObject != null)
+        try
         {
-            if (hit.collider.CompareTag("Player") && !_isShooting)
+            if (hit.collider.gameObject != null)
             {
-              mouthSprite.GetComponent<SpriteRenderer>().sprite = mouthFindSprite;
-                StartCoroutine(Shoot());
+                if (hit.collider.CompareTag("Player") && !_isShooting)
+                {
+                    mouthSprite.GetComponent<SpriteRenderer>().sprite = mouthFindSprite;
+                    StartCoroutine(Shoot());
+                }
             }
+        }
+        catch (Exception e)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -69,17 +76,16 @@ public class EnemyShooting : MonoBehaviour
 
     private Vector3 CheckEnemySide()
     {
-        if (isLeftSide)
+        if (isRightSide)
         {
-           return new Vector3(0, 0, Random.Range(85, 95));
+            firePoint.transform.rotation =new Quaternion(0,0,0,0);
+           return new Vector3(0, 0, Random.Range(-85, -95));
         }
         else
         {
-            return new Vector3(0, 0, Random.Range(-85, -95));
+            return new Vector3(0, 0, Random.Range(85, 95));
         }
     }
-    
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position + castOffset, castSize);

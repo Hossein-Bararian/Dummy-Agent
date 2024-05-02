@@ -1738,6 +1738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+  castOffset: {x: 2.5, y: 5, z: 0}
+  radius: 3
 --- !u!114 &1623188355514325918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,6 +1752,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c4a401b63a3ac41bf961792d8a9a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadEyeSprite: {fileID: 0}
+  deadMouthSprite: {fileID: 0}
+  eyes: []
+  mouth: {fileID: 0}
   head: {fileID: 6857872846440247918}
   isHeadCutted: 0
 --- !u!1 &5055049588386656283

@@ -6,22 +6,17 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private ParticleManager particleManager;
     private EnemyTakeDamage _takeDamage;
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.name=="BulletDestroyer")
-        {
-            Destroy(gameObject);
-        }
-    }
-
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         var bullet = gameObject;
         if (!(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player") ||
               other.gameObject.CompareTag("Head")))
         {
-            particleManager.SpawnParticle(particleManager.bulletImpactParticles[0], bullet.transform);
+            if (other.gameObject.name == "BulletDestroyer")
+                Destroy(bullet);
+            else
+                particleManager.SpawnParticle(particleManager.bulletImpactParticles[0], bullet.transform);
         }
         else
         {
@@ -31,10 +26,8 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Head"))
         {
             _takeDamage = other.transform.root.GetComponent<EnemyTakeDamage>();
-            if (!_takeDamage.isHeadCutted)
-            {
+            if (!_takeDamage.isHeadCutted && _takeDamage!=null)
                 _takeDamage.CutHead();
-            }
         }
         Destroy(bullet);
     }
