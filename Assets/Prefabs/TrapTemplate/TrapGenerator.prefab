@@ -45,9 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnList:
-  - {fileID: 7779825318158239491, guid: be7509a90c31168478cdf58763a7b868, type: 3}
+  - {fileID: 4396470540982154035, guid: c76f37458e36b354e9cb2c73973ad0fb, type: 3}
+  - {fileID: 4844422347633303300, guid: a63a43b252ae4d145901bc04ec5cc7d2, type: 3}
   - {fileID: 4138498575836670495, guid: d6d00e293c2f60f46b331fee6341434d, type: 3}
   - {fileID: 6538749525547556954, guid: 5a7b0fa55e6ae0b4fac04882074cee71, type: 3}
-  - {fileID: 4844422347633303300, guid: a63a43b252ae4d145901bc04ec5cc7d2, type: 3}
-  - {fileID: 7779825318158239491, guid: be7509a90c31168478cdf58763a7b868, type: 3}
-  - {fileID: 6538749525547556954, guid: 5a7b0fa55e6ae0b4fac04882074cee71, type: 3}
+  - {fileID: 2003284518834968080, guid: be7509a90c31168478cdf58763a7b868, type: 3}

@@ -26,5 +26,13 @@ public class Trap : MonoBehaviour
                 _gameOverManager.ActiveGameOverPanel(true);
             }
         }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if (other.gameObject.GetComponent<EnemyManager>())
+            {
+                if (!other.gameObject.GetComponent<EnemyManager>().isDead)
+                    Destroy(gameObject);
+            }
+        }
     }
 }
