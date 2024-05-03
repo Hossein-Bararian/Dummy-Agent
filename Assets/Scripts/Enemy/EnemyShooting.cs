@@ -64,7 +64,7 @@ public class EnemyShooting : MonoBehaviour
         _anim.enabled = false;
         _isShooting = true;
         hand.transform.DORotate(CheckEnemySide(), 0.2f);
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.23f);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, hand.transform.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.gravityScale = bulletGravity;
