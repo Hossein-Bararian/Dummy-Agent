@@ -12,6 +12,7 @@ public class EnemyGenerator : MonoBehaviour
     {
         int randomIndex = Random.Range(0, enemy.Count);
         GameObject obj=Instantiate(enemy[randomIndex], transform.position, Quaternion.identity);
+        obj.transform.SetParent(transform);
         if (obj.GetComponent<EnemyShooting>())
         {
             if (isRight)
