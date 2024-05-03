@@ -8,10 +8,10 @@ using Random = UnityEngine.Random;
 
 public class EnemyShooting : MonoBehaviour
 {
-    [Header("BoxCast")] 
+    [Header("BoxCast")]
     [SerializeField] private Vector3 castOffset;
     [SerializeField] private Vector3 castSize;
-      [Space(30)]
+    [Space(30)]
     [Header("Dead Face Sprites")]
     [SerializeField] private Sprite mouthFindSprite;
     [SerializeField] private GameObject mouthSprite;
@@ -23,8 +23,7 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform hand;
     [SerializeField] private float shotDelay;
-     public bool isRightSide;
-    
+    public bool isRightSide;
     private Animator _anim;
     private bool _isShooting;
 
@@ -78,8 +77,8 @@ public class EnemyShooting : MonoBehaviour
     {
         if (isRightSide)
         {
-            firePoint.transform.rotation =new Quaternion(0,0,0,0);
-           return new Vector3(0, 0, Random.Range(-85, -95));
+            firePoint.transform.rotation = new Quaternion(0, 0, 0, 0);
+            return new Vector3(0, 0, Random.Range(-85, -95));
         }
         else
         {
