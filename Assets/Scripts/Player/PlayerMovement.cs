@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            _anim.Play("Slide");
+            _anim.Play("Sliding");
         }
     }
 
