@@ -25,10 +25,15 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.CompareTag("Head"))
         {
-            _takeDamage = other.transform.root.GetComponent<EnemyTakeDamage>();
-            if (!_takeDamage.isHeadCutted && _takeDamage!=null)
-                _takeDamage.CutHead();
+                _takeDamage = other.transform.parent.parent.GetComponent<EnemyTakeDamage>();
+                if (!_takeDamage.isHeadCutted && _takeDamage != null)
+                    _takeDamage.CutHead();
         }
         Destroy(bullet);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
     }
 }
