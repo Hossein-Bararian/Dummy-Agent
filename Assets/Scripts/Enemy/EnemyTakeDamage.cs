@@ -42,7 +42,6 @@ public class EnemyTakeDamage : MonoBehaviour
             Die();
         }
     }
-
     private void Die()
     {
         _enemyManager.isDead = true;
@@ -70,6 +69,5 @@ public class EnemyTakeDamage : MonoBehaviour
         head.tag = "Enemy";
         if(_gameManager!=null)  
             _gameManager.UpdateScore(1);
-      
     }
 }
