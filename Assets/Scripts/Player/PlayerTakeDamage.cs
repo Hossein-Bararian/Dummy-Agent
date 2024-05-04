@@ -10,7 +10,10 @@ public class PlayerTakeDamage : MonoBehaviour
     [SerializeField] private Sprite deadMouthSprite;
     [SerializeField] private GameObject[] eyes;
     [SerializeField] private GameObject mouth;
+    [Space(10)]
+    [Header("GameOver Management")]
     [SerializeField]private GameOverManager gameOverManager;
+    [SerializeField] private ParallaxSystem parallaxSystem;
     private ToggleRagdoll _toggleRagdoll;
     private PlayerManager _playerManager;
     
@@ -45,7 +48,8 @@ public class PlayerTakeDamage : MonoBehaviour
     public void Die()
     {
         _toggleRagdoll.Ragdoll(true);
-        PlayerManager.IsDead = true; 
+        PlayerManager.IsDead = true;
+        parallaxSystem.enabled = false;
         gameOverManager.ActiveGameOverPanel(true);
         _playerManager.DeActiveScripts();
     }

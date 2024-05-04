@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f106b22dee32a4bb4118d0e56873de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 5
+  runSpeed: 8
   jumpForce: 9
   originRay: {fileID: 6877434492980342910}
   layerMask:
@@ -1342,6 +1342,7 @@ MonoBehaviour:
   - {fileID: 4107328690660709253}
   mouth: {fileID: 4193506165874697006}
   gameOverManager: {fileID: 0}
+  parallaxSystem: {fileID: 0}
 --- !u!114 &6923937014110635916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1641,7 +1642,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.083, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7831835725462077210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2709,7 +2710,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.101699404, y: -0.61870056}
+  m_ConnectedAnchor: {x: -0.000999539, y: -0.599}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
