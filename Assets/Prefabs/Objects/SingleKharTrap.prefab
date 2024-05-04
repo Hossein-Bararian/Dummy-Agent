@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4128288840977947560}
   - component: {fileID: 1008701233221955894}
   - component: {fileID: 3195766619216735954}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SingleKharTrap
   m_TagString: Trap
   m_Icon: {fileID: 0}
