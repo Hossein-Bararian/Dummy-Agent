@@ -8,16 +8,17 @@ using Random = UnityEngine.Random;
 
 public class EnemyShooting : MonoBehaviour
 {
-    [Header("BoxCast")]
-    [SerializeField] private Vector3 castOffset;
+    [Header("BoxCast")] [SerializeField] private Vector3 castOffset;
     [SerializeField] private Vector3 castSize;
-    [Space(30)]
-    [Header("Dead Face Sprites")]
-    [SerializeField] private Sprite mouthFindSprite;
+
+    [Space(30)] [Header("Dead Face Sprites")] [SerializeField]
+    private Sprite mouthFindSprite;
+
     [SerializeField] private GameObject mouthSprite;
-    [Space(30)]
-    [Header("Shooting")] 
-    [SerializeField] private GameObject bulletPrefab;
+
+    [Space(30)] [Header("Shooting")] [SerializeField]
+    private GameObject bulletPrefab;
+
     [SerializeField] private float bulletForce;
     [SerializeField] private float bulletGravity;
     [SerializeField] private Transform firePoint;
@@ -40,21 +41,15 @@ public class EnemyShooting : MonoBehaviour
 
     void CheckPlayerOnRange()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position + castOffset, castSize, 0, Vector2.zero);
-        try
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position + castOffset, castSize, 0, Vector2.zero);
+
+        foreach (var hit in hits)
         {
-            if (hit.collider.gameObject != null)
+            if (hit && hit.collider.CompareTag("Player") && !_isShooting)
             {
-                if (hit.collider.CompareTag("Player") && !_isShooting)
-                {
-                    mouthSprite.GetComponent<SpriteRenderer>().sprite = mouthFindSprite;
-                    StartCoroutine(Shoot());
-                }
+                mouthSprite.GetComponent<SpriteRenderer>().sprite = mouthFindSprite;
+                StartCoroutine(Shoot());
             }
-        }
-        catch (Exception e)
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -85,6 +80,7 @@ public class EnemyShooting : MonoBehaviour
             return new Vector3(0, 0, Random.Range(85, 95));
         }
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position + castOffset, castSize);
