@@ -4,8 +4,6 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     public bool isDead;
-    [Header("BoxCast")] [SerializeField] private Vector3 castOffset;
-    [SerializeField] private float radius;
 
     private void Awake()
     {
