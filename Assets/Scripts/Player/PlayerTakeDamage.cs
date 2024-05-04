@@ -39,15 +39,14 @@ public class PlayerTakeDamage : MonoBehaviour
         {
             DeadFace();
             Die();
-            gameOverManager.ActiveGameOverPanel(true);
-            
         }
     }
 
     public void Die()
     {
         _toggleRagdoll.Ragdoll(true);
-        PlayerManager.IsDead = true;
+        PlayerManager.IsDead = true; 
+        gameOverManager.ActiveGameOverPanel(true);
         _playerManager.DeActiveScripts();
     }
     private void DeadFace()
