@@ -277,8 +277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  castOffset: {x: 2.5, y: 5, z: 0}
-  radius: 2
 --- !u!114 &8530002934244108831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bcdb6781c16e494bb4b3e9ce7d14a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castOffset: {x: -4.48, y: 5.84, z: 0}
+  castOffset: {x: -3, y: 5.5, z: 0}
   castSize: {x: 12, y: 5, z: 0}
   mouthFindSprite: {fileID: -289323735, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
   mouthSprite: {fileID: 4204893265375276386}
