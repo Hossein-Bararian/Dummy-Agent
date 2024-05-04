@@ -52,8 +52,6 @@ public class CrazyManManager : MonoBehaviour
         Instantiate(suicideParticle, player.transform.position+new Vector3(0,2,0), Quaternion.identity);
         if (player.gameObject.GetComponent<PlayerTakeDamage>())
             player.gameObject.GetComponent<PlayerTakeDamage>().Die();
-        else
-            Destroy(player,0.01f);
         Destroy(gameObject,0.05f);
     }
 
