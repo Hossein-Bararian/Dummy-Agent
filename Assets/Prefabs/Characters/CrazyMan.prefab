@@ -1771,10 +1771,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498ad0425fb5b6a4892178a2d425c57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castOffset: {x: -13, y: 6, z: 0}
-  castSize: {x: 30, y: 7.1, z: 0}
+  castOffset: {x: -9, y: 6, z: 0}
+  castSize: {x: 28, y: 7, z: 0}
   distance: 0.35
-  runSpeed: -4
+  runSpeed: -10
   suicideParticle: {fileID: 7142014074468564604, guid: 9986d1050e808804d941327c55c4f6f8, type: 3}
 --- !u!1 &5055049588386656283
 GameObject:
