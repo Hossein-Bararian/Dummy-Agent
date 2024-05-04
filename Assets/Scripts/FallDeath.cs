@@ -18,7 +18,7 @@ public class FallDeath : MonoBehaviour
 
     }
 
-    private IEnumerator OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -26,9 +26,7 @@ public class FallDeath : MonoBehaviour
             {
                 _playerTakeDamage = other.GetComponent<PlayerTakeDamage>();
                 cinemachine.Follow = null;
-                yield return new WaitForSeconds(1);
                 _playerTakeDamage.Die();
-                gameOverManager.ActiveGameOverPanel(true);
             }
 
         }
