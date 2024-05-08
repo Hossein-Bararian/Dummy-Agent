@@ -1,17 +1,24 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    [SerializeField] private GameObject panel;
-   
-    public void ActiveGameOverPanel(bool value)
+    private Animator _anim;
+  
+    private void Start()
     {
-        panel.SetActive(value);
+        _anim = GetComponent<Animator>();
     }
 
-    public void RestartButton()
+    public IEnumerator CrossFadeRestartLevel()
     {
+        SlowMotionMechanic.Instance.StopSlowMotion();
+        yield return new WaitForSeconds(1f);
+        _anim.SetTrigger("Fade");
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    
     }
 }

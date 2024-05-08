@@ -7,8 +7,8 @@ public class CrazyManManager : MonoBehaviour
     [Header("BoxCast")] [SerializeField] private Vector3 castOffset;
     [SerializeField] private Vector3 castSize;
     [SerializeField] private float distance;
-    [Space(35)] [SerializeField] private float runSpeed;
-
+    [Space(35)] 
+    [SerializeField] private float runSpeed;
     [SerializeField] private ParticleSystem suicideParticle;
     private Animator _anim;
     private Rigidbody2D _rigidBody;

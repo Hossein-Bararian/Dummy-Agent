@@ -1,22 +1,16 @@
-using System;
-using System.Collections;
-using TMPro;
 using UnityEngine;
-
 public class PlayerTakeDamage : MonoBehaviour
 {
-    [Header("Dead Face")]
-    [SerializeField] private Sprite deadEyeSprite;
+    [Header("Dead Face")] [SerializeField] private Sprite deadEyeSprite;
     [SerializeField] private Sprite deadMouthSprite;
     [SerializeField] private GameObject[] eyes;
     [SerializeField] private GameObject mouth;
-    [Space(10)]
-    [Header("GameOver Management")]
-    [SerializeField]private GameOverManager gameOverManager;
+    [Space(10)] [Header("GameOver Management")]
+    [SerializeField] private GameOverManager gameOverManager;
     [SerializeField] private ParallaxSystem parallaxSystem;
     private ToggleRagdoll _toggleRagdoll;
     private PlayerManager _playerManager;
-    
+
     private void Awake()
     {
         _playerManager = GetComponent<PlayerManager>();
@@ -39,19 +33,21 @@ public class PlayerTakeDamage : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("EnemyBullet") && !PlayerManager.IsDead)
-        {
+        {  
             DeadFace();
             Die();
         }
     }
 
     public void Die()
-    {
+    {  
         _toggleRagdoll.Ragdoll(true);
         PlayerManager.IsDead = true;
         parallaxSystem.enabled = false;
-        gameOverManager.ActiveGameOverPanel(true);
         _playerManager.DeActiveScripts();
+        StartCoroutine(gameOverManager.CrossFadeRestartLevel());
+       
+        
     }
     private void DeadFace()
     {

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class SlowMotionMechanic : MonoBehaviour
 {
+    public static SlowMotionMechanic Instance;
     private bool _isOnSlowMotion;
 
     [SerializeField] private float slowTime;
@@ -23,6 +24,8 @@ public class SlowMotionMechanic : MonoBehaviour
 
     private void Start()
     {
+        if (Instance==null)
+            Instance = this;
         _startScaleTime =1; 
         _startFixedDeltaTime =0.02f;
         StopSlowMotion();
@@ -65,7 +68,7 @@ public class SlowMotionMechanic : MonoBehaviour
         
     }
 
-    private void StopSlowMotion()
+    public void StopSlowMotion()
     {
         _isOnSlowMotion = false;
         Time.timeScale = _startScaleTime;

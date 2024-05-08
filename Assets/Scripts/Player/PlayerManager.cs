@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour
             var enemyScripts = enemy.GetComponents<MonoBehaviour>();
             foreach (var script in enemyScripts)
             {
+                script.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 if (script.gameObject.GetComponent<Animator>())
                 {
                     script.gameObject.GetComponent<Animator>().enabled = false;
@@ -29,9 +30,10 @@ public class PlayerManager : MonoBehaviour
                 Destroy(script);
             }
         }
-
         foreach (var script in playerScripts)
         {
+            if (script is PlayerTakeDamage)
+                continue;
             Destroy(script);
         }
     }
