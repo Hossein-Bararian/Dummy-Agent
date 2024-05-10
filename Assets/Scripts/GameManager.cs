@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Score = 0;
+         Score = 0;
+         PlayerPrefs.SetInt("Score",Score);
         _scoreAnimator = txtScore.GetComponent<Animator>();
         txtScore.text = "Score: 0";
     }
@@ -19,5 +20,6 @@ public class GameManager : MonoBehaviour
         Score += value;
         txtScore.text = "Score: " + Score;
         _scoreAnimator.Play("GetScore");
+        PlayerPrefs.SetInt("Score",Score);
     }
 }
