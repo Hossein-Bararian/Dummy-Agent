@@ -841,15 +841,15 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: -0.014999986, y: -0.0049996376}
-  m_ConnectedAnchor: {x: -0.041000366, y: 1.2400002}
+  m_ConnectedAnchor: {x: -0.04099989, y: 1.2150002}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -180
-    m_UpperAngle: 0
+    m_LowerAngle: -150.99
+    m_UpperAngle: -20
 --- !u!70 &7058564879720186237
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
