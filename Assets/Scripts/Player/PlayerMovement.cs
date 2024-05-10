@@ -12,8 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform originRay;
 
     [SerializeField] private LayerMask layerMask;
-    [Space(30)]
-    [SerializeField] private ParallaxSystem parallaxSystem;
+    [Space(30)] [SerializeField] private ParallaxSystem parallaxSystem;
     private Animator _anim;
     private Rigidbody2D _rb;
 
@@ -52,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             parallaxSystem.enabled = false;
             _anim.Play("Idle");
         }
-       
+
         transform.hasChanged = false;
     }
 
@@ -73,8 +72,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            _anim.Play("Jump");
-            _rb.velocity = new Vector2(jumpForce, jumpForce * 2.5f);
+            if (!_anim.GetCurrentAnimatorStateInfo(0).IsName("Sliding"))
+            {
+                _anim.Play("Jump");
+                _rb.velocity = new Vector2(jumpForce, jumpForce * 2.5f);
+            }
         }
     }
 
