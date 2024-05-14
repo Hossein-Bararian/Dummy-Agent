@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class TileGenerator : MonoBehaviour
 {
@@ -36,7 +33,7 @@ public class TileGenerator : MonoBehaviour
 
     private void SpawnLevelPart()
     {
-        Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
+        Transform chosenLevelPart = levelPartList[UnityEngine.Random.Range(0, levelPartList.Count)];
         Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart,_lastEndPosition);
         _lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
 

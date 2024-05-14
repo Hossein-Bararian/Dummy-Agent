@@ -1,6 +1,3 @@
-using System;
-using DG.Tweening;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PickAndDrop : MonoBehaviour
