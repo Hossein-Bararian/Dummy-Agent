@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 public class PlayerTakeDamage : MonoBehaviour
 {
-    [Header("Dead Face")] [SerializeField] private Sprite deadEyeSprite;
-    [SerializeField] private Sprite deadMouthSprite;
+    [Header("Dead Face")] [SerializeField] private AssetReferenceSprite deadEyeSprite;
+    [SerializeField] private AssetReferenceSprite deadMouthSprite;
     [SerializeField] private GameObject[] eyes;
     [SerializeField] private GameObject mouth;
     [Space(10)] [Header("GameOver Management")]
@@ -46,13 +47,17 @@ public class PlayerTakeDamage : MonoBehaviour
         parallaxSystem.enabled = false;
         _playerManager.DeActiveScripts();
         StartCoroutine(gameOverManager.CrossFadeRestartLevel());
-       
-        
     }
     private void DeadFace()
     {
-        eyes[0].GetComponent<SpriteRenderer>().sprite = deadEyeSprite;
-        eyes[1].GetComponent<SpriteRenderer>().sprite = deadEyeSprite;
-        mouth.GetComponent<SpriteRenderer>().sprite = deadMouthSprite;
+        deadEyeSprite.LoadAssetAsync<Sprite>().Completed += handle =>
+        {
+                eyes[0].GetComponent<SpriteRenderer>().sprite = handle.Result;
+                eyes[1].GetComponent<SpriteRenderer>().sprite = handle.Result;
+        };
+        deadMouthSprite.LoadAssetAsync<Sprite>().Completed += handle =>
+        {
+              mouth.GetComponent<SpriteRenderer>().sprite =handle.Result;
+        };
     }
 }

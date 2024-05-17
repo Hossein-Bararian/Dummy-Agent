@@ -1335,8 +1335,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220cc1affa4f67744859233566a03c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadEyeSprite: {fileID: -1882320105, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
-  deadMouthSprite: {fileID: -67430062, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
+  deadEyeSprite:
+    m_AssetGUID: 4728c543c22a90341a082be17190ddfb
+    m_SubObjectName: all face_3
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_EditorAssetChanged: 1
+  deadMouthSprite:
+    m_AssetGUID: 4728c543c22a90341a082be17190ddfb
+    m_SubObjectName: all face_8
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_EditorAssetChanged: 1
   eyes:
   - {fileID: 4398592398461962034}
   - {fileID: 4107328690660709253}

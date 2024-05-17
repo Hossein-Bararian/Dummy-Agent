@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class Bullet : MonoBehaviour
 {
@@ -41,5 +40,12 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+       // Addressables.ReleaseInstance(gameObject);
+       
+       //object pooling
     }
 }

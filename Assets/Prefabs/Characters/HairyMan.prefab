@@ -2879,7 +2879,11 @@ MonoBehaviour:
   castSize: {x: 20, y: 5, z: 0}
   mouthFindSprite: {fileID: 464161073, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
   mouthSprite: {fileID: 1853282784985253492}
-  bulletPrefab: {fileID: 279176457771732945, guid: dbd1d214eb3d6ce4686d85a267b53c78, type: 3}
+  bulletPrefab:
+    m_AssetGUID: dbd1d214eb3d6ce4686d85a267b53c78
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   bulletForce: 44
   bulletGravity: 1
   firePoint: {fileID: 396942697382729737}

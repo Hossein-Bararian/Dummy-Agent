@@ -33,5 +33,7 @@ public class Shooting : MonoBehaviour
             rb.gravityScale = bulletGravity;
             rb.AddForce(bulletSpeed * firePoint.right, ForceMode2D.Impulse);
             _anim.Play("GunRecoil");
+            
+            //make instantiate bullet with object pooloign
     }
 }

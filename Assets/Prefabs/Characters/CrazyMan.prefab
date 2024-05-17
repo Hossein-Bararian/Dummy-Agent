@@ -1775,7 +1775,11 @@ MonoBehaviour:
   castSize: {x: 28, y: 7, z: 0}
   distance: 0.35
   runSpeed: -10
-  suicideParticle: {fileID: 7142014074468564604, guid: 9986d1050e808804d941327c55c4f6f8, type: 3}
+  suicideParticle:
+    m_AssetGUID: 9986d1050e808804d941327c55c4f6f8
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!1 &5055049588386656283
 GameObject:
   m_ObjectHideFlags: 0

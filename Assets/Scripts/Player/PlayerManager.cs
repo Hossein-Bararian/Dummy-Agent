@@ -20,10 +20,13 @@ public class PlayerManager : MonoBehaviour
             foreach (var script in enemyScripts)
             {
                 script.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                if (script is EnemyTakeDamage || script is EnemyManager)
+                    continue;
                 if (script.gameObject.GetComponent<Animator>())
                 {
                     script.gameObject.GetComponent<Animator>().enabled = false;
                 }
+               
                 Destroy(script);
             }
         }

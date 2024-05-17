@@ -1,15 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class TileGenerator : MonoBehaviour
 {
-    private const float PLAYER_DISTANCE_LEVEL_PART=80f;
+    private const float PlayerDistanceLevelPart=80f;
 
-    [SerializeField] private Transform parentTile;
-    [SerializeField] private Transform levelPartStart; 
-    [SerializeField] private List<Transform> levelPartList; 
-    [SerializeField] private GameObject player;
-
+     [SerializeField] private Transform parentTile;
+     [SerializeField] private Transform levelPartStart; 
+     [SerializeField] private List<AssetReferenceGameObject> levelPartList; 
+     [SerializeField] private GameObject player;
+    
     private Vector3 _lastEndPosition;
 
     private void Awake()
@@ -20,23 +21,24 @@ public class TileGenerator : MonoBehaviour
         {
             SpawnLevelPart();
         }
-        
     }
 
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, _lastEndPosition) < PLAYER_DISTANCE_LEVEL_PART)
-        {
-            SpawnLevelPart();
-        }
+            if (Vector3.Distance(player.transform.position, _lastEndPosition) < PlayerDistanceLevelPart)
+            { 
+                SpawnLevelPart();
+            }
     }
 
     private void SpawnLevelPart()
     {
-        Transform chosenLevelPart = levelPartList[UnityEngine.Random.Range(0, levelPartList.Count)];
-        Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart,_lastEndPosition);
-        _lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
-
+        Addressables.LoadAssetAsync<GameObject>(levelPartList[UnityEngine.Random.Range(0, levelPartList.Count)]).Completed += handle =>
+        {
+            Transform  chosenLevelPart = handle.Result.transform;
+            Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart,_lastEndPosition);
+            _lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
+        }; 
     }
 
     private Transform SpawnLevelPart(Transform levelPart,Vector3 spawnPosition)

@@ -45,11 +45,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
-  - {fileID: 352361307158313731, guid: 742f0e7e34de2ee4fab2c393e5a62533, type: 3}
-  - {fileID: 7069446352581154025, guid: d5b27038cc6858448a22cdf5dbce09ac, type: 3}
-  - {fileID: 1825517669330747136, guid: 6cd63bd5f5b1b374690a88049497ce25, type: 3}
-  - {fileID: 4585930036893058350, guid: f1114e1bc5e459645b112b166e7a9a75, type: 3}
-  - {fileID: 4649324378142669681, guid: c0a58f7f11d66cc4093dc8d380e77d23, type: 3}
+  - m_AssetGUID: 742f0e7e34de2ee4fab2c393e5a62533
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: c0a58f7f11d66cc4093dc8d380e77d23
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: d5b27038cc6858448a22cdf5dbce09ac
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 6cd63bd5f5b1b374690a88049497ce25
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: f1114e1bc5e459645b112b166e7a9a75
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   isRight: 0
 --- !u!1 &5979503757829426990
 GameObject:
@@ -129,9 +144,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
-  - {fileID: 352361307158313731, guid: 742f0e7e34de2ee4fab2c393e5a62533, type: 3}
-  - {fileID: 7069446352581154025, guid: d5b27038cc6858448a22cdf5dbce09ac, type: 3}
-  - {fileID: 1825517669330747136, guid: 6cd63bd5f5b1b374690a88049497ce25, type: 3}
-  - {fileID: 4585930036893058350, guid: f1114e1bc5e459645b112b166e7a9a75, type: 3}
-  - {fileID: 4649324378142669681, guid: c0a58f7f11d66cc4093dc8d380e77d23, type: 3}
+  - m_AssetGUID: 742f0e7e34de2ee4fab2c393e5a62533
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: c0a58f7f11d66cc4093dc8d380e77d23
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: d5b27038cc6858448a22cdf5dbce09ac
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 6cd63bd5f5b1b374690a88049497ce25
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: f1114e1bc5e459645b112b166e7a9a75
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   isRight: 0

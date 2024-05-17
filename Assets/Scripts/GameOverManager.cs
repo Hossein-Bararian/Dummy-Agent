@@ -1,7 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
@@ -49,7 +49,7 @@ public class GameOverManager : MonoBehaviour
         gameOverButtons.SetActive(true);
         gameOverButtons.GetComponent<Animator>().Play("ButtonsPanel_FadeOut");
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(levelIndex);
+        Addressables.LoadSceneAsync(levelIndex);
     }
 
     

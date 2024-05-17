@@ -77,5 +77,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnList:
-  - {fileID: 930707959514430539, guid: d4081aaff2dee6e409321150a802fca0, type: 3}
-  - {fileID: 8933499922116861426, guid: a8c4a5f9a07b7884183aab93a94a0a83, type: 3}
+  - m_AssetGUID: a8c4a5f9a07b7884183aab93a94a0a83
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: d4081aaff2dee6e409321150a802fca0
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

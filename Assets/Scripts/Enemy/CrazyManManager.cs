@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class CrazyManManager : MonoBehaviour
 {
@@ -7,7 +10,7 @@ public class CrazyManManager : MonoBehaviour
     [SerializeField] private float distance;
     [Space(35)] 
     [SerializeField] private float runSpeed;
-    [SerializeField] private ParticleSystem suicideParticle;
+    [SerializeField] private  AssetReferenceGameObject suicideParticle;
     private Animator _anim;
     private Rigidbody2D _rigidBody;
 
@@ -47,12 +50,13 @@ public class CrazyManManager : MonoBehaviour
 
     public void Suicide(GameObject player)
     {
-        Instantiate(suicideParticle, player.transform.position+new Vector3(0,2,0), Quaternion.identity);
-        if (player.gameObject.GetComponent<PlayerTakeDamage>())
-            player.gameObject.GetComponent<PlayerTakeDamage>().Die();
-        Destroy(gameObject,0.05f);
+       suicideParticle.InstantiateAsync(player.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+       if (player.gameObject.GetComponent<PlayerTakeDamage>())
+           player.gameObject.GetComponent<PlayerTakeDamage>().Die();
+       Destroy(gameObject,0.06f);
     }
-
+    
+    
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position + castOffset, castSize);
