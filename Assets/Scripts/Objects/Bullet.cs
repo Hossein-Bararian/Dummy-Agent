@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class Bullet : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Bullet : MonoBehaviour
               other.gameObject.CompareTag("Head")))
         {
             if (other.gameObject.name == "BulletDestroyer")
-                Destroy(bullet);
+                Addressables.ReleaseInstance(bullet);
             else
                 particleManager.SpawnParticle(particleManager.bulletImpactParticles[0], bullet.transform);
         }
@@ -35,17 +36,11 @@ public class Bullet : MonoBehaviour
                     Console.WriteLine(e);
                 } 
         }
-        Destroy(bullet);
+        Addressables.ReleaseInstance(bullet); 
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        Addressables.ReleaseInstance(gameObject);
     }
-
-    private void OnDestroy()
-    {
-       // Addressables.ReleaseInstance(gameObject);
-       
-       //object pooling
-    }
+    
 }
