@@ -2,7 +2,6 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using Random = UnityEngine.Random;
 
 
@@ -59,7 +58,7 @@ public class EnemyShooting : MonoBehaviour
         _isShooting = true;
         hand.transform.DORotate(CheckEnemySide(), 0.2f);
         yield return new WaitForSeconds(0.23f);
-        bulletPrefab.InstantiateAsync(firePoint.position, hand.transform.rotation).Completed+= handle =>
+        bulletPrefab.InstantiateAsync(firePoint.position, hand.rotation).Completed+= handle =>
         {
             GameObject bullet = handle.Result;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();

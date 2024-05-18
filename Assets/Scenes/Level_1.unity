@@ -917,11 +917,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &900868100 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4193506165874697006, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-  m_PrefabInstance: {fileID: 8993426080365244051}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &936930428 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6053797110163977471, guid: a633d7046c52a8b42a20dccf6f16f8d3, type: 3}
@@ -1107,11 +1102,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1431086672 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4107328690660709253, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-  m_PrefabInstance: {fileID: 8993426080365244051}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1480674426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2587579250558213254, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
@@ -1185,11 +1175,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1802253423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4398592398461962034, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-  m_PrefabInstance: {fileID: 8993426080365244051}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1907217983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,10 +3043,6 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7270514397477574023, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: mouth
-      value: 
-      objectReference: {fileID: 900868100}
-    - target: {fileID: 7270514397477574023, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: parallaxSystem
       value: 
       objectReference: {fileID: 4074165032385940841}
@@ -3069,14 +3050,6 @@ PrefabInstance:
       propertyPath: gameOverManager
       value: 
       objectReference: {fileID: 936930429}
-    - target: {fileID: 7270514397477574023, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: eyes.Array.data[0]
-      value: 
-      objectReference: {fileID: 1802253423}
-    - target: {fileID: 7270514397477574023, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: eyes.Array.data[1]
-      value: 
-      objectReference: {fileID: 1431086672}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
