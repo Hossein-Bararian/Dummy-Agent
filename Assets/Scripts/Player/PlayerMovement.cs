@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    [Header("Touche Input")] 
+    private Vector3 _startTouchePosition;
+    private Vector3 _endTouchePosition;
+    [Space(30)] 
     [Header("Movement Speed")] [SerializeField]
     private float runSpeed;
 
@@ -56,15 +61,35 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckInputs()
     {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            _startTouchePosition = Input.GetTouch(0).position;
+        }
+        if(Input.touchCount>0 && Input.GetTouch(0).phase==TouchPhase.Ended)
+        {
+            _endTouchePosition = Input.GetTouch(0).position;
+            if (_startTouchePosition.y > _endTouchePosition.y+100)
+            {
+                
+                Slide();
+            }
+            if (_startTouchePosition.y < _endTouchePosition.y-100)
+            {
+                Jump();
+            }
+        }
+        
+        // on Windows
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
         }
-
+        
         if (Input.GetButtonDown("Slide"))
         {
             Slide();
         }
+        // on Windows
     }
 
     private void Jump()

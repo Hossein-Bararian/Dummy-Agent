@@ -41,7 +41,7 @@ public class PlayerTakeDamage : MonoBehaviour
     }
 
     public void Die()
-    {  
+    {
         _toggleRagdoll.Ragdoll(true);
         PlayerManager.IsDead = true;
         parallaxSystem.enabled = false;
