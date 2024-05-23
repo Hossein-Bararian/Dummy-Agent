@@ -12,6 +12,7 @@ TagManager:
   - PlayerBullet
   - PlayerBulletDestroyer
   - Trap
+  - ControllButton
   layers:
   - Default
   - TransparentFX

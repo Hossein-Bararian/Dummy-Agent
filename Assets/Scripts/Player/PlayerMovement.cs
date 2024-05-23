@@ -1,26 +1,24 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    
     [Header("Touche Input")] 
     private Vector3 _startTouchePosition;
     private Vector3 _endTouchePosition;
     [Space(30)] 
     [Header("Movement Speed")] [SerializeField]
     private float runSpeed;
-
     [SerializeField] private float jumpForce;
-
-    [Header("Ground Detect")] [SerializeField]
-    private Transform originRay;
-
+    [Header("Ground Detect")]
+    [SerializeField] private Transform originRay;
     [SerializeField] private LayerMask layerMask;
-    [Space(30)] [SerializeField] private ParallaxSystem parallaxSystem;
+    [Space(30)] 
+    [SerializeField] private ParallaxSystem parallaxSystem;
     private Animator _anim;
     private Rigidbody2D _rb;
-
-
+    
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -55,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
             parallaxSystem.enabled = false;
             _anim.Play("Idle");
         }
-
         transform.hasChanged = false;
     }
 
@@ -63,7 +60,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            _startTouchePosition = Input.GetTouch(0).position;
+                _startTouchePosition = Input.GetTouch(0).position;
+            
         }
         if(Input.touchCount>0 && Input.GetTouch(0).phase==TouchPhase.Ended)
         {
