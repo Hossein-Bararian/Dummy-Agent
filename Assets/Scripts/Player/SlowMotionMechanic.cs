@@ -7,25 +7,26 @@ public class SlowMotionMechanic : MonoBehaviour
 {
     public static SlowMotionMechanic Instance;
     private bool _isOnSlowMotion;
-
+    private bool _turnOnSlowMotion = false;
     [SerializeField] private float slowTime;
     [SerializeField] private float slowTimeEffect;
     [SerializeField] private Volume volume;
     private float _startScaleTime;
     private float _startFixedDeltaTime;
-    
+
     [Header("SlowMotion Bar")] [SerializeField]
     private Slider slowMotionBar;
+
     [SerializeField] private float increaseSlowValue;
     [SerializeField] private float decreaseSlowValue;
 
 
     private void Start()
     {
-        if (Instance==null)
+        if (Instance == null)
             Instance = this;
-        _startScaleTime =1; 
-        _startFixedDeltaTime =0.02f;
+        _startScaleTime = 1;
+        _startFixedDeltaTime = 0.02f;
         StopSlowMotion();
     }
 
@@ -35,11 +36,18 @@ public class SlowMotionMechanic : MonoBehaviour
         {
             RecoverSlowMotionBar();
         }
+
+        if (_turnOnSlowMotion)
+            StartSlowMotion(slowTime);
+        else
+            StopSlowMotion();
+
         CheckInputs();
     }
 
     private void CheckInputs()
     {
+        //OnWindows
         if (Input.GetButton("SlowMotion"))
         {
             StartSlowMotion(slowTime);
@@ -49,11 +57,17 @@ public class SlowMotionMechanic : MonoBehaviour
         {
             StopSlowMotion();
         }
+        //OnWindows
+    }
+
+    public void InputOnMobile()
+    {
+        _turnOnSlowMotion = !_turnOnSlowMotion;
     }
 
     private void StartSlowMotion(float time)
     {
-        _isOnSlowMotion = true; 
+        _isOnSlowMotion = true;
         Time.timeScale = time;
         Time.fixedDeltaTime = time * _startFixedDeltaTime;
         UseSlowMotionBar();
@@ -63,11 +77,11 @@ public class SlowMotionMechanic : MonoBehaviour
             StopSlowMotion();
             return;
         }
-        
     }
 
     public void StopSlowMotion()
     {
+        _turnOnSlowMotion = false;
         _isOnSlowMotion = false;
         Time.timeScale = _startScaleTime;
         Time.fixedDeltaTime = _startFixedDeltaTime;
