@@ -12,17 +12,17 @@ public class HandMovement : MonoBehaviour
     private void MouseFollower()
     {
         //onWindows  -->
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var lookDir = mousePos - hand.transform.position;
-        float rotateZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        hand.DORotateQuaternion(Quaternion.Euler(0, 0, rotateZ + 265f), .35f);
+        // var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // var lookDir = mousePos - hand.transform.position;
+        // float rotateZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        // hand.DORotateQuaternion(Quaternion.Euler(0, 0, rotateZ + 265f), .35f);
         //onWindows    <---
 
         Vector2 joystickDirection = new Vector2(joystick.Horizontal, joystick.Vertical);
         if (joystickDirection.magnitude > 0)
         {
             float angle = Mathf.Atan2(joystickDirection.y, joystickDirection.x) * Mathf.Rad2Deg;
-            hand.DORotateQuaternion(Quaternion.Euler(0, 0, angle + 265f), .35f);
+            hand.DORotateQuaternion(Quaternion.Euler(0, 0, angle + 250f), .35f);
         }
     }
 }
