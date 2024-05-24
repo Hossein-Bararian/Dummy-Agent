@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _endTouchePosition;
     [Space(30)] 
     [Header("Movement Speed")] [SerializeField]
-    private float runSpeed;
+    public float runSpeed;
     [SerializeField] private float jumpForce;
     [Header("Ground Detect")]
     [SerializeField] private Transform originRay;

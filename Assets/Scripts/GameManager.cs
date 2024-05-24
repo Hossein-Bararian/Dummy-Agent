@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-         Score = 0;
          PlayerPrefs.SetInt("Score",Score);
         _scoreAnimator = txtScore.GetComponent<Animator>();
         txtScore.text = "Score: 0";

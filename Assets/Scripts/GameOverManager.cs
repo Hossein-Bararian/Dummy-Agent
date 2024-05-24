@@ -25,7 +25,7 @@ public class GameOverManager : MonoBehaviour
         gameOverButtons.SetActive(true);
         gameOverButtons.GetComponent<Animator>().Play("ButtonsPanel_FadeIn");
         txtScore.text = "Your Score: "+PlayerPrefs.GetInt("Score");
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.2f);
         if (PlayerPrefs.GetInt("Score") > PlayerPrefs.GetInt("HighScore"))
         {
             PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
@@ -51,6 +51,4 @@ public class GameOverManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Addressables.LoadSceneAsync(levelIndex);
     }
-
-    
 }
