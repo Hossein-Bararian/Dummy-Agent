@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject menuUI;
     [SerializeField] private PlayerMovement player;
     [SerializeField] private Animator muteButtonAnimator;
+    private Animator _animator;
     private bool _isMute = false;
     private void Awake()
     {
@@ -24,20 +25,14 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        _animator = GetComponent<Animator>();
         txtLastScore.text = PlayerPrefs.GetInt("Score").ToString();
         txtBestScore.text = PlayerPrefs.GetInt("HighScore").ToString();
     }
 
     public void StartGame()
     {
-        StartCoroutine(Wait(0.5f));
-        player.gameObject.GetComponent<Animator>().Play("Walk");
-        StartCoroutine(Wait(0.15f));
-        GameManager.Score = 0;
-        PlayerPrefs.SetInt("Score",GameManager.Score);
-        player.runSpeed = 8;
-        menuUI.SetActive(false);
-        gameUI.SetActive(true);
+        StartCoroutine(StartGameCoroutine());
     }
     public void MuteMusic()
     {
@@ -55,9 +50,17 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private IEnumerator Wait(float time)
+    private IEnumerator StartGameCoroutine()
     {
-        yield return new WaitForSeconds(time);
+        _animator.Play("MenuUI_FadOut");
+        yield return new WaitForSeconds(0.3f);
+        player.gameObject.GetComponent<Animator>().Play("Walk");
+        player.runSpeed = 8;
+        yield return new WaitForSeconds(0.2f);
+        GameManager.Score = 0;
+        PlayerPrefs.SetInt("Score",GameManager.Score);
+        gameUI.SetActive(true);
+        menuUI.SetActive(false);
     }
     
 }
