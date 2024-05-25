@@ -1,16 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening.Core.Easing;
 using TMPro;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    
     [SerializeField] private TextMeshProUGUI txtBestScore;
     [SerializeField] private TextMeshProUGUI txtLastScore;
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject menuUI;
     [SerializeField] private PlayerMovement player;
+    [SerializeField] private Animator muteButtonAnimator;
+    private bool _isMute = false;
     private void Awake()
     {
         player.runSpeed = 0;
@@ -37,7 +41,18 @@ public class MenuManager : MonoBehaviour
     }
     public void MuteMusic()
     {
-        print("Muted");
+        if (_isMute)
+        {
+            _isMute = false;
+            muteButtonAnimator.Play("Music");
+            //play 
+        }
+        if (! _isMute)
+        {
+            _isMute = true;
+            muteButtonAnimator.Play("Mute");
+            //mute
+        }
     }
 
     private IEnumerator Wait(float time)

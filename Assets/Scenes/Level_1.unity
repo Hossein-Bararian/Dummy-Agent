@@ -277,7 +277,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 20, y: -20}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &134438283
 MonoBehaviour:
@@ -348,14 +348,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.990566, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b4f425db7bb75624e8f00ff89fc781ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e6942bc4f917af4b84ea29453f1e3aa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5473,6 +5473,7 @@ MonoBehaviour:
   gameUI: {fileID: 1857089960}
   menuUI: {fileID: 2093814957}
   player: {fileID: 8993426080365244052}
+  muteButtonAnimator: {fileID: 134438286}
 --- !u!224 &886686082187525158
 RectTransform:
   m_ObjectHideFlags: 0
