@@ -62,11 +62,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 096173d68a2ee684aae438e408dfe5c9
-    m_Address: EnemyTemplate09
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a633d7046c52a8b42a20dccf6f16f8d3
     m_Address: LevelFader
     m_ReadOnly: 0
