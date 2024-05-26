@@ -23,6 +23,7 @@ public class Weapon : MonoBehaviour
     }
     public void Pistol()
     {
-            shooting.Shot(80, 1, 0.25f, firePoint);
+        if(!MenuManager.IsOnGame)return;
+        shooting.Shot(80, 1, 0.25f, firePoint);
     }
 }
