@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    
+    public static bool IsOnGame;
     [SerializeField] private TextMeshProUGUI txtBestScore;
     [SerializeField] private TextMeshProUGUI txtLastScore;
     [SerializeField] private GameObject gameUI;
@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour
     private bool _isMute = false;
     private void Awake()
     {
+        IsOnGame = false;
         player.runSpeed = 0;
         menuUI.SetActive(true);
         gameUI.SetActive(false);
@@ -52,6 +53,7 @@ public class MenuManager : MonoBehaviour
 
     private IEnumerator StartGameCoroutine()
     {
+        IsOnGame = true;
         _animator.Play("MenuUI_FadOut");
         yield return new WaitForSeconds(0.3f);
         player.gameObject.GetComponent<Animator>().Play("Walk");

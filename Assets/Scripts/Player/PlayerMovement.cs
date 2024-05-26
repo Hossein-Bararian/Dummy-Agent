@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
                 _startTouchePosition = Input.GetTouch(0).position;
             
         }
-        if(Input.touchCount>0 && Input.GetTouch(0).phase==TouchPhase.Ended)
+        if(Input.touchCount>0 && Input.GetTouch(0).phase==TouchPhase.Ended && MenuManager.IsOnGame)
         {
             _endTouchePosition = Input.GetTouch(0).position;
             if (_startTouchePosition.y > _endTouchePosition.y+50)
@@ -80,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         // on Windows
         if (Input.GetButtonDown("Jump"))
         {
+          
             Jump();
         }
         
