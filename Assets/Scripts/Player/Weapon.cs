@@ -1,7 +1,9 @@
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 public class Weapon : MonoBehaviour
 {
+    [SerializeField]private Button btnSlowMotion;
     private enum WeaponsType
     {
         Pistol
@@ -24,6 +26,7 @@ public class Weapon : MonoBehaviour
     public void Pistol()
     {
         if(!MenuManager.IsOnGame)return;
+        if (EventSystem.current.currentSelectedGameObject == btnSlowMotion.gameObject) return;
         shooting.Shot(80, 1, 0.25f, firePoint);
     }
 }
