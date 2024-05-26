@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.touchCount>0 && Input.GetTouch(0).phase==TouchPhase.Ended)
         {
             _endTouchePosition = Input.GetTouch(0).position;
-            if (_startTouchePosition.y > _endTouchePosition.y+100)
+            if (_startTouchePosition.y > _endTouchePosition.y+50)
             {
                 
                 Slide();
