@@ -12,15 +12,14 @@ public class Weapon : MonoBehaviour
     
     private void LateUpdate()
     {
-        //onWindows
-        // if (Input.GetButtonDown("Shot"))
-        // {
-        //     if (weapon == WeaponsType.Pistol)
-        //     {
-        //         Pistol();
-        //     }
-        // }
-        //onWindows
+        if (Input.GetButtonDown("Shot"))
+        {
+            if (weapon == WeaponsType.Pistol)
+            {
+                Pistol();
+            }
+        }
+     
     }
     public void Pistol()
     {
