@@ -20,5 +20,7 @@ public class ObjectDestroyer : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Addressables.ReleaseInstance(obj);
+        yield return new WaitForSeconds(time);
+        Destroy(obj);
     }
 }

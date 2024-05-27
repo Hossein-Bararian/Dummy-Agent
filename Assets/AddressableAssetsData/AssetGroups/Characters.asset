@@ -77,16 +77,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dbd1d214eb3d6ce4686d85a267b53c78
-    m_Address: Enemy Bullet
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c190bfc753a3eac45bac82e163d9dc58
-    m_Address: Player Bullet
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: be7509a90c31168478cdf58763a7b868
     m_Address: TrapsTemplate01
     m_ReadOnly: 0
@@ -199,6 +189,21 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4728c543c22a90341a082be17190ddfb
     m_Address: Assets/Sprites/Faces/all face.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e2a285cc33ecd34aa308466fb75cfb1
+    m_Address: Assets/Sprites/tomp.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 985d81a9cb9b8cc4aa34b7837e8438c3
+    m_Address: Assets/Prefabs/Objects/Tomb.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe10162f2c011414ca4e3f255afbd795
+    m_Address: Assets/Prefabs/TombGenerator/TombGenerator.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

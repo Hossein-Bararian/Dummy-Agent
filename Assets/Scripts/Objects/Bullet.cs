@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
               other.gameObject.CompareTag("Head")))
         {
             if (other.gameObject.name == "BulletDestroyer")
-                Addressables.ReleaseInstance(bullet);
+                Destroy(bullet);
             else
                 particleManager.SpawnParticle(particleManager.bulletImpactParticles[0], bullet.transform);
         }
@@ -36,11 +36,11 @@ public class Bullet : MonoBehaviour
                     Console.WriteLine(e);
                 } 
         }
-        Addressables.ReleaseInstance(bullet); 
+        Destroy(bullet);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Addressables.ReleaseInstance(gameObject);
+        Destroy(gameObject);
     }
     
 }
