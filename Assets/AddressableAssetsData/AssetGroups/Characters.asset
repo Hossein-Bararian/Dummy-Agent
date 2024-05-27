@@ -202,11 +202,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fe10162f2c011414ca4e3f255afbd795
-    m_Address: Assets/Prefabs/TombGenerator/TombGenerator.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2d7907f09156fe14c86b44115fc46802, type: 2}
   m_SchemaSet:
