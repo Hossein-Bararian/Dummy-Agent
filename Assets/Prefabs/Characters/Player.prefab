@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f106b22dee32a4bb4118d0e56873de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 8
+  runSpeed: 0
   jumpForce: 9
   originRay: {fileID: 6877434492980342910}
   layerMask:
@@ -1249,6 +1249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 8869971533291415002}
+  btnSlowMotion: {fileID: 0}
+  btnShot: {fileID: 0}
 --- !u!114 &4424951407245049275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1261,11 +1263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdec74191766b14b8197bd8be18bc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab:
-    m_AssetGUID: c190bfc753a3eac45bac82e163d9dc58
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 1
+  bulletPrefab: {fileID: 279176457771732945, guid: c190bfc753a3eac45bac82e163d9dc58, type: 3}
   currentGunCoolDown: 0
   impulseForce: 0.2
 --- !u!114 &2006224146480874003
@@ -2878,6 +2876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bc43bc9e6c4820a03e25b0886a24b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnSlowMotion: {fileID: 0}
   firePoint: {fileID: 2271551427946389302}
   weapon: 0
   shooting: {fileID: 4424951407245049275}
