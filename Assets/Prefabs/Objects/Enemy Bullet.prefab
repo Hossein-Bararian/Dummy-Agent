@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4413950592190472975}
   - component: {fileID: 8437499774423757137}
   - component: {fileID: 1558374255720310651}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy Bullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6373600639853821518}
   - component: {fileID: 5032337104062655219}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3081780909064282035}
   - component: {fileID: 5521700216037294775}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6499718706673510564}
   - component: {fileID: 6912056918822696750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
