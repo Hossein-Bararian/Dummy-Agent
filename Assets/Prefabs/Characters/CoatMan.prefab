@@ -294,11 +294,11 @@ MonoBehaviour:
   mouthFindSprite: {fileID: -289323735, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
   mouthSprite: {fileID: 4204893265375276386}
   bulletPrefab: {fileID: 279176457771732945, guid: dbd1d214eb3d6ce4686d85a267b53c78, type: 3}
-  bulletForce: 50
+  bulletForce: 45
   bulletGravity: 2
   firePoint: {fileID: 7548212959292235446}
   hand: {fileID: 149732664083778009}
-  shotDelay: 0.7
+  shotDelay: 0.8
   isRightSide: 0
 --- !u!114 &5729666151492835726
 MonoBehaviour:
