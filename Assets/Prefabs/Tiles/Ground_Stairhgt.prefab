@@ -1053,11 +1053,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2502685903867058167, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
       propertyPath: spawnList.Array.data[2].m_AssetGUID
-      value: a63a43b252ae4d145901bc04ec5cc7d2
+      value: d6d00e293c2f60f46b331fee6341434d
       objectReference: {fileID: 0}
     - target: {fileID: 2502685903867058167, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
       propertyPath: spawnList.Array.data[3].m_AssetGUID
-      value: be7509a90c31168478cdf58763a7b868
+      value: a63a43b252ae4d145901bc04ec5cc7d2
       objectReference: {fileID: 0}
     - target: {fileID: 4077279750090752747, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
       propertyPath: m_Name
@@ -1113,6 +1113,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5592552927144139314, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
   m_PrefabInstance: {fileID: 5132799927671032169}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9200350472961395586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4077279750090752747, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
+  m_PrefabInstance: {fileID: 5132799927671032169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8816741963171802560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1161,6 +1166,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2807472169233416022, guid: ab5e346f48daf7741b9fdfc8b95559d1, type: 3}
+      propertyPath: trapGenerator
+      value: 
+      objectReference: {fileID: 9200350472961395586}
     - target: {fileID: 6175998027394896221, guid: ab5e346f48daf7741b9fdfc8b95559d1, type: 3}
       propertyPath: m_Name
       value: TombGenerator

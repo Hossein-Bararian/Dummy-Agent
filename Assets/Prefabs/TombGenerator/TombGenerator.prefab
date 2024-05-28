@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6175998027394896221}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 119.93, y: -11.1, z: 0}
+  m_LocalPosition: {x: 122, y: -11.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,3 +49,4 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  trapGenerator: {fileID: 4077279750090752747, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
