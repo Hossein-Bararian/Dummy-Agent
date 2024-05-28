@@ -1773,7 +1773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castOffset: {x: -9, y: 6, z: 0}
   castSize: {x: 28, y: 7, z: 0}
-  distance: 0.35
+  distance: 1.5
+  wallCastOffset: {x: 2, y: 6, z: 0}
+  wallCastSize: {x: 1.65, y: 3, z: 0}
   runSpeed: -10
   suicideParticle:
     m_AssetGUID: 9986d1050e808804d941327c55c4f6f8

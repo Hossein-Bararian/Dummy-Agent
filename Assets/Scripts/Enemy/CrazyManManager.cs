@@ -9,6 +9,10 @@ public class CrazyManManager : MonoBehaviour
     [SerializeField] private Vector3 castSize;
     [SerializeField] private float distance;
     [Space(35)] 
+    [Header("CheckWall Cast")]
+    [SerializeField] private Vector3 wallCastOffset;
+    [SerializeField] private Vector3 wallCastSize;
+    [Space(35)] 
     [SerializeField] private float runSpeed;
     [SerializeField] private  AssetReferenceGameObject suicideParticle;
     private Animator _anim;
@@ -23,6 +27,7 @@ public class CrazyManManager : MonoBehaviour
     private void LateUpdate()
     {
         CheckPlayerOnRange();
+        CheckWallOnRange();
     }
 
     void CheckPlayerOnRange()
@@ -34,6 +39,19 @@ public class CrazyManManager : MonoBehaviour
             if (hit && hit.collider.CompareTag("Player"))
             {
                 Attack(hit.collider.gameObject);
+            }
+        }
+    }
+    
+    void CheckWallOnRange()
+    {
+        RaycastHit2D[] wallHits = Physics2D.BoxCastAll(transform.position + wallCastOffset, wallCastSize, 0, Vector2.zero);
+
+        foreach (var hit in wallHits)
+        {
+            if (hit && hit.collider.CompareTag("Ground"))
+            {
+                Suicide(gameObject);
             }
         }
     }
@@ -60,5 +78,6 @@ public class CrazyManManager : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position + castOffset, castSize);
+        Gizmos.DrawWireCube(transform.position + wallCastOffset, wallCastSize);
     }
 }
