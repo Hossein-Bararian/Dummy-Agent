@@ -12,6 +12,7 @@ TagManager:
   - PlayerBullet
   - PlayerBulletDestroyer
   - Trap
+  - Tomb
   layers:
   - Default
   - TransparentFX
