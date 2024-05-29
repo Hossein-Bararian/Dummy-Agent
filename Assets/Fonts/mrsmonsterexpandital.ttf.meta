@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1366ec2b87f3a241b1cdc0e32731689
+guid: 7d390726933bfd643a4b0979ea70644c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Candara
+  - Mrs. Monster Expanded Italic
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

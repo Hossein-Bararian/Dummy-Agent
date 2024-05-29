@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55ec8231597ecb6479807838a6c84b5a
+guid: 6d21acfbd7bb98249ad2e6331461bd00
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Candara
+  - Mrs. Monster
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
