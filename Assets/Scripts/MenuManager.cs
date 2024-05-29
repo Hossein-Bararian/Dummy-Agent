@@ -51,6 +51,16 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void Shop()
+    {
+        Debug.Log("Shop");
+    }
+
+    public void AboutUs()
+    {
+        Debug.Log("About Us");
+    }
+
     private IEnumerator StartGameCoroutine()
     {
         IsOnGame = true;
