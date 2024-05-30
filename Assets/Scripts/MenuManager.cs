@@ -39,6 +39,7 @@ public class MenuManager : MonoBehaviour
     {
         if (_isMute)
         {
+            PlayerPrefs.SetInt("HighScore",0);
             _isMute = false;
             muteButtonAnimator.Play("Music");
             //play 
@@ -69,7 +70,9 @@ public class MenuManager : MonoBehaviour
         player.gameObject.GetComponent<Animator>().Play("Walk");
         player.runSpeed = 8;
         yield return new WaitForSeconds(0.2f);
+        GameManager.HeadShots = 0;
         GameManager.Score = 0;
+        PlayerPrefs.SetInt("HeadShots",GameManager.HeadShots);
         PlayerPrefs.SetInt("Score",GameManager.Score);
         gameUI.SetActive(true);
         menuUI.SetActive(false);

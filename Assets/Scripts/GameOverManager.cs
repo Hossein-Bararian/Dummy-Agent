@@ -2,13 +2,14 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
     private Animator _anim;
     [SerializeField] private GameObject gameOverButtons;
-    [SerializeField] private TextMeshProUGUI txtScore;
+    [SerializeField] private TextMeshProUGUI txtHeadShots;
   
     private void Awake()
     {
@@ -24,21 +25,15 @@ public class GameOverManager : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         gameOverButtons.SetActive(true);
         gameOverButtons.GetComponent<Animator>().Play("ButtonsPanel_FadeIn");
-        txtScore.text = "Your Score: "+PlayerPrefs.GetInt("Score");
+        txtHeadShots.text = PlayerPrefs.GetInt("HeadShots").ToString();
         yield return new WaitForSeconds(0.2f);
         if (PlayerPrefs.GetInt("Score") > PlayerPrefs.GetInt("HighScore"))
         {
             PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
-            txtScore.GetComponentInChildren<Image>().enabled = true;
-            txtScore.GetComponent<Animator>().Play("NewIcon");
+            txtHeadShots.GetComponentInChildren<Image>().enabled = true;
+            txtHeadShots.GetComponent<Animator>().Play("NewRecord");
         }
     }
-
-    public void btn_Ads()
-    {
-        //Show Ads Later ...
-    }
-    
     public void btn_Level(int levelIndex)
     {
         StartCoroutine("Buttons_FadeOut",levelIndex);

@@ -5,11 +5,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI txtScore;
     public static int Score;
+    public static int HeadShots;
     private Animator _scoreAnimator;
 
     private void Start()
     {
-         PlayerPrefs.SetInt("Score",Score);
         _scoreAnimator = txtScore.GetComponent<Animator>();
         txtScore.text = "Score: 0";
     }
@@ -20,5 +20,10 @@ public class GameManager : MonoBehaviour
         txtScore.text = "Score: " + Score;
         _scoreAnimator.Play("GetScore");
         PlayerPrefs.SetInt("Score",Score);
+    }
+    public  void UpdateHeadShots()
+    {
+        HeadShots++;
+        PlayerPrefs.SetInt("HeadShots",HeadShots);
     }
 }

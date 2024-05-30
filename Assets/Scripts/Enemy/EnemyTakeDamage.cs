@@ -65,7 +65,10 @@ public class EnemyTakeDamage : MonoBehaviour
         head.transform.SetParent(null);
         hinge.enabled = false;
         head.tag = "Enemy";
-        if(_gameManager!=null)  
+        if (_gameManager != null)
+        {
             _gameManager.UpdateScore(1);
+            _gameManager.UpdateHeadShots();
+        }
     }
 }
