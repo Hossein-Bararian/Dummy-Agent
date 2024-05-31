@@ -3493,6 +3493,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fda683bc8bb16a4e9582f6247f9ad1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1113043796 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7881082274157498710, guid: df0a7fba38e006c4195d1481a40b4725, type: 3}
+  m_PrefabInstance: {fileID: 1113043793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!213 &1133317607
 Sprite:
   m_ObjectHideFlags: 0
@@ -4983,14 +4988,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2093814959}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: Shop
-        m_Mode: 1
+        m_MethodName: MenuButton
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: shop
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1651346353
@@ -5829,14 +5834,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2093814959}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: AboutUs
-        m_Mode: 1
+        m_MethodName: MenuButton
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: aboutUs
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2088599070
@@ -5940,6 +5945,7 @@ MonoBehaviour:
   menuUI: {fileID: 2093814957}
   player: {fileID: 8993426080365244052}
   muteButtonAnimator: {fileID: 134438286}
+  levelFaderAnimator: {fileID: 1113043796}
 --- !u!95 &2093814960
 Animator:
   serializedVersion: 5

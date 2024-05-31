@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening.Core.Easing;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -14,8 +12,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject menuUI;
     [SerializeField] private PlayerMovement player;
     [SerializeField] private Animator muteButtonAnimator;
+    [SerializeField] private Animator levelFaderAnimator;
     private Animator _animator;
+    
     private bool _isMute = false;
+
     private void Awake()
     {
         IsOnGame = false;
@@ -35,16 +36,18 @@ public class MenuManager : MonoBehaviour
     {
         StartCoroutine(StartGameCoroutine());
     }
+
     public void MuteMusic()
     {
         if (_isMute)
         {
-            PlayerPrefs.SetInt("HighScore",0);
+            PlayerPrefs.SetInt("HighScore", 0);
             _isMute = false;
             muteButtonAnimator.Play("Music");
             //play 
         }
-        if (! _isMute)
+
+        if (!_isMute)
         {
             _isMute = true;
             muteButtonAnimator.Play("Mute");
@@ -52,14 +55,30 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void Shop()
+    private IEnumerator Shop()
     {
-        Debug.Log("Shop");
+        levelFaderAnimator.SetTrigger("Fade");
+        yield return new WaitForSeconds(0.7f);
+        SceneManager.LoadScene(1);
+    }
+    private IEnumerator AboutUs()
+    {
+        levelFaderAnimator.SetTrigger("Fade");
+        yield return new WaitForSeconds(0.7f);
+        SceneManager.LoadScene(2);
     }
 
-    public void AboutUs()
+    public void MenuButton(string sceneName)
     {
-        Debug.Log("About Us");
+        switch (sceneName)
+        {
+            case "shop":
+                StartCoroutine(Shop());
+                break;
+            case "aboutUs":
+                StartCoroutine(AboutUs());
+                break;
+        }
     }
 
     private IEnumerator StartGameCoroutine()
@@ -72,10 +91,9 @@ public class MenuManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         GameManager.HeadShots = 0;
         GameManager.Score = 0;
-        PlayerPrefs.SetInt("HeadShots",GameManager.HeadShots);
-        PlayerPrefs.SetInt("Score",GameManager.Score);
+        PlayerPrefs.SetInt("HeadShots", GameManager.HeadShots);
+        PlayerPrefs.SetInt("Score", GameManager.Score);
         gameUI.SetActive(true);
         menuUI.SetActive(false);
     }
-    
 }
