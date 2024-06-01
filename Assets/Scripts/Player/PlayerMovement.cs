@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void Start()
     {
+        parallaxSystem.enabled = false;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
     }
@@ -112,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D groundRayCast = Physics2D.Raycast(originRay.position, Vector2.down, 1, layerMask);
+        RaycastHit2D groundRayCast = Physics2D.Raycast(originRay.position, Vector2.down,1, layerMask);
         return groundRayCast;
     }
 
