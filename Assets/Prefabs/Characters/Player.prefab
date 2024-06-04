@@ -1263,7 +1263,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdec74191766b14b8197bd8be18bc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 279176457771732945, guid: c190bfc753a3eac45bac82e163d9dc58, type: 3}
+  bulletPrefab:
+    m_AssetGUID: c190bfc753a3eac45bac82e163d9dc58
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   currentGunCoolDown: 0
   impulseForce: 0.2
 --- !u!114 &2006224146480874003
