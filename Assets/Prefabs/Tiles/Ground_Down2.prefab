@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3417530253890391101}
   - component: {fileID: 8703196874246590257}
   - component: {fileID: 5828128648988584549}
+  - component: {fileID: 7077174766793089464}
   m_Layer: 6
   m_Name: Ground_Down2
   m_TagString: Ground
@@ -1410,6 +1411,18 @@ CompositeCollider2D:
   m_OffsetDistance: 1
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 4586336179644289128}
+--- !u!114 &7077174766793089464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586336179644289128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c986b4eff3b8bdc4d83ccee5073282e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7171672307268506929
 GameObject:
   m_ObjectHideFlags: 0

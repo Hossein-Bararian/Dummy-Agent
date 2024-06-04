@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1785238205229271222}
   - component: {fileID: 5706274336539023226}
   - component: {fileID: 1098509632392198617}
+  - component: {fileID: 1422761897890786100}
   m_Layer: 6
   m_Name: Ground_Up
   m_TagString: Ground
@@ -1155,6 +1156,18 @@ CompositeCollider2D:
   m_OffsetDistance: 1
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 4050925362654141448}
+--- !u!114 &1422761897890786100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050925362654141448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c986b4eff3b8bdc4d83ccee5073282e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1973562849231542885
 PrefabInstance:
   m_ObjectHideFlags: 0
