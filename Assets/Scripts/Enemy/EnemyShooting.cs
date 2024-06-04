@@ -2,6 +2,7 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using Random = UnityEngine.Random;
 
 
@@ -16,12 +17,14 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private GameObject mouthSprite;
 
     [Space(30)] [Header("Shooting")] [SerializeField]
-    private GameObject bulletPrefab;
+    private AssetReferenceGameObject bulletPrefab;
+
     [SerializeField] private float bulletForce;
     [SerializeField] private float bulletGravity;
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform hand;
     [SerializeField] private float shotDelay;
+    private AsyncOperationHandle<GameObject> _handle;
     public bool isRightSide;
     private Animator _anim;
     private bool _isShooting;
@@ -30,6 +33,7 @@ public class EnemyShooting : MonoBehaviour
     {
         _isShooting = false;
         _anim = GetComponent<Animator>();
+        _handle = Addressables.LoadAssetAsync<GameObject>(bulletPrefab);
     }
 
     private void LateUpdate()
@@ -57,14 +61,24 @@ public class EnemyShooting : MonoBehaviour
         _isShooting = true;
         hand.transform.DORotate(CheckEnemySide(), 0.2f);
         yield return new WaitForSeconds(0.23f);
-        GameObject bullet=Instantiate(bulletPrefab, firePoint.position, hand.rotation); 
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.gravityScale = bulletGravity;
-        rb.AddForce(bulletForce * firePoint.right, ForceMode2D.Impulse);
-        _anim.Play("GunRecoil");
-        yield return new WaitForSeconds(shotDelay);
-        _isShooting = false;
+        if (_handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            Addressables.InstantiateAsync(bulletPrefab, firePoint.position, hand.rotation).Completed += bullet =>
+            {
+                if (bullet.Status == AsyncOperationStatus.Succeeded)
+                {
+                    GameObject bulletInstance = bullet.Result;
+                    Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
+                    rb.gravityScale = bulletGravity;
+                    rb.AddForce(bulletForce * firePoint.right, ForceMode2D.Impulse);
+                }
+            };
+            _anim.Play("GunRecoil");
+            yield return new WaitForSeconds(shotDelay);
+            _isShooting = false;
+        }
     }
+
     private Vector3 CheckEnemySide()
     {
         if (isRightSide)

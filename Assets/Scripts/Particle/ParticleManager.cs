@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class ParticleManager : MonoBehaviour
 {
-    public List<ParticleSystem> bulletImpactParticles;
-    public void SpawnParticle(ParticleSystem particlePrefab,Transform particlePlace)
+    public List<AssetReference> bulletImpactParticles;
+    public void SpawnParticle(AssetReference particlePrefab, Transform particlePlace)
     {
-        var instance = Instantiate(particlePrefab, particlePlace.position, particlePlace.rotation);
-     
+        Addressables.InstantiateAsync(particlePrefab, particlePlace.position, particlePlace.rotation);
     }
 }

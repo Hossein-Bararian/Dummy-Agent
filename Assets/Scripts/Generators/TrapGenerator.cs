@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class TrapGenerator : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class TrapGenerator : MonoBehaviour
         Addressables.InstantiateAsync(spawnList[randomIndex], transform.position, Quaternion.identity).Completed +=
             handle =>
             {
-                GameObject obj = handle.Result;
-                obj.transform.SetParent(transform);
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    GameObject obj = handle.Result;
+                    obj.transform.SetParent(transform);
+                }
             };
     }
 }

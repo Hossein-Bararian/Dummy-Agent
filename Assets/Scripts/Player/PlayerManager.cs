@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -26,15 +27,14 @@ public class PlayerManager : MonoBehaviour
                 {
                     script.gameObject.GetComponent<Animator>().enabled = false;
                 }
-               
-                Destroy(script);
+                script.enabled=false;
             }
         }
         foreach (var script in playerScripts)
         {
             if (script is PlayerTakeDamage)
                 continue;
-            Destroy(script);
+            script.enabled = false;
         }
     }
 }

@@ -1,6 +1,5 @@
-using System;
-using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class Trap : MonoBehaviour
 {
@@ -23,8 +22,13 @@ public class Trap : MonoBehaviour
             {
                 if (!other.gameObject.GetComponent<EnemyManager>().isDead &&
                     !other.gameObject.GetComponent<CrazyManManager>())
-                    Destroy(gameObject);
+                    Addressables.ReleaseInstance(gameObject);
             }
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Addressables.ReleaseInstance(gameObject);
     }
 }

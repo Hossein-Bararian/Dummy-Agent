@@ -6,17 +6,13 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private ParticleManager particleManager;
     private EnemyTakeDamage _takeDamage;
-    
     private void OnCollisionEnter2D(Collision2D other)
     {
         var bullet = gameObject;
         if (!(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player") ||
               other.gameObject.CompareTag("Head")))
         {
-            if (other.gameObject.name == "BulletDestroyer")
-                Destroy(bullet);
-            else
-                particleManager.SpawnParticle(particleManager.bulletImpactParticles[0], bullet.transform);
+            particleManager.SpawnParticle(particleManager.bulletImpactParticles[0], bullet.transform);
         }
         else
         {
@@ -25,22 +21,28 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.CompareTag("Head"))
         {
-                _takeDamage = other.transform.parent.parent.GetComponent<EnemyTakeDamage>();
-                try
-                {
-                    if (!_takeDamage.isHeadCutted && _takeDamage)
-                        _takeDamage.CutHead();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                } 
+            _takeDamage = other.transform.parent.parent.GetComponent<EnemyTakeDamage>();
+            try
+            {
+                if (!_takeDamage.isHeadCutted && _takeDamage)
+                    _takeDamage.CutHead();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
-        Destroy(bullet);
+
+        Addressables.ReleaseInstance(gameObject);
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+        Invoke("DestroyBulletAfterTime",0.15f);
     }
-    
+
+    private void DestroyBulletAfterTime()
+    {
+        Addressables.ReleaseInstance(gameObject);
+    }
 }

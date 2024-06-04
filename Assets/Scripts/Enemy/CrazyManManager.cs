@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -15,13 +14,23 @@ public class CrazyManManager : MonoBehaviour
     [Space(35)] 
     [SerializeField] private float runSpeed;
     [SerializeField] private  AssetReferenceGameObject suicideParticle;
+    private GameObject _suicideParticlePrefab;
     private Animator _anim;
     private Rigidbody2D _rigidBody;
 
     private void Start()
     {
+        Addressables.LoadAssetAsync<GameObject>(suicideParticle).Completed += OnParticleLoaded;
         _rigidBody = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+    }
+
+    private void OnParticleLoaded(AsyncOperationHandle<GameObject> obj)
+    {
+        if (obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            _suicideParticlePrefab = obj.Result;
+        }
     }
 
     private void LateUpdate()
@@ -68,10 +77,11 @@ public class CrazyManManager : MonoBehaviour
 
     public void Suicide(GameObject player)
     {
-       suicideParticle.InstantiateAsync(player.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
-       if (player.gameObject.GetComponent<PlayerTakeDamage>())
+        if(_suicideParticlePrefab)
+            Instantiate(_suicideParticlePrefab,player.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+        if (player.gameObject.GetComponent<PlayerTakeDamage>())
            player.gameObject.GetComponent<PlayerTakeDamage>().Die();
-       Destroy(gameObject,0.06f);
+        Addressables.ReleaseInstance(gameObject);
     }
     
     

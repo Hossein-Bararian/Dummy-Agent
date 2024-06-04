@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class TileGenerator : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class TileGenerator : MonoBehaviour
             SpawnLevelPart();
         }
     }
-
+    
     void Update()
     {
             if (Vector3.Distance(player.transform.position, _lastEndPosition) < PlayerDistanceLevelPart)
@@ -35,9 +36,13 @@ public class TileGenerator : MonoBehaviour
     {
         Addressables.LoadAssetAsync<GameObject>(levelPartList[UnityEngine.Random.Range(0, levelPartList.Count)]).Completed += handle =>
         {
-            Transform  chosenLevelPart = handle.Result.transform;
-            Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart,_lastEndPosition);
-            _lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                Transform  chosenLevelPart = handle.Result.transform;
+                Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart,_lastEndPosition);
+                _lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
+                
+            }
         }; 
     }
 

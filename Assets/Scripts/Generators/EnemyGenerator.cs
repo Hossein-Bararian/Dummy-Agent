@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -11,20 +12,23 @@ public class EnemyGenerator : MonoBehaviour
 
     [SerializeField] private bool isRight;
 
-    void Start()
+    void Awake()   
     {
         int randomIndex = Random.Range(0, enemy.Count);
         enemy[randomIndex].InstantiateAsync(transform.position, Quaternion.identity).Completed += handle =>
         {
-            GameObject obj = handle.Result;
-            obj.transform.SetParent(transform);
-            if (obj.GetComponent<EnemyShooting>())
+            if (handle.Status == AsyncOperationStatus.Succeeded)
             {
-                if (isRight)
+                GameObject obj = handle.Result;
+                obj.transform.SetParent(transform);
+                if (obj.GetComponent<EnemyShooting>())
                 {
-                    obj.transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                    if (isRight)
+                    {
+                        obj.transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                    }
+                    obj.GetComponent<EnemyShooting>().isRightSide = isRight;
                 }
-                obj.GetComponent<EnemyShooting>().isRightSide = isRight;
             }
         };
     }
