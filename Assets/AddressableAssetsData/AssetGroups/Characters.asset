@@ -83,11 +83,6 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a63a43b252ae4d145901bc04ec5cc7d2
-    m_Address: TrapsTemplate04
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d6d00e293c2f60f46b331fee6341434d
     m_Address: TrapsTemplate03
     m_ReadOnly: 0
     m_SerializedLabels: []

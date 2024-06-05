@@ -696,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4715556324292877275, guid: 5e4cae55b4eb77e489a1caebd4617795, type: 3}
       propertyPath: m_Name
-      value: Ground_Stairhgt2
+      value: FirstGround
       objectReference: {fileID: 0}
     - target: {fileID: 7313860944199949982, guid: 5e4cae55b4eb77e489a1caebd4617795, type: 3}
       propertyPath: spawnList.Array.size
@@ -997,8 +997,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Slow
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 81b4c079cb334b4448c4db61cbe9cd46, type: 2}
+  m_sharedMaterial: {fileID: -1628184712086185157, guid: 81b4c079cb334b4448c4db61cbe9cd46, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1022,8 +1022,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2780,8 +2780,8 @@ Transform:
   m_GameObject: {fileID: 915775304}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.491333, y: -0.17661381, z: 14.9521}
-  m_LocalScale: {x: 38.9, y: 22.3, z: 0.0011446839}
+  m_LocalPosition: {x: -0.5601, y: 0.1158, z: 14.9521}
+  m_LocalScale: {x: 41.21711, y: 20.340822, z: 0.0011446839}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1022085453}
@@ -3570,7 +3570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentTile: {fileID: 6562583748300229483}
-  levelPartStart: {fileID: 5997242706529111849}
+  levelPartStart: {fileID: 149186333}
   levelPartList:
   - m_AssetGUID: 5e4cae55b4eb77e489a1caebd4617795
     m_SubObjectName: 
@@ -3922,8 +3922,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shot
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 81b4c079cb334b4448c4db61cbe9cd46, type: 2}
+  m_sharedMaterial: {fileID: -1628184712086185157, guid: 81b4c079cb334b4448c4db61cbe9cd46, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3947,8 +3947,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6594,7 +6594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4715556324292877275, guid: 5e4cae55b4eb77e489a1caebd4617795, type: 3}
       propertyPath: m_Name
-      value: Ground_Stairhgt
+      value: FirstGround
       objectReference: {fileID: 0}
     - target: {fileID: 7313860944199949982, guid: 5e4cae55b4eb77e489a1caebd4617795, type: 3}
       propertyPath: spawnList.Array.size
@@ -6694,7 +6694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815322178877480404, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: m_TagString
-      value: Finish
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7270514397477574023, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: parallaxSystem

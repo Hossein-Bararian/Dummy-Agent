@@ -5,14 +5,14 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class TileGenerator : MonoBehaviour
 {
-    private const float PlayerDistanceLevelPart=80f;
+    private const float PlayerDistanceLevelPart = 80f;
 
-     [SerializeField] private Transform parentTile;
-     [SerializeField] private Transform levelPartStart; 
-     [SerializeField] private List<AssetReferenceGameObject> levelPartList; 
-     [SerializeField] private GameObject player;
-    
+    [SerializeField] private Transform parentTile;
+    [SerializeField] private Transform levelPartStart;
+    [SerializeField] private List<AssetReferenceGameObject> levelPartList;
+    [SerializeField] private GameObject player;
     private Vector3 _lastEndPosition;
+    private bool isSpawning = false;
 
     private void Awake()
     {
@@ -23,33 +23,27 @@ public class TileGenerator : MonoBehaviour
             SpawnLevelPart();
         }
     }
-    
+
     void Update()
     {
-            if (Vector3.Distance(player.transform.position, _lastEndPosition) < PlayerDistanceLevelPart)
-            { 
-                SpawnLevelPart();
-            }
+        if (Vector3.Distance(player.transform.position, _lastEndPosition) < PlayerDistanceLevelPart && !isSpawning)
+        {
+            SpawnLevelPart();
+        }
     }
 
     private void SpawnLevelPart()
     {
-        Addressables.LoadAssetAsync<GameObject>(levelPartList[UnityEngine.Random.Range(0, levelPartList.Count)]).Completed += handle =>
-        {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                Transform  chosenLevelPart = handle.Result.transform;
-                Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart,_lastEndPosition);
-                _lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
-                
-            }
-        }; 
+        AssetReferenceGameObject chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
+        isSpawning = true;
+        Addressables.InstantiateAsync(chosenLevelPart, _lastEndPosition, Quaternion.identity).Completed += OnLevelPartSpawned;
     }
 
-    private Transform SpawnLevelPart(Transform levelPart,Vector3 spawnPosition)
+    private void OnLevelPartSpawned(AsyncOperationHandle<GameObject> handle)
     {
-        Transform levelPartTransform = Instantiate(levelPart,spawnPosition, Quaternion.identity);
+        Transform levelPartTransform = handle.Result.transform;
         levelPartTransform.SetParent(parentTile);
-        return levelPartTransform;
+        _lastEndPosition = levelPartTransform.Find("EndPosition").position;
+        isSpawning = false;
     }
 }
