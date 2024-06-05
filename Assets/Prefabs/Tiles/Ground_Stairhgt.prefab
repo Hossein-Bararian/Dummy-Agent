@@ -1028,38 +1028,38 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 4240689932170095941}
     m_ColliderPaths:
-    - - X: 1303467904
-        Y: -242168032
-      - X: 1305412736
-        Y: -241868816
-      - X: 1305412736
-        Y: -162364144
-      - X: 1305566848
-        Y: -162364144
-      - X: 1305566848
-        Y: -137529888
-      - X: 1014748544
-        Y: -137529888
-      - X: 1014748544
-        Y: -157333776
-      - X: 1014744064
-        Y: -157333776
-      - X: 1014744064
-        Y: -242317632
-      - X: 1302869376
-        Y: -242317632
+    - - X: 658468032
+        Y: -127168032
+      - X: 660412800
+        Y: -126868824
+      - X: 660412800
+        Y: -87364136
+      - X: 660566912
+        Y: -87364136
+      - X: 660566912
+        Y: -62529884
+      - X: 499748544
+        Y: -62529884
+      - X: 499748544
+        Y: -72333776
+      - X: 499744000
+        Y: -72333776
+      - X: 499744000
+        Y: -127317640
+      - X: 657869568
+        Y: -127317640
   m_CompositePaths:
     m_Paths:
-    - - {x: 130.54128, y: -23.625977}
-      - {x: 130.54128, y: -16.386978}
-      - {x: 130.55669, y: -16.3095}
-      - {x: 130.55669, y: -14.318774}
-      - {x: 129.9709, y: -13.732988}
-      - {x: 102.06061, y: -13.732988}
-      - {x: 101.47483, y: -14.318746}
-      - {x: 101.474434, y: -23.625948}
-      - {x: 102.06023, y: -24.211763}
-      - {x: 129.95549, y: -24.211763}
+    - - {x: 66.04128, y: -12.1259775}
+      - {x: 66.04128, y: -8.886976}
+      - {x: 66.056694, y: -8.809499}
+      - {x: 66.056694, y: -6.8187747}
+      - {x: 65.47091, y: -6.2329884}
+      - {x: 50.560593, y: -6.2329884}
+      - {x: 49.97481, y: -6.818725}
+      - {x: 49.97444, y: -12.125928}
+      - {x: 50.560238, y: -12.711763}
+      - {x: 65.4555, y: -12.711763}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 1
   m_UseDelaunayMesh: 0
@@ -1203,7 +1203,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2502685903867058167, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
       propertyPath: spawnList.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2502685903867058167, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
       propertyPath: spawnList.Array.data[1].m_AssetGUID
@@ -1211,7 +1211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2502685903867058167, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
       propertyPath: spawnList.Array.data[2].m_AssetGUID
-      value: d6d00e293c2f60f46b331fee6341434d
+      value: a63a43b252ae4d145901bc04ec5cc7d2
       objectReference: {fileID: 0}
     - target: {fileID: 2502685903867058167, guid: 2d1476d28d148cd488bedc10d2d7f9b0, type: 3}
       propertyPath: spawnList.Array.data[3].m_AssetGUID
