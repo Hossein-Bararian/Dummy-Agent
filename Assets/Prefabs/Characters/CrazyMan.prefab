@@ -2423,6 +2423,7 @@ GameObject:
   - component: {fileID: 6570687100462138191}
   - component: {fileID: 4555661036246776333}
   - component: {fileID: 8336623403342955538}
+  - component: {fileID: 1394570089331988716}
   m_Layer: 8
   m_Name: Head
   m_TagString: Head
@@ -2585,6 +2586,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.465}
   m_Size: {x: 0.58, y: 0.93}
   m_Direction: 0
+--- !u!114 &1394570089331988716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857872846440247918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6b1da4e45155c42a1e9181cc12a3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6956077701913940496
 GameObject:
   m_ObjectHideFlags: 0

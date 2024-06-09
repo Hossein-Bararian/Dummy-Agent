@@ -304,7 +304,6 @@ MonoBehaviour:
   firePoint: {fileID: 7548212959292235446}
   hand: {fileID: 149732664083778009}
   shotDelay: 0.85
-  isRightSide: 0
 --- !u!114 &5729666151492835726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,6 +1035,7 @@ GameObject:
   - component: {fileID: 1025907256529523144}
   - component: {fileID: 3151423718421393864}
   - component: {fileID: 2441563050147383053}
+  - component: {fileID: 5748734716695315776}
   m_Layer: 8
   m_Name: Head
   m_TagString: Head
@@ -1198,6 +1198,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.58}
   m_Size: {x: 0.67, y: 1.16}
   m_Direction: 0
+--- !u!114 &5748734716695315776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939561698021317668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6b1da4e45155c42a1e9181cc12a3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3858286556735277050
 GameObject:
   m_ObjectHideFlags: 0
