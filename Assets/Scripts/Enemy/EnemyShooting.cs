@@ -25,7 +25,6 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private Transform hand;
     [SerializeField] private float shotDelay;
     private AsyncOperationHandle<GameObject> _handle;
-    public bool isRightSide;
     private Animator _anim;
     private bool _isShooting;
 
@@ -59,7 +58,7 @@ public class EnemyShooting : MonoBehaviour
     {
         _anim.enabled = false;
         _isShooting = true;
-        hand.transform.DORotate(CheckEnemySide(), 0.2f);
+        hand.transform.DORotate( new Vector3(0, 0, Random.Range(85, 95)), 0.2f);
         yield return new WaitForSeconds(0.23f);
         if (_handle.Status == AsyncOperationStatus.Succeeded)
         {
@@ -78,20 +77,7 @@ public class EnemyShooting : MonoBehaviour
             _isShooting = false;
         }
     }
-
-    private Vector3 CheckEnemySide()
-    {
-        if (isRightSide)
-        {
-            firePoint.transform.rotation = new Quaternion(0, 0, 0, 0);
-            return new Vector3(0, 0, Random.Range(-85, -95));
-        }
-        else
-        {
-            return new Vector3(0, 0, Random.Range(85, 95));
-        }
-    }
-
+    
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position + castOffset, castSize);
