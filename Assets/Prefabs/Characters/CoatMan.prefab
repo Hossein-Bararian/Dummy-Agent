@@ -299,11 +299,11 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  bulletForce: 45
+  bulletForce: 40
   bulletGravity: 2
   firePoint: {fileID: 7548212959292235446}
   hand: {fileID: 149732664083778009}
-  shotDelay: 0.8
+  shotDelay: 0.85
   isRightSide: 0
 --- !u!114 &5729666151492835726
 MonoBehaviour:

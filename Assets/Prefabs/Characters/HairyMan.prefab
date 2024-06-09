@@ -2876,8 +2876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bcdb6781c16e494bb4b3e9ce7d14a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castOffset: {x: -7, y: 5.5, z: 0}
-  castSize: {x: 20, y: 5, z: 0}
+  castOffset: {x: -4, y: 5.5, z: 0}
+  castSize: {x: 15.5, y: 5, z: 0}
   mouthFindSprite: {fileID: 464161073, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
   mouthSprite: {fileID: 1853282784985253492}
   bulletPrefab:
@@ -2885,11 +2885,11 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  bulletForce: 45
+  bulletForce: 40
   bulletGravity: 1
   firePoint: {fileID: 396942697382729737}
   hand: {fileID: 4786034313418271306}
-  shotDelay: 0.75
+  shotDelay: 0.8
   isRightSide: 0
 --- !u!114 &2081066458010367954
 MonoBehaviour:
