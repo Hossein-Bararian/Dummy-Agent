@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private ParticleManager particleManager;
     private EnemyTakeDamage _takeDamage;
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -12,11 +11,17 @@ public class Bullet : MonoBehaviour
         if (!(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player") ||
               other.gameObject.CompareTag("Head")))
         {
-            particleManager.SpawnParticle(particleManager.bulletImpactParticles[0], bullet.transform);
+       
+         GameObject particleInstance= BlastParticlePoolManager.Instance.GetParticle();
+         particleInstance.transform.position = bullet.transform.position;
+         particleInstance.transform.rotation = bullet.transform.rotation;
         }
         else
         {
-            particleManager.SpawnParticle(particleManager.bulletImpactParticles[1], bullet.transform);
+          
+           GameObject particleInstance= BloodParticlePoolManager.Instance.GetParticle();
+           particleInstance.transform.position = bullet.transform.position;
+           particleInstance.transform.rotation = bullet.transform.rotation;
         }
 
         if (other.gameObject.CompareTag("Head"))

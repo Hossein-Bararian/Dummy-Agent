@@ -4,33 +4,25 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class CrazyManManager : MonoBehaviour
 {
-    [Header("BoxCast")] [SerializeField] private Vector3 castOffset;
+    [Header("BoxCast")] 
+    [SerializeField] private Vector3 castOffset;
     [SerializeField] private Vector3 castSize;
     [SerializeField] private float distance;
+
     [Space(35)] 
-    [Header("CheckWall Cast")]
-    [SerializeField] private Vector3 wallCastOffset;
+    [Header("CheckWall Cast")] 
+    [SerializeField]
+    private Vector3 wallCastOffset;
     [SerializeField] private Vector3 wallCastSize;
-    [Space(35)] 
-    [SerializeField] private float runSpeed;
-    [SerializeField] private  AssetReferenceGameObject suicideParticle;
-    private GameObject _suicideParticlePrefab;
+    
+    [Space(35)] [SerializeField] private float runSpeed;
     private Animator _anim;
     private Rigidbody2D _rigidBody;
-
+    [SerializeField] private GameObject suicideParticle;
     private void Start()
     {
-        Addressables.LoadAssetAsync<GameObject>(suicideParticle).Completed += OnParticleLoaded;
         _rigidBody = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-    }
-
-    private void OnParticleLoaded(AsyncOperationHandle<GameObject> obj)
-    {
-        if (obj.Status == AsyncOperationStatus.Succeeded)
-        {
-            _suicideParticlePrefab = obj.Result;
-        }
     }
 
     private void LateUpdate()
@@ -51,10 +43,11 @@ public class CrazyManManager : MonoBehaviour
             }
         }
     }
-    
+
     void CheckWallOnRange()
     {
-        RaycastHit2D[] wallHits = Physics2D.BoxCastAll(transform.position + wallCastOffset, wallCastSize, 0, Vector2.zero);
+        RaycastHit2D[] wallHits =
+            Physics2D.BoxCastAll(transform.position + wallCastOffset, wallCastSize, 0, Vector2.zero);
 
         foreach (var hit in wallHits)
         {
@@ -77,14 +70,13 @@ public class CrazyManManager : MonoBehaviour
 
     public void Suicide(GameObject player)
     {
-        if(_suicideParticlePrefab)
-            Instantiate(_suicideParticlePrefab,player.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+        Instantiate(suicideParticle,player.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
         if (player.gameObject.GetComponent<PlayerTakeDamage>())
-           player.gameObject.GetComponent<PlayerTakeDamage>().Die();
+            player.gameObject.GetComponent<PlayerTakeDamage>().Die();
         Addressables.ReleaseInstance(gameObject);
     }
-    
-    
+
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position + castOffset, castSize);
