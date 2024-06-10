@@ -1,18 +1,19 @@
 using System.Collections;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-
 public class ParticleDestroyer : MonoBehaviour
 {
     [SerializeField] private float destroyTime;
-    void Start()
+    void OnEnable()
     {
-       StartCoroutine(DestroyParticle());
+      Invoke("DestroyParticle",destroyTime);
     }
-    IEnumerator DestroyParticle()
+    void DestroyParticle()
     {
-        yield return new WaitForSeconds(destroyTime);
-        Addressables.ReleaseInstance(gameObject);
+        if(gameObject.name=="DefualtBulletImpact(Clone)")
+            BlastParticlePoolManager.Instance.ReleaseParticle(gameObject);
+        else  if(gameObject.name=="Blood(Clone)")
+            BloodParticlePoolManager.Instance.ReleaseParticle(gameObject);
+        else if(gameObject.name=="SuicideParticle(Clone)")
+            gameObject.SetActive(false);
     }
 }
