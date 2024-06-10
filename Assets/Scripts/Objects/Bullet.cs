@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     private EnemyTakeDamage _takeDamage;
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (!gameObject.activeSelf) return;
         var bullet = gameObject;
         if (!(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player") ||
               other.gameObject.CompareTag("Head")))
@@ -32,17 +33,25 @@ public class Bullet : MonoBehaviour
                 Console.WriteLine(e);
             }
         }
-
-        Addressables.ReleaseInstance(gameObject);
+        
+        BulletPoolManager.Instance.ReleaseBullet(gameObject);
     }
+
     private void OnBecameInvisible()
     {
+        if (!gameObject.activeSelf) return;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-        Invoke("DestroyBulletAfterTime",0.15f);
+        Invoke("DeActiveBulletAfterTime", 0.15f);
     }
 
-    private void DestroyBulletAfterTime()
+    private void DeActiveBulletAfterTime()
     {
-        Addressables.ReleaseInstance(gameObject);
+        if (!gameObject.activeSelf) return;
+        BulletPoolManager.Instance.ReleaseBullet(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
     }
 }
