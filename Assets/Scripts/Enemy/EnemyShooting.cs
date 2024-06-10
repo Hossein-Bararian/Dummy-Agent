@@ -1,30 +1,22 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using Random = UnityEngine.Random;
-
-
 public class EnemyShooting : MonoBehaviour
 {
-    [Header("BoxCast")] [SerializeField] private Vector3 castOffset;
+    [Header("BoxCast")]
+    [SerializeField] private Vector3 castOffset;
     [SerializeField] private Vector3 castSize;
-
-    [Space(30)] [Header("Dead Face Sprites")] [SerializeField]
-    private Sprite mouthFindSprite;
-
+    
+    [Space(30)] [Header("Dead Face Sprites")]
+    [SerializeField] private Sprite mouthFindSprite;
     [SerializeField] private GameObject mouthSprite;
-
-    [Space(30)] [Header("Shooting")] [SerializeField]
-    private AssetReferenceGameObject bulletPrefab;
-
+    
+    [Space(30)] [Header("Shooting")]
     [SerializeField] private float bulletForce;
     [SerializeField] private float bulletGravity;
     [SerializeField] private Transform firePoint;
     [SerializeField] private Transform hand;
     [SerializeField] private float shotDelay;
-    private AsyncOperationHandle<GameObject> _handle;
     private Animator _anim;
     private bool _isShooting;
 
@@ -32,7 +24,6 @@ public class EnemyShooting : MonoBehaviour
     {
         _isShooting = false;
         _anim = GetComponent<Animator>();
-        _handle = Addressables.LoadAssetAsync<GameObject>(bulletPrefab);
     }
 
     private void LateUpdate()
@@ -60,22 +51,16 @@ public class EnemyShooting : MonoBehaviour
         _isShooting = true;
         hand.transform.DORotate( new Vector3(0, 0, Random.Range(85, 95)), 0.2f);
         yield return new WaitForSeconds(0.23f);
-        if (_handle.Status == AsyncOperationStatus.Succeeded)
-        {
-            Addressables.InstantiateAsync(bulletPrefab, firePoint.position, hand.rotation).Completed += bullet =>
-            {
-                if (bullet.Status == AsyncOperationStatus.Succeeded)
-                {
-                    GameObject bulletInstance = bullet.Result;
-                    Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
-                    rb.gravityScale = bulletGravity;
-                    rb.AddForce(bulletForce * firePoint.right, ForceMode2D.Impulse);
-                }
-            };
-            _anim.Play("GunRecoil");
-            yield return new WaitForSeconds(shotDelay);
-            _isShooting = false;
-        }
+        GameObject bulletInstance = EnemyBulletPoolManager.Instance.GetBullet();
+        bulletInstance.transform.position = firePoint.position;
+        bulletInstance.transform.rotation = hand.transform.rotation;
+        Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
+        rb.gravityScale = bulletGravity;
+        rb.velocity = Vector2.zero; 
+        rb.AddForce(bulletForce * firePoint.right, ForceMode2D.Impulse);
+        _anim.Play("GunRecoil");
+        yield return new WaitForSeconds(shotDelay);
+        _isShooting = false;
     }
     
     private void OnDrawGizmos()

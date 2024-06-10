@@ -28,7 +28,7 @@ public class Shooting : MonoBehaviour
         CameraShake.Instance.Shake(_impulseSource, impulseForce);
         currentGunCoolDown = gunCoolDown;
 
-        GameObject bulletInstance = BulletPoolManager.Instance.GetBullet();
+        GameObject bulletInstance = PlayerBulletPoolManager.Instance.GetBullet();
         bulletInstance.transform.position = firePoint.position;
         bulletInstance.transform.rotation = _handMovement.hand.transform.rotation;
         Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();

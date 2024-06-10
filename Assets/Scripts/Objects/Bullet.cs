@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class Bullet : MonoBehaviour
 {
@@ -33,8 +32,10 @@ public class Bullet : MonoBehaviour
                 Console.WriteLine(e);
             }
         }
-        
-        BulletPoolManager.Instance.ReleaseBullet(gameObject);
+        if(gameObject.CompareTag("PlayerBullet"))
+            PlayerBulletPoolManager.Instance.ReleaseBullet(gameObject);
+        else  if(gameObject.CompareTag("EnemyBullet"))
+            EnemyBulletPoolManager.Instance.ReleaseBullet(gameObject);
     }
 
     private void OnBecameInvisible()
@@ -47,7 +48,11 @@ public class Bullet : MonoBehaviour
     private void DeActiveBulletAfterTime()
     {
         if (!gameObject.activeSelf) return;
-        BulletPoolManager.Instance.ReleaseBullet(gameObject);
+        
+        if(gameObject.CompareTag("PlayerBullet"))
+            PlayerBulletPoolManager.Instance.ReleaseBullet(gameObject);
+        else  if(gameObject.CompareTag("EnemyBullet"))
+            EnemyBulletPoolManager.Instance.ReleaseBullet(gameObject);
     }
 
     private void OnEnable()

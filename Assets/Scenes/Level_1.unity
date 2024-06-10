@@ -1662,7 +1662,7 @@ Transform:
   m_GameObject: {fileID: 639532609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.703333, y: -8.976, z: -10}
+  m_LocalPosition: {x: 5.3299994, y: -8.976, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1896,6 +1896,7 @@ GameObject:
   - component: {fileID: 691927203}
   - component: {fileID: 691927202}
   - component: {fileID: 691927204}
+  - component: {fileID: 691927205}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -1943,7 +1944,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d916b4711b9ac429efc8dc09b74e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 279176457771732945, guid: c190bfc753a3eac45bac82e163d9dc58, type: 3}
+  playerBulletPrefab: {fileID: 279176457771732945, guid: c190bfc753a3eac45bac82e163d9dc58, type: 3}
+--- !u!114 &691927205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691927201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29ea41f61cf98b42ba3ac9cc76786b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBulletPrefab: {fileID: 279176457771732945, guid: dbd1d214eb3d6ce4686d85a267b53c78, type: 3}
 --- !u!114 &707564115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2898,7 +2912,7 @@ Transform:
   m_GameObject: {fileID: 1022085451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.703333, y: -8.976, z: -10}
+  m_LocalPosition: {x: 5.3299994, y: -8.976, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

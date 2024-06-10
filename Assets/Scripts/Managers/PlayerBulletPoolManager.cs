@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.Pool;
-
-public class BulletPoolManager : MonoBehaviour
+public class PlayerBulletPoolManager : MonoBehaviour
 {
-  public static BulletPoolManager Instance;
-  [SerializeField] private GameObject bulletPrefab;
+  public static PlayerBulletPoolManager Instance;
+  [SerializeField] private GameObject playerBulletPrefab;
   private ObjectPool<GameObject> _bulletPool;
 
   private void Awake()
@@ -35,7 +34,7 @@ public class BulletPoolManager : MonoBehaviour
 
   private GameObject OnCreateBullet()
   {
-    return Instantiate(bulletPrefab);
+    return Instantiate(playerBulletPrefab);
   }
 
   public GameObject GetBullet()
