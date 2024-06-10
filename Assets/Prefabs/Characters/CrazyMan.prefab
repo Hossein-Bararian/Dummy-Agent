@@ -1778,11 +1778,7 @@ MonoBehaviour:
   wallCastOffset: {x: 1.89, y: 6, z: 0}
   wallCastSize: {x: 1, y: 3, z: 0}
   runSpeed: -10
-  suicideParticle:
-    m_AssetGUID: 9986d1050e808804d941327c55c4f6f8
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  suicideParticle: {fileID: 180173050344029081, guid: 9986d1050e808804d941327c55c4f6f8, type: 3}
 --- !u!212 &2462595743655497461
 SpriteRenderer:
   m_ObjectHideFlags: 0
