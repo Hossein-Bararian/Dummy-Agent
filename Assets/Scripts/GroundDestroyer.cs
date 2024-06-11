@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-
 public class GroundDestroyer : MonoBehaviour
 {
     private bool _isGroundTouched=false;
@@ -8,12 +6,12 @@ public class GroundDestroyer : MonoBehaviour
    private void OnBecameInvisible()
    {
        if (gameObject.name == "FirstGround")
-       {
+       { 
            gameObject.SetActive(false);
        }
        if (!_isOn && _isGroundTouched)
-       {
-           Addressables.ReleaseInstance(gameObject);
+       { 
+        GroundPoolManager.Instance.ReleaseGround(gameObject);
        }
    }
    private void OnCollisionEnter2D(Collision2D other)
@@ -26,7 +24,7 @@ public class GroundDestroyer : MonoBehaviour
    }
    private void OnCollisionExit2D(Collision2D other)
    {
-       if (other.gameObject.CompareTag("Player"))
+       if (other.gameObject.CompareTag("Finish"))
        {
            _isOn = false;
        }

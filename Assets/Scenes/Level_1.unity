@@ -1899,6 +1899,7 @@ GameObject:
   - component: {fileID: 691927205}
   - component: {fileID: 691927207}
   - component: {fileID: 691927206}
+  - component: {fileID: 691927208}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -1986,6 +1987,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blastParticlePrefabs: {fileID: 1827459166581611904, guid: 502d4960c2132c94f8385201fac260f8, type: 3}
+--- !u!114 &691927208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691927201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d050b2296a98942afb11d1ad0e6b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundsPrefab:
+  - {fileID: 1626211344796261106, guid: 09d12a97b6be52c4088edb6944473126, type: 3}
+  - {fileID: 4715556324292877275, guid: 5e4cae55b4eb77e489a1caebd4617795, type: 3}
+  - {fileID: 3354834359937145271, guid: 7501cb4d05328eb4a8468c25a07ffe71, type: 3}
+  - {fileID: 3297579915784329628, guid: 1fae93eee5f4e174eab642e76ae256a9, type: 3}
+  - {fileID: 4586336179644289128, guid: 33bd0e409aaf26948af5fe413243b6cc, type: 3}
+  - {fileID: 4050925362654141448, guid: 02c16e57c29f10a41afc2aaa3fe73805, type: 3}
 --- !u!114 &707564115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3627,35 +3647,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentTile: {fileID: 6562583748300229483}
   levelPartStart: {fileID: 149186333}
-  levelPartList:
-  - m_AssetGUID: 5e4cae55b4eb77e489a1caebd4617795
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 33bd0e409aaf26948af5fe413243b6cc
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 09d12a97b6be52c4088edb6944473126
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 7501cb4d05328eb4a8468c25a07ffe71
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 02c16e57c29f10a41afc2aaa3fe73805
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 1fae93eee5f4e174eab642e76ae256a9
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 5e4cae55b4eb77e489a1caebd4617795
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
   player: {fileID: 354327069}
 --- !u!4 &1213106148
 Transform:

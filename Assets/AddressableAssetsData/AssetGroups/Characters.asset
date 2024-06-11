@@ -137,36 +137,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1fae93eee5f4e174eab642e76ae256a9
-    m_Address: Assets/Prefabs/Tiles/Ground_Up2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 02c16e57c29f10a41afc2aaa3fe73805
-    m_Address: Assets/Prefabs/Tiles/Ground_Up.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7501cb4d05328eb4a8468c25a07ffe71
-    m_Address: Assets/Prefabs/Tiles/Ground_Hole.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 33bd0e409aaf26948af5fe413243b6cc
-    m_Address: Assets/Prefabs/Tiles/Ground_Down2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 09d12a97b6be52c4088edb6944473126
-    m_Address: Assets/Prefabs/Tiles/Ground_Down.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5e4cae55b4eb77e489a1caebd4617795
-    m_Address: Assets/Prefabs/Tiles/Ground_Stairhgt.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4728c543c22a90341a082be17190ddfb
     m_Address: Assets/Sprites/Faces/all face.png
     m_ReadOnly: 0

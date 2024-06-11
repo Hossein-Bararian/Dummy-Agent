@@ -1,7 +1,5 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class TileGenerator : MonoBehaviour
 {
@@ -9,10 +7,9 @@ public class TileGenerator : MonoBehaviour
 
     [SerializeField] private Transform parentTile;
     [SerializeField] private Transform levelPartStart;
-    [SerializeField] private List<AssetReferenceGameObject> levelPartList;
     [SerializeField] private GameObject player;
     private Vector3 _lastEndPosition;
-    private bool isSpawning = false;
+    private bool _isSpawning = false;
 
     private void Awake()
     {
@@ -26,7 +23,7 @@ public class TileGenerator : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, _lastEndPosition) < PlayerDistanceLevelPart && !isSpawning)
+        if (Vector3.Distance(player.transform.position, _lastEndPosition) < PlayerDistanceLevelPart && !_isSpawning)
         {
             SpawnLevelPart();
         }
@@ -34,16 +31,12 @@ public class TileGenerator : MonoBehaviour
 
     private void SpawnLevelPart()
     {
-        AssetReferenceGameObject chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
-        isSpawning = true;
-        Addressables.InstantiateAsync(chosenLevelPart, _lastEndPosition, Quaternion.identity).Completed += OnLevelPartSpawned;
-    }
-
-    private void OnLevelPartSpawned(AsyncOperationHandle<GameObject> handle)
-    {
-        Transform levelPartTransform = handle.Result.transform;
-        levelPartTransform.SetParent(parentTile);
-        _lastEndPosition = levelPartTransform.Find("EndPosition").position;
-        isSpawning = false;
+        _isSpawning = true;
+        GameObject chosenLevelPart = GroundPoolManager.Instance.GetGround();
+        chosenLevelPart.transform.position = _lastEndPosition;
+        chosenLevelPart.transform.rotation = Quaternion.identity;
+        chosenLevelPart.transform.SetParent(parentTile);
+        _lastEndPosition = chosenLevelPart.transform.Find("EndPosition").position;
+        _isSpawning = false;
     }
 }
