@@ -45,15 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnList:
-  - m_AssetGUID: be7509a90c31168478cdf58763a7b868
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: a63a43b252ae4d145901bc04ec5cc7d2
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 5a7b0fa55e6ae0b4fac04882074cee71
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  - {fileID: 2003284518834968080, guid: be7509a90c31168478cdf58763a7b868, type: 3}
+  - {fileID: 6538749525547556954, guid: 5a7b0fa55e6ae0b4fac04882074cee71, type: 3}
+  - {fileID: 4844422347633303300, guid: a63a43b252ae4d145901bc04ec5cc7d2, type: 3}

@@ -1,24 +1,15 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class TrapGenerator : MonoBehaviour
 {
-    [SerializeField] private List<AssetReferenceGameObject> spawnList;
-
-    private void Start()
+    [SerializeField] private List<GameObject> spawnList;
+    private void OnEnable()
     {
-        int randomIndex = UnityEngine.Random.Range(0, spawnList.Count);
-        Addressables.InstantiateAsync(spawnList[randomIndex], transform.position, Quaternion.identity).Completed +=
-            handle =>
-            {
-                if (handle.Status == AsyncOperationStatus.Succeeded)
-                {
-                    GameObject obj = handle.Result;
-                    obj.transform.SetParent(transform);
-                }
-            };
+      GameObject trap =TrapPoolManager.Instance.GetTrap(spawnList[Random.Range(0,spawnList.Count)]);
+      trap.transform.position = transform.position;
+      trap.transform.rotation=Quaternion.identity;
+      trap.transform.SetParent(transform);
     }
 }

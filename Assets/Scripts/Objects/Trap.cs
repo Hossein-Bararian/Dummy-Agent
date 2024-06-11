@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-
 public class Trap : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D other)
@@ -22,13 +20,13 @@ public class Trap : MonoBehaviour
             {
                 if (!other.gameObject.GetComponent<EnemyManager>().isDead &&
                     !other.gameObject.GetComponent<CrazyManManager>())
-                    Addressables.ReleaseInstance(gameObject);
+                    TrapPoolManager.Instance.ReleaseTrap(gameObject);
             }
         }
     }
 
     private void OnBecameInvisible()
     {
-        Addressables.ReleaseInstance(gameObject);
+        TrapPoolManager.Instance.ReleaseTrap(gameObject);
     }
 }
