@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class GroundDestroyer : MonoBehaviour
 {
@@ -7,10 +6,6 @@ public class GroundDestroyer : MonoBehaviour
     private bool _isOn=false;
    private void OnBecameInvisible()
    {
-       if (gameObject.name == "FirstGround")
-       { 
-           gameObject.SetActive(false);
-       }
        if (!_isOn && _isGroundTouched)
        { 
            GroundPoolManager.Instance.ReleaseGround(gameObject);

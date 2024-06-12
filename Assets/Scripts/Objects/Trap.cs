@@ -27,6 +27,7 @@ public class Trap : MonoBehaviour
 
     private void OnBecameInvisible()
     {
+        if(!gameObject.activeSelf) return;
         TrapPoolManager.Instance.ReleaseTrap(gameObject);
     }
 }

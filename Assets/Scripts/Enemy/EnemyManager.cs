@@ -25,9 +25,6 @@ public class EnemyManager : MonoBehaviour
     {
         if(!_isOnGround && !isDead)
             Invoke("DestroyObjectAfterTime", 0.5f);
-            
-        // if (isDead)
-        //     Invoke("DestroyObjectAfterTime", 1);
     }
     private void DestroyObjectAfterTime()
     {
