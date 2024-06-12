@@ -1662,7 +1662,7 @@ Transform:
   m_GameObject: {fileID: 639532609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.703333, y: -8.976, z: -10}
+  m_LocalPosition: {x: 5.1399994, y: -8.976, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1901,6 +1901,7 @@ GameObject:
   - component: {fileID: 691927206}
   - component: {fileID: 691927208}
   - component: {fileID: 691927209}
+  - component: {fileID: 691927210}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -2019,7 +2020,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e0ff01ba5ac29448ff3fa1b75c502f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapPrefabs: {fileID: 0}
+--- !u!114 &691927210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691927201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f183515e31a204b9500c344753ed0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &707564115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2974,7 +2986,7 @@ Transform:
   m_GameObject: {fileID: 1022085451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.703333, y: -8.976, z: -10}
+  m_LocalPosition: {x: 5.1399994, y: -8.976, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6689,6 +6701,10 @@ PrefabInstance:
       propertyPath: parallaxSystem
       value: 
       objectReference: {fileID: 1022085452}
+    - target: {fileID: 872492855475331076, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: m_Name
+      value: Head
+      objectReference: {fileID: 0}
     - target: {fileID: 1479651460361055310, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: btnShot
       value: 
@@ -6711,7 +6727,7 @@ PrefabInstance:
       objectReference: {fileID: 739261637}
     - target: {fileID: 2587579250558213254, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2587579250558213254, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6755,7 +6771,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815322178877480404, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562938804773903382, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -3.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562938804773903382, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -5.1450005
       objectReference: {fileID: 0}
     - target: {fileID: 7270514397477574023, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: parallaxSystem

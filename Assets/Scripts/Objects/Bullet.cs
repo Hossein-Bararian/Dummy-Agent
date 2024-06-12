@@ -3,7 +3,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private EnemyTakeDamage _takeDamage;
+    private EnemyTakeDamage _takeDamage; 
+    private TrailRenderer _trailRenderer;
+    private void Awake()
+    {
+     _trailRenderer=gameObject.transform.Find("Trial").GetComponent<TrailRenderer>();
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (!gameObject.activeSelf) return;
@@ -11,17 +16,17 @@ public class Bullet : MonoBehaviour
         if (!(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player") ||
               other.gameObject.CompareTag("Head")))
         {
-       
-         GameObject particleInstance= BlastParticlePoolManager.Instance.GetParticle();
-         particleInstance.transform.position = bullet.transform.position;
-         particleInstance.transform.rotation = bullet.transform.rotation;
+
+            GameObject particleInstance = BlastParticlePoolManager.Instance.GetParticle();
+            particleInstance.transform.position = bullet.transform.position;
+            particleInstance.transform.rotation = bullet.transform.rotation;
         }
         else
         {
-          
-           GameObject particleInstance= BloodParticlePoolManager.Instance.GetParticle();
-           particleInstance.transform.position = bullet.transform.position;
-           particleInstance.transform.rotation = bullet.transform.rotation;
+
+            GameObject particleInstance = BloodParticlePoolManager.Instance.GetParticle();
+            particleInstance.transform.position = bullet.transform.position;
+            particleInstance.transform.rotation = bullet.transform.rotation;
         }
 
         if (other.gameObject.CompareTag("Head"))
@@ -53,15 +58,27 @@ public class Bullet : MonoBehaviour
     private void DeActiveBulletAfterTime()
     {
         if (!gameObject.activeSelf) return;
-        
-        if(gameObject.CompareTag("PlayerBullet"))
+
+        if (gameObject.CompareTag("PlayerBullet"))
             PlayerBulletPoolManager.Instance.ReleaseBullet(gameObject);
-        else  if(gameObject.CompareTag("EnemyBullet"))
+        else if (gameObject.CompareTag("EnemyBullet"))
             EnemyBulletPoolManager.Instance.ReleaseBullet(gameObject);
     }
-
+    
     private void OnEnable()
     {
+        if (_trailRenderer != null)
+        {
+            _trailRenderer.enabled = true;
+        }
         gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+    }
+    private void OnDisable()
+    {
+        if (_trailRenderer != null)
+        {
+            _trailRenderer.Clear();
+            _trailRenderer.enabled = false;
+        }
     }
 }

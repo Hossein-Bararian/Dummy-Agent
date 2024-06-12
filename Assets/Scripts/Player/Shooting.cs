@@ -27,7 +27,7 @@ public class Shooting : MonoBehaviour
         if (_impulseSource == null) return;
         CameraShake.Instance.Shake(_impulseSource, impulseForce);
         currentGunCoolDown = gunCoolDown;
-
+        _anim.Play("GunRecoil");
         GameObject bulletInstance = PlayerBulletPoolManager.Instance.GetBullet();
         bulletInstance.transform.position = firePoint.position;
         bulletInstance.transform.rotation = _handMovement.hand.transform.rotation;
@@ -35,6 +35,6 @@ public class Shooting : MonoBehaviour
         rb.gravityScale = bulletGravity;
         rb.velocity = Vector2.zero; 
         rb.AddForce(bulletSpeed * firePoint.right, ForceMode2D.Impulse);
-        _anim.Play("GunRecoil");
+       
     }
 }
