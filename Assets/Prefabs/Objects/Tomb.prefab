@@ -49,7 +49,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  - m_AssetGUID: 6cd63bd5f5b1b374690a88049497ce25
+  - m_AssetGUID: f1114e1bc5e459645b112b166e7a9a75
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -57,11 +57,10 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  - m_AssetGUID: f1114e1bc5e459645b112b166e7a9a75
+  - m_AssetGUID: 6cd63bd5f5b1b374690a88049497ce25
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  isRight: 0
 --- !u!1 &5171476727762006497
 GameObject:
   m_ObjectHideFlags: 0

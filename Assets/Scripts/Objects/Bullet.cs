@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
             _takeDamage = other.transform.parent.parent.GetComponent<EnemyTakeDamage>();
             try
             {
-                if (!_takeDamage.isHeadCutted && _takeDamage)
+                if (!_takeDamage.isHeadCut && _takeDamage)
                     _takeDamage.CutHead();
             }
             catch (Exception e)

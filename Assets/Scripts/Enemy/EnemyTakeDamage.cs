@@ -1,5 +1,4 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class EnemyTakeDamage : MonoBehaviour
 {
@@ -8,23 +7,21 @@ public class EnemyTakeDamage : MonoBehaviour
     [SerializeField] private Sprite deadMouthSprite;
     [SerializeField] private GameObject[] eyes;
     [SerializeField] private GameObject mouth;
-    [Space(10)] [SerializeField] private GameObject head;
-    [Space(10)] public bool isHeadCutted;
-    private EnemyManager _enemyManager;
+    [Space(10)] 
+    [SerializeField] private GameObject head;
     private ToggleRagdoll _toggleRagdoll;
+    private EnemyManager _enemyManager;
+    [Space(10)] public bool isHeadCut=false;
     private Animator _playerAnim;
     private readonly string[] _playerHappyFacesAnimationName = { "HappyFace1", "HappyFace2" };
-
     private void Start()
     {
-        isHeadCutted = false;
-        _enemyManager = GetComponent<EnemyManager>();
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
+        _enemyManager = GetComponent<EnemyManager>();
         _gameManager = FindObjectOfType<GameManager>();
         _playerAnim = GameObject.Find("Player").GetComponent<Animator>();
         _toggleRagdoll.Ragdoll(false);
     }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("PlayerBullet") && !_enemyManager.isDead)
@@ -43,17 +40,16 @@ public class EnemyTakeDamage : MonoBehaviour
     private void Die()
     {
         _enemyManager.isDead = true;
-        _enemyManager.DeActiveScripts();
         _toggleRagdoll.Ragdoll(true);
+        _enemyManager.ActiveScripts(false);
     }
-
     private void DeadFace()
     {
         eyes[0].GetComponent<SpriteRenderer>().sprite = deadEyeSprite;
         eyes[1].GetComponent<SpriteRenderer>().sprite = deadEyeSprite;
         mouth.GetComponent<SpriteRenderer>().sprite = deadMouthSprite;
     }
-
+    
     public void CutHead()
     {
         if (_playerAnim != null)
@@ -61,7 +57,7 @@ public class EnemyTakeDamage : MonoBehaviour
             _playerAnim.Play("PlayerCutHead");
         }
         HingeJoint2D hinge = head.GetComponent<HingeJoint2D>();
-        isHeadCutted = true;
+        isHeadCut = true;
         head.transform.SetParent(null);
         hinge.enabled = false;
         head.tag = "Enemy";

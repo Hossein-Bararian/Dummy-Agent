@@ -294,11 +294,6 @@ MonoBehaviour:
   castSize: {x: 12, y: 5, z: 0}
   mouthFindSprite: {fileID: -289323735, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
   mouthSprite: {fileID: 4204893265375276386}
-  bulletPrefab:
-    m_AssetGUID: dbd1d214eb3d6ce4686d85a267b53c78
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
   bulletForce: 40
   bulletGravity: 2
   firePoint: {fileID: 7548212959292235446}
@@ -323,7 +318,8 @@ MonoBehaviour:
   - {fileID: 3858286556735277050}
   mouth: {fileID: 4204893265375276386}
   head: {fileID: 1939561698021317668}
-  isHeadCutted: 0
+  headPositionTemp: {x: -2.396, y: 5.653, z: 0}
+  isHeadCut: 0
 --- !u!212 &9776982777690644
 SpriteRenderer:
   m_ObjectHideFlags: 0

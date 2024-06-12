@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -7,20 +5,19 @@ public class EnemyManager : MonoBehaviour
 {
     public bool isDead;
     private bool _isOnGround;
-
     private void Awake()
     {
         _isOnGround=false;
         isDead = false;
     }
-    public void DeActiveScripts()
+    public void ActiveScripts(bool isTrue)
     {
         var enemyScripts = GetComponents<MonoBehaviour>();
         foreach (var script in enemyScripts)
         {
             if (script is EnemyTakeDamage || script is EnemyManager)
                 continue;
-            (script).enabled = false;
+            (script).enabled = isTrue;
         }
     }
 
@@ -29,8 +26,8 @@ public class EnemyManager : MonoBehaviour
         if(!_isOnGround && !isDead)
             Invoke("DestroyObjectAfterTime", 0.5f);
             
-        if (isDead)
-            Invoke("DestroyObjectAfterTime", 1);
+        // if (isDead)
+        //     Invoke("DestroyObjectAfterTime", 1);
     }
     private void DestroyObjectAfterTime()
     {
@@ -42,11 +39,9 @@ public class EnemyManager : MonoBehaviour
         {
             _isOnGround = true;
         }
-   
     }
     private void OnDestroy()
     {
         Addressables.ReleaseInstance(gameObject);
     }
-    
 }

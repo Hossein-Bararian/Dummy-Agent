@@ -1759,7 +1759,8 @@ MonoBehaviour:
   - {fileID: 5412633576424923415}
   mouth: {fileID: 5239729349660653340}
   head: {fileID: 6857872846440247918}
-  isHeadCutted: 0
+  headPositionTemp: {x: -2.36, y: 5.782, z: 0}
+  isHeadCut: 0
 --- !u!114 &4494987086320335590
 MonoBehaviour:
   m_ObjectHideFlags: 0
