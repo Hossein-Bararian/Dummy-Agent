@@ -20,6 +20,7 @@ public class TombGenerator : MonoBehaviour
                     if (handle.Status == AsyncOperationStatus.Succeeded)
                     {
                         GameObject obj = handle.Result;
+                        obj.transform.position = transform.position;
                         obj.transform.SetParent(transform);
                     }
                 };
