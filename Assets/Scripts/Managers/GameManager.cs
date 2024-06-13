@@ -15,6 +15,14 @@ public class GameManager : MonoBehaviour
         txtScore.text = "Score: 0";
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void UpdateScore(int value)
     {
         Score += value;

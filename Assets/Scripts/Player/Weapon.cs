@@ -12,17 +12,17 @@ public class Weapon : MonoBehaviour
     [SerializeField] private WeaponsType weapon;
     [SerializeField] private  Shooting shooting;
     
-    // private void LateUpdate()
-    // {
-    //     if (Input.GetButtonDown("Shot"))
-    //     {
-    //         if (weapon == WeaponsType.Pistol)
-    //         {
-    //             Pistol();
-    //         }
-    //     }
-    //  
-    // }
+    private void LateUpdate()
+    {
+        if (Input.GetButtonDown("Shot"))
+        {
+            if (weapon == WeaponsType.Pistol)
+            {
+                Pistol();
+            }
+        }
+     
+    }
     public void Pistol()
     {
         if(!MenuManager.IsOnGame)return;
