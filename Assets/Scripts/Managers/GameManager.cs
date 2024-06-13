@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 80;
         _scoreAnimator = txtScore.GetComponent<Animator>();
         txtScore.text = "Score: 0";
     }
