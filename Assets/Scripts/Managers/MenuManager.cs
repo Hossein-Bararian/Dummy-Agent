@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private PlayerMovement player;
     [SerializeField] private Animator muteButtonAnimator;
     [SerializeField] private Animator levelFaderAnimator;
+    [SerializeField] private GameObject hand;
     private Animator _animator;
     
     private bool _isMute = false;
@@ -85,6 +87,7 @@ public class MenuManager : MonoBehaviour
     {
         IsOnGame = true;
         _animator.Play("MenuUI_FadOut");
+        hand.transform.DORotateQuaternion(Quaternion.Euler(0, 0, -90), .6f);
         yield return new WaitForSeconds(0.3f);
         player.gameObject.GetComponent<Animator>().Play("Walk");
         player.runSpeed = 8;
