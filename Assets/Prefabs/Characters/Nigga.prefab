@@ -912,8 +912,9 @@ MonoBehaviour:
   - {fileID: 5019018840962346384}
   mouth: {fileID: 3061110610649835302}
   head: {fileID: 8552829548595475395}
-  headPositionTemp: {x: -2.331, y: 5.624, z: 0}
   isHeadCut: 0
+  bodyTransform: {fileID: 725632931117959255}
+  headBloodPosition: {x: 0.3, y: 1.8, z: 0}
 --- !u!212 &107008847458399208
 SpriteRenderer:
   m_ObjectHideFlags: 0

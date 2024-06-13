@@ -14,6 +14,8 @@ public class EnemyTakeDamage : MonoBehaviour
     [Space(10)] public bool isHeadCut=false;
     private Animator _playerAnim;
     private readonly string[] _playerHappyFacesAnimationName = { "HappyFace1", "HappyFace2" };
+    [SerializeField] private Transform bodyTransform;
+    [SerializeField] private Vector3 headBloodPosition;
     private void Start()
     {
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
@@ -52,6 +54,10 @@ public class EnemyTakeDamage : MonoBehaviour
     
     public void CutHead()
     {
+        GameObject bodyBloodParticle = HeadBloodPoolManager.Instance.GetParticle();
+        bodyBloodParticle.transform.SetParent(bodyTransform.transform);
+        bodyBloodParticle.transform.localRotation =Quaternion.identity;
+        bodyBloodParticle.transform.localPosition =new Vector3(headBloodPosition.x,headBloodPosition.y,0);
         if (_playerAnim != null)
         {
             _playerAnim.Play("PlayerCutHead");
