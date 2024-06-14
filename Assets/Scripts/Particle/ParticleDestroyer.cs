@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 public class ParticleDestroyer : MonoBehaviour
@@ -15,5 +16,16 @@ public class ParticleDestroyer : MonoBehaviour
             BloodParticlePoolManager.Instance.ReleaseParticle(gameObject);
         else if(gameObject.name=="SuicideParticle(Clone)")
             gameObject.SetActive(false);
+    }
+
+    private void OnBecameInvisible()
+    {
+        if(gameObject.name=="HeadBlood(Clone)")
+            Invoke("DestroyHeadBlood",2);
+    }
+
+    private void DestroyHeadBlood()
+    {
+            HeadBloodPoolManager.Instance.ReleaseParticle(gameObject);
     }
 }

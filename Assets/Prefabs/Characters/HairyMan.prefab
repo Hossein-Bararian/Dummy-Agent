@@ -2593,7 +2593,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2711,7 +2711,7 @@ Transform:
   m_GameObject: {fileID: 7069446352581154025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30, y: -10, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2919,7 +2919,7 @@ MonoBehaviour:
   head: {fileID: 6622006617368388043}
   isHeadCut: 0
   bodyTransform: {fileID: 2661542322255832027}
-  headBloodPosition: {x: 0.4, y: 1.8, z: 0}
+  headBloodPosition: {x: -0.5, y: 1.5, z: 0}
 --- !u!212 &-3080166100291830420
 SpriteRenderer:
   m_ObjectHideFlags: 0

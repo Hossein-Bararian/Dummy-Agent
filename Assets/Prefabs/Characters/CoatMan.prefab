@@ -320,7 +320,7 @@ MonoBehaviour:
   head: {fileID: 1939561698021317668}
   isHeadCut: 0
   bodyTransform: {fileID: 7340728911089130962}
-  headBloodPosition: {x: 0.2, y: 1.8, z: 0}
+  headBloodPosition: {x: -0.2, y: 1.35, z: 0}
 --- !u!212 &9776982777690644
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1123,7 +1123,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

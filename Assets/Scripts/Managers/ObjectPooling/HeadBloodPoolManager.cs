@@ -26,6 +26,7 @@ public class HeadBloodPoolManager : MonoBehaviour
 
     private void OnReleaseParticle(GameObject obj)
     {
+        obj.transform.SetParent(null);
         obj.gameObject.SetActive(false);
     }
 

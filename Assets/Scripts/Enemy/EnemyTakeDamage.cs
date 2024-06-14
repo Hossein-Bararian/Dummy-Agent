@@ -54,10 +54,6 @@ public class EnemyTakeDamage : MonoBehaviour
     
     public void CutHead()
     {
-        GameObject bodyBloodParticle = HeadBloodPoolManager.Instance.GetParticle();
-        bodyBloodParticle.transform.SetParent(bodyTransform.transform);
-        bodyBloodParticle.transform.localRotation =Quaternion.identity;
-        bodyBloodParticle.transform.localPosition =new Vector3(headBloodPosition.x,headBloodPosition.y,0);
         if (_playerAnim != null)
         {
             _playerAnim.Play("PlayerCutHead");
@@ -72,5 +68,9 @@ public class EnemyTakeDamage : MonoBehaviour
             _gameManager.UpdateScore(1);
             _gameManager.UpdateHeadShots();
         }
+        GameObject bodyBloodParticle = HeadBloodPoolManager.Instance.GetParticle();
+        bodyBloodParticle.transform.SetParent(bodyTransform.transform,false);
+        bodyBloodParticle.transform.localPosition =new Vector3(headBloodPosition.x,headBloodPosition.y,0);
+        bodyBloodParticle.transform.rotation = Quaternion.identity;
     }
 }

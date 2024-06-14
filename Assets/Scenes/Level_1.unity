@@ -6970,7 +6970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815322178877480404, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: m_TagString
-      value: Finish
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5562938804773903382, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: m_ConnectedAnchor.x

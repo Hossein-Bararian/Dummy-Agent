@@ -14,7 +14,6 @@ public class EnemyGenerator : MonoBehaviour
             for (int i = 0; i < transform.childCount; i++)
             {
                 Addressables.ReleaseInstance(transform.GetChild(i).gameObject);
-                print("Deleted"+transform.GetChild(i).gameObject.name);
             }
         }
 
