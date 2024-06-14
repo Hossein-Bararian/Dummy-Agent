@@ -1718,7 +1718,7 @@ MonoBehaviour:
   head: {fileID: 541951596094715874}
   isHeadCut: 0
   bodyTransform: {fileID: 4306640640641714801}
-  headBloodPosition: {x: -0.4, y: 1.5, z: 0}
+  headBloodPosition: {x: -0.1, y: 0.45, z: 0}
 --- !u!212 &3060549976533798552
 SpriteRenderer:
   m_ObjectHideFlags: 0

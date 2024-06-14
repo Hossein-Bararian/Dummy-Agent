@@ -1761,7 +1761,7 @@ MonoBehaviour:
   head: {fileID: 6857872846440247918}
   isHeadCut: 0
   bodyTransform: {fileID: 569524372981155422}
-  headBloodPosition: {x: -0.3, y: 1.4, z: 0}
+  headBloodPosition: {x: -0.1, y: 0.45, z: 0}
 --- !u!114 &4494987086320335590
 MonoBehaviour:
   m_ObjectHideFlags: 0

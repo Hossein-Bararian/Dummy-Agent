@@ -71,6 +71,6 @@ public class EnemyTakeDamage : MonoBehaviour
         GameObject bodyBloodParticle = HeadBloodPoolManager.Instance.GetParticle();
         bodyBloodParticle.transform.SetParent(bodyTransform.transform,false);
         bodyBloodParticle.transform.localPosition =new Vector3(headBloodPosition.x,headBloodPosition.y,0);
-        bodyBloodParticle.transform.rotation = Quaternion.identity;
+        bodyBloodParticle.transform.localRotation = Quaternion.identity;
     }
 }
