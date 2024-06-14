@@ -8,6 +8,7 @@ public class CrazyManManager : MonoBehaviour
     [SerializeField] private Vector3 castOffset;
     [SerializeField] private Vector3 castSize;
     [SerializeField] private float distance;
+    [SerializeField] private Vector3 distancePosition;
 
     [Space(35)] 
     [Header("CheckWall Cast")] 
@@ -62,9 +63,13 @@ public class CrazyManManager : MonoBehaviour
     {
         _anim.Play("Walk");
         _rigidBody.velocity = new Vector2(runSpeed, _rigidBody.velocity.y);
-        if (Vector3.Distance(transform.position, player.transform.Find("Hitman").transform.position) < distance)
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position+distancePosition, distance, LayerMask.GetMask("Player"));
+        foreach (var hit in hits)
         {
-            Suicide(player);
+            if (hit && hit.gameObject.CompareTag("Player"))
+            {
+                Suicide(player);
+            }
         }
     }
 
@@ -81,5 +86,6 @@ public class CrazyManManager : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position + castOffset, castSize);
         Gizmos.DrawWireCube(transform.position + wallCastOffset, wallCastSize);
+        Gizmos.DrawWireSphere(transform.position+distancePosition, distance);
     }
 }
