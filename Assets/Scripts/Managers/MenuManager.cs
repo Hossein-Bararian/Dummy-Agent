@@ -36,6 +36,11 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        if (PlayerPrefs.GetInt("Tutorial") == 0)
+        {
+            PlayerPrefs.SetInt("Tutorial",1);
+            SceneManager.LoadScene(3);
+        }
         StartCoroutine(StartGameCoroutine());
     }
 
