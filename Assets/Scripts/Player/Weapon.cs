@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     
     private void LateUpdate()
     {
-        if (Input.GetButtonDown("Shot"))
+        if (Input.GetButtonUp("Shot"))
         {
             if (weapon == WeaponsType.Pistol)
             {
@@ -25,8 +25,9 @@ public class Weapon : MonoBehaviour
     }
     public void Pistol()
     {
+        if(PlayerMovement.IsOnJumpOrSlide) return;
         if(!MenuManager.IsOnGame)return;
         if (EventSystem.current.currentSelectedGameObject == btnSlowMotion.gameObject ) return;
-        shooting.Shot(80, 1, 0.25f, firePoint);
+        shooting.Shot(80, 1, 0.24f, firePoint);
     }
 }

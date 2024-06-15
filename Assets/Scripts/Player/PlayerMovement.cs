@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+    public static bool IsOnJumpOrSlide;
     [Header("Touche Input")] 
     private Vector3 _startTouchePosition;
     private Vector3 _endTouchePosition;
@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         CheckStopRunning();
-        CheckInputs();
     }
 
     private void Update()
@@ -69,11 +68,15 @@ public class PlayerMovement : MonoBehaviour
             _endTouchePosition = Input.GetTouch(0).position;
             if (_startTouchePosition.y > _endTouchePosition.y+220)
             {
+                IsOnJumpOrSlide=true;
                 Slide();
+                Invoke("ResetIsOnJumpOrSlide",0.2f);
             }
             if (_startTouchePosition.y < _endTouchePosition.y-220)
             {
+                IsOnJumpOrSlide=true;
                 Jump();
+                Invoke("ResetIsOnJumpOrSlide",0.2f);
             }
         }
         
@@ -110,7 +113,10 @@ public class PlayerMovement : MonoBehaviour
             _anim.Play("Sliding");
         }
     }
-
+    private void ResetIsOnJumpOrSlide()
+    {
+        IsOnJumpOrSlide = false;
+    }
     private bool IsGrounded()
     {
         RaycastHit2D groundRayCast = Physics2D.Raycast(originRay.position, Vector2.down,1, layerMask);

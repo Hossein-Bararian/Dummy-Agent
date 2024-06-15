@@ -85,10 +85,10 @@ public class MenuManager : MonoBehaviour
 
     private IEnumerator StartGameCoroutine()
     {
-        IsOnGame = true;
         _animator.Play("MenuUI_FadOut");
         hand.transform.DORotateQuaternion(Quaternion.Euler(0, 0, -90), .6f);
         yield return new WaitForSeconds(0.3f);
+        IsOnGame = true;
         player.gameObject.GetComponent<Animator>().Play("Walk");
         player.runSpeed = 8;
         yield return new WaitForSeconds(0.2f);
