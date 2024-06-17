@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 643c9f4f526e5f44ab31136b568b89b9
+guid: 9ff1020c99301bd4f9e9d5675366352f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: btn pannel_0
+      name: GameoverButtonpng_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 291
-        width: 807
-        height: 258
+        x: 72
+        y: 313
+        width: 720
+        height: 218
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba62a3daca14ff54686ac6e8aa7b8484
-      internalID: 1903028999
+      spriteID: 40d33e22294a53644ba71c4a17931dba
+      internalID: -2111881885
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      btn pannel_0: 1903028999
+      GameoverButtonpng_0: -2111881885
+      GameoverButtonpng_1: -51332925
+      GameoverButtonpng_10: 851750349
+      GameoverButtonpng_11: -600108598
+      GameoverButtonpng_2: 1026805054
+      GameoverButtonpng_3: 193693924
+      GameoverButtonpng_4: -1272855534
+      GameoverButtonpng_5: -187676268
+      GameoverButtonpng_6: 1113972155
+      GameoverButtonpng_7: 1582951697
+      GameoverButtonpng_8: -1408127475
+      GameoverButtonpng_9: -2073679762
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

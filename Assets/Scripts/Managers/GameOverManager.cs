@@ -24,7 +24,7 @@ public class GameOverManager : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         gameOverButtons.SetActive(true);
         gameOverButtons.GetComponent<Animator>().Play("ButtonsPanel_FadeIn");
-        txtScore.text = +PlayerPrefs.GetInt("HeadShots")+" : ";
+        txtScore.text =PlayerPrefs.GetInt("Score").ToString();
         yield return new WaitForSeconds(0.2f);
         if (PlayerPrefs.GetInt("Score") > PlayerPrefs.GetInt("HighScore"))
         {

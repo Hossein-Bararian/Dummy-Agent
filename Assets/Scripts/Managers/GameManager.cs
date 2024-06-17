@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using RTLTMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] menuTexts;
     [SerializeField] private Image[] menuImage;
     [Space(35)]
-    [SerializeField] private TextMeshProUGUI txtScore;
+    [SerializeField] private RTLTextMeshPro txtScore;
     public static int Score;
     public static int HeadShots;
     private Animator _scoreAnimator;
@@ -18,7 +19,6 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 80;
         _scoreAnimator = txtScore.GetComponent<Animator>();
-        txtScore.text = "Score: 0";
         print(PlayerPrefs.GetInt("Tutorial"));
         TutorialCheck();
     }
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public void UpdateScore(int value)
     {
         Score += value;
-        txtScore.text = "Score: " + Score;
+        txtScore.text = Score.ToString();
         _scoreAnimator.Play("GetScore");
         PlayerPrefs.SetInt("Score",Score);
     }

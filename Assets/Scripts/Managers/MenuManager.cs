@@ -1,5 +1,5 @@
 using System.Collections;
-using TMPro;
+using RTLTMPro;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public static bool IsOnGame;
-    [SerializeField] private TextMeshProUGUI txtBestScore;
-    [SerializeField] private TextMeshProUGUI txtLastScore;
+    [SerializeField] private RTLTextMeshPro txtBestScore;
+    [SerializeField] private RTLTextMeshPro txtLastScore;
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject menuUI;
     [SerializeField] private PlayerMovement player;
