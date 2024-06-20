@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 80;
         _scoreAnimator = txtScore.GetComponent<Animator>();
-        print(PlayerPrefs.GetInt("Tutorial"));
         TutorialCheck();
     }
 

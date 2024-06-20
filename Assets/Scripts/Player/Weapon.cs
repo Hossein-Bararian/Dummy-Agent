@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class Weapon : MonoBehaviour
 {
+    public static Weapon Instance;
     [SerializeField]private Button btnSlowMotion;
     private enum WeaponsType
     {
@@ -11,7 +12,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private WeaponsType weapon;
     [SerializeField] private  Shooting shooting;
-    
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void LateUpdate()
     {
         if (Input.GetButtonUp("Shot"))

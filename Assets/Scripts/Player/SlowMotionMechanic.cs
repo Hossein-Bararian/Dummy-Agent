@@ -8,14 +8,14 @@ public class SlowMotionMechanic : MonoBehaviour
     public static SlowMotionMechanic Instance;
     private bool _isOnSlowMotion;
     private bool _turnOnSlowMotion = false;
-    [SerializeField] private float slowTime;
+    public float slowTime;
     [SerializeField] private float slowTimeEffect;
     [SerializeField] private Volume volume;
     private float _startScaleTime;
     private float _startFixedDeltaTime;
 
-    [Header("SlowMotion Bar")] [SerializeField]
-    private Slider slowMotionBar;
+    [Header("SlowMotion Bar")]
+    // [SerializeField]private Slider slowMotionBar;
 
     [SerializeField] private float increaseSlowValue;
     [SerializeField] private float decreaseSlowValue;
@@ -32,10 +32,10 @@ public class SlowMotionMechanic : MonoBehaviour
 
     private void Update()
     {
-        if (slowMotionBar.value < 100 && !_isOnSlowMotion)
-        {
-            RecoverSlowMotionBar();
-        }
+        // if (slowMotionBar.value < 100 && !_isOnSlowMotion)
+        // {
+        //     RecoverSlowMotionBar();
+        // }
 
         if (_turnOnSlowMotion)
             StartSlowMotion(slowTime);
@@ -65,18 +65,18 @@ public class SlowMotionMechanic : MonoBehaviour
         _turnOnSlowMotion = !_turnOnSlowMotion;
     }
 
-    private void StartSlowMotion(float time)
+    public void StartSlowMotion(float time)
     {
         _isOnSlowMotion = true;
         Time.timeScale = time;
         Time.fixedDeltaTime = time * _startFixedDeltaTime;
         UseSlowMotionBar();
         SlowMotionEffects(true);
-        if (slowMotionBar.value <= 0)
-        {
-            StopSlowMotion();
-            return;
-        }
+        // if (slowMotionBar.value <= 0)
+        // {
+        //     StopSlowMotion();
+        //     return;
+        // }
     }
 
     public void StopSlowMotion()
@@ -90,12 +90,12 @@ public class SlowMotionMechanic : MonoBehaviour
 
     private void RecoverSlowMotionBar()
     {
-        slowMotionBar.value += increaseSlowValue * Time.unscaledDeltaTime;
+        // slowMotionBar.value += increaseSlowValue * Time.unscaledDeltaTime;
     }
 
     private void UseSlowMotionBar()
     {
-        slowMotionBar.value -= decreaseSlowValue * Time.unscaledDeltaTime;
+        // slowMotionBar.value -= decreaseSlowValue * Time.unscaledDeltaTime;
     }
 
     private void SlowMotionEffects(bool active)

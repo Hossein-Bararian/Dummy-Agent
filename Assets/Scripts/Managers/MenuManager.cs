@@ -48,7 +48,7 @@ public class MenuManager : MonoBehaviour
     {
         if (_isMute)
         {
-            PlayerPrefs.SetInt("HighScore", 0);
+            PlayerPrefs.SetInt("Tutorial", 0);
             _isMute = false;
             muteButtonAnimator.Play("Music");
             //play 
