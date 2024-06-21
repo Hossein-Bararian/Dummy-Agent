@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class Weapon : MonoBehaviour
 {
     public static Weapon Instance;
-    [SerializeField]private Button btnSlowMotion;
+    [SerializeField] private Button[] uiButtons;
     private enum WeaponsType
     {
         Pistol
@@ -33,7 +33,10 @@ public class Weapon : MonoBehaviour
     {
         if(PlayerMovement.IsOnJumpOrSlide) return;
         if(!MenuManager.IsOnGame)return;
-        if (EventSystem.current.currentSelectedGameObject == btnSlowMotion.gameObject ) return;
+        if(StopMenuManager.IsGameStop) return;
+        if (EventSystem.current.currentSelectedGameObject == uiButtons[0].gameObject) return;
+        if (EventSystem.current.currentSelectedGameObject == uiButtons[1].gameObject) return;
+        if (EventSystem.current.currentSelectedGameObject == uiButtons[2].gameObject) return;
         shooting.Shot(80, 1, 0.24f, firePoint);
     }
 }

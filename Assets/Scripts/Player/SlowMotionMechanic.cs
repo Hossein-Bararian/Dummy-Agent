@@ -36,12 +36,6 @@ public class SlowMotionMechanic : MonoBehaviour
         // {
         //     RecoverSlowMotionBar();
         // }
-
-        if (_turnOnSlowMotion)
-            StartSlowMotion(slowTime);
-        else
-            StopSlowMotion();
-
         CheckInputs();
     }
 
@@ -63,6 +57,10 @@ public class SlowMotionMechanic : MonoBehaviour
     public void InputOnMobile()
     {
         _turnOnSlowMotion = !_turnOnSlowMotion;
+        if (_turnOnSlowMotion)
+            StartSlowMotion(slowTime);
+        else
+            StopSlowMotion();
     }
 
     public void StartSlowMotion(float time)
@@ -81,6 +79,7 @@ public class SlowMotionMechanic : MonoBehaviour
 
     public void StopSlowMotion()
     {
+      
         _turnOnSlowMotion = false;
         _isOnSlowMotion = false;
         Time.timeScale = _startScaleTime;

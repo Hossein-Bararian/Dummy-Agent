@@ -41,30 +41,32 @@ public class TrianManager : MonoBehaviour
         hand.DORotateQuaternion(Quaternion.Euler(0, 0,  -90), .25f);
         yield return new WaitForSeconds(0.26f);
         _animator.Play("ClickToShotTutorial");
-        SlowMotionMechanic.Instance.InputOnMobile();
         while (SlowMotionMechanic.Instance.slowTime>0.005)
         {
+            SlowMotionMechanic.Instance.StartSlowMotion(SlowMotionMechanic.Instance.slowTime);
             SlowMotionMechanic.Instance.slowTime -=0.005f;
             yield return new WaitForSeconds(0.001f);
         }
+        SlowMotionMechanic.Instance.StartSlowMotion(0);
     }
     private IEnumerator TrainingSectionHeadShot()
     {
         _status = 1;
-        yield return new WaitForSeconds(2f);
-        hand.DORotateQuaternion(Quaternion.Euler(0, 0,  -105), 0.24f);
+        yield return new WaitForSeconds(1f);
+        hand.DORotateQuaternion(Quaternion.Euler(0, 0,  -103), 0.24f);
         yield return new WaitForSeconds(0.25f);
         _animator.Play("ClickToHeadShotTutorial");
-        SlowMotionMechanic.Instance.InputOnMobile();
-        while (SlowMotionMechanic.Instance.slowTime>0.005)
+        while (SlowMotionMechanic.Instance.slowTime>0.007)
         {
-            SlowMotionMechanic.Instance.slowTime -=0.005f;
+            SlowMotionMechanic.Instance.StartSlowMotion(SlowMotionMechanic.Instance.slowTime);
+            SlowMotionMechanic.Instance.slowTime -=0.007f;
             yield return new WaitForSeconds(0.001f);
         }
+        SlowMotionMechanic.Instance.StartSlowMotion(0);
     }
     private IEnumerator TrainingAdvice()
     {
-        yield return new WaitForSeconds(3.2f);
+        yield return new WaitForSeconds(4f);
         player.runSpeed = 0f;
         hand.DORotateQuaternion(Quaternion.Euler(0, 0,  -180), 0.3f);
         player.gameObject.GetComponent<Animator>().Play("Idle");
@@ -89,7 +91,7 @@ public class TrianManager : MonoBehaviour
             return;
         }
         StartCoroutine(IncreaseSlowTime());
-        SlowMotionMechanic.Instance.InputOnMobile();
+        SlowMotionMechanic.Instance.StopSlowMotion();
         MenuManager.IsOnGame = true;
         Weapon.Instance.Pistol();
         MenuManager.IsOnGame = false;
@@ -100,8 +102,9 @@ public class TrianManager : MonoBehaviour
         while (SlowMotionMechanic.Instance.slowTime < 1)
         {
             SlowMotionMechanic.Instance.slowTime += 0.05f;
-            yield return new WaitForSeconds(0.005f);
+            yield return new WaitForSeconds(0.002f);
         }
+        SlowMotionMechanic.Instance.StartSlowMotion(1);
     }
 
     public void SetTitleText(string title)

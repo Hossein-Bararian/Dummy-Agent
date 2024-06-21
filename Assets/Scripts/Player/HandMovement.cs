@@ -7,9 +7,8 @@ using UnityEngine.UI;
 public class HandMovement : MonoBehaviour
 {
     public Transform hand;
-    [SerializeField] private Button btnSlowMotion;
-    [SerializeField] private Button btnShot;
-    [SerializeField] private Button btnTapToStart;
+    [SerializeField] private Button[] uiButtons;
+   
     private void LateUpdate()
     {
         MouseFollower();
@@ -17,9 +16,10 @@ public class HandMovement : MonoBehaviour
     private void MouseFollower()
     {
         if(!MenuManager.IsOnGame)return;
-        if (EventSystem.current.currentSelectedGameObject == btnSlowMotion.gameObject) return;
-        if (EventSystem.current.currentSelectedGameObject == btnShot.gameObject) return;
-       // if (EventSystem.current.currentSelectedGameObject == btnTapToStart.gameObject) return;
+        if(StopMenuManager.IsGameStop) return;
+        if (EventSystem.current.currentSelectedGameObject == uiButtons[0].gameObject) return;
+        if (EventSystem.current.currentSelectedGameObject == uiButtons[1].gameObject) return;
+        if (EventSystem.current.currentSelectedGameObject == uiButtons[2].gameObject) return;
        Vector3 mousePos = Input.mousePosition;
        if (mousePos.x >= 0 && mousePos.x <= Screen.width && mousePos.y >= 0 && mousePos.y <= Screen.height)
        {

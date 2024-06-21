@@ -1748,7 +1748,7 @@ Transform:
   m_GameObject: {fileID: 639532609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.864307, y: -6.96, z: -10}
+  m_LocalPosition: {x: 4.3933325, y: -6.96, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2705,7 +2705,7 @@ Transform:
   m_GameObject: {fileID: 1022085451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.864307, y: -6.96, z: -10}
+  m_LocalPosition: {x: 4.3933325, y: -6.96, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6342,17 +6342,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 133801457208164189, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: jumpForce
-      value: 9.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 133801457208164189, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: parallaxSystem
       value: 
       objectReference: {fileID: 1022085452}
-    - target: {fileID: 872492855475331076, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_Name
-      value: Head
-      objectReference: {fileID: 0}
     - target: {fileID: 1479651460361055310, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: btnShot
       value: 
@@ -6362,29 +6354,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 393498635}
     - target: {fileID: 1479651460361055310, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: btnTapToStart
-      value: 
+      propertyPath: uiButtons.Array.size
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1479651460361055310, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: uiButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 240024642}
+    - target: {fileID: 1479651460361055310, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: uiButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 240024642}
+    - target: {fileID: 1479651460361055310, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: uiButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 393498635}
     - target: {fileID: 1701578385835409983, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: btnSlowMotion
+      value: 
+      objectReference: {fileID: 393498635}
+    - target: {fileID: 1701578385835409983, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: uiButtons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701578385835409983, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: uiButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 393498635}
+    - target: {fileID: 1701578385835409983, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: uiButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 240024642}
+    - target: {fileID: 1701578385835409983, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
+      propertyPath: uiButtons.Array.data[2]
       value: 
       objectReference: {fileID: 393498635}
     - target: {fileID: 2006224146480874003, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: volume
       value: 
       objectReference: {fileID: 1907217984}
-    - target: {fileID: 2006224146480874003, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2006224146480874003, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: slowMotionBar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2364174687876938396, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2587579250558213254, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6429,18 +6437,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3815322178877480404, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5562938804773903382, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.04099989
-      objectReference: {fileID: 0}
-    - target: {fileID: 5562938804773903382, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 1.2149997
-      objectReference: {fileID: 0}
     - target: {fileID: 7270514397477574023, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
       propertyPath: parallaxSystem
       value: 
@@ -6449,26 +6445,6 @@ PrefabInstance:
       propertyPath: gameOverManager
       value: 
       objectReference: {fileID: 1113043795}
-    - target: {fileID: 8869971533291415002, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869971533291415002, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869971533291415002, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869971533291415002, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869971533291415002, guid: bd3e37e3ae37ca24eb6eb283ed87441c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
