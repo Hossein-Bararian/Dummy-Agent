@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class StopMenuManager : MonoBehaviour
 {
-    public static bool IsGameStop;
-    [SerializeField] private Animator animator;
+    public static bool IsGameStop; 
+    private Animator _animator;
     [SerializeField] private GameObject stopMenuPanel;
     [SerializeField] private GameObject gameUiPanel;
+
+    private void Start()
+    {
+        _animator = stopMenuPanel.GetComponent<Animator>();
+    }
 
     public void StopStatus()
     {
@@ -23,23 +28,16 @@ public class StopMenuManager : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger("FadeOut");
+            _animator.SetTrigger("FadeOut");
             StartCoroutine(ResumeAfterAnimation());
         }
     }
 
     private IEnumerator ResumeAfterAnimation()
     {
-        yield return new WaitForSecondsRealtime(animator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSecondsRealtime(_animator.GetCurrentAnimatorStateInfo(0).length);
         stopMenuPanel.SetActive(false);
         gameUiPanel.SetActive(true);
-        float elapsedTime = 0f;
-        while (elapsedTime < 1f)
-        {
-            Time.timeScale = Mathf.SmoothStep(0, 1, elapsedTime / 1f);
-            elapsedTime += Time.unscaledDeltaTime;
-            yield return null;
-        }
         Time.timeScale = 1;
         IsGameStop = false;
     }
