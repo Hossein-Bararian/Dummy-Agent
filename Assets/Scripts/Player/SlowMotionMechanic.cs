@@ -16,11 +16,8 @@ public class SlowMotionMechanic : MonoBehaviour
 
     [Header("SlowMotion Bar")]
     // [SerializeField]private Slider slowMotionBar;
-
     [SerializeField] private float increaseSlowValue;
     [SerializeField] private float decreaseSlowValue;
-
-
     private void Start()
     {
         if (Instance == null)
@@ -36,12 +33,18 @@ public class SlowMotionMechanic : MonoBehaviour
         // {
         //     RecoverSlowMotionBar();
         // }
+        if(!StopMenuManager.IsGameStop)
+        {
+            if (_turnOnSlowMotion)
+                StartSlowMotion(slowTime);
+            else
+                StopSlowMotion();
+        }
         CheckInputs();
     }
 
     private void CheckInputs()
     {
-        //OnWindows
         if (Input.GetButton("SlowMotion"))
         {
             StartSlowMotion(slowTime);
@@ -51,16 +54,11 @@ public class SlowMotionMechanic : MonoBehaviour
         {
             StopSlowMotion();
         }
-        //OnWindows
     }
 
     public void InputOnMobile()
     {
         _turnOnSlowMotion = !_turnOnSlowMotion;
-        if (_turnOnSlowMotion)
-            StartSlowMotion(slowTime);
-        else
-            StopSlowMotion();
     }
 
     public void StartSlowMotion(float time)
@@ -68,7 +66,7 @@ public class SlowMotionMechanic : MonoBehaviour
         _isOnSlowMotion = true;
         Time.timeScale = time;
         Time.fixedDeltaTime = time * _startFixedDeltaTime;
-        UseSlowMotionBar();
+       // UseSlowMotionBar();
         SlowMotionEffects(true);
         // if (slowMotionBar.value <= 0)
         // {

@@ -14,7 +14,7 @@ public class StopMenuManager : MonoBehaviour
         if(PlayerManager.IsDead) return;
         if (!IsGameStop)
         {
-           
+           SlowMotionMechanic.Instance.StopSlowMotion();
             Time.timeScale = 0;
             gameUiPanel.GetComponent<Animator>().SetTrigger("FadOut");
             StartCoroutine(ResumeAfterGameUiAnimation());
