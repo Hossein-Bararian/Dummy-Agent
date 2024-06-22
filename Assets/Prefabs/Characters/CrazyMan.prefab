@@ -1777,7 +1777,7 @@ MonoBehaviour:
   castOffset: {x: -12, y: 6, z: 0}
   castSize: {x: 30, y: 5.2, z: 0}
   distance: 4.5
-  distancePosition: {x: 3.8, y: 5, z: 0}
+  distancePosition: {x: 3.3, y: 5, z: 0}
   wallCastOffset: {x: 1.89, y: 6, z: 0}
   wallCastSize: {x: 1, y: 3, z: 0}
   runSpeed: -10
