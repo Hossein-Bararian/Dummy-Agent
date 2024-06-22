@@ -21,7 +21,7 @@ public class StopMenuManager : MonoBehaviour
         {
            SlowMotionMechanic.Instance.StopSlowMotion();
             Time.timeScale = 0;
-            gameUiPanel.GetComponent<Animator>().SetTrigger("FadOut");
+            gameUiPanel.GetComponent<Animator>().SetTrigger("FadeOut");
             StartCoroutine(ResumeAfterGameUiAnimation());
             stopMenuPanel.SetActive(true);
             IsGameStop = true;

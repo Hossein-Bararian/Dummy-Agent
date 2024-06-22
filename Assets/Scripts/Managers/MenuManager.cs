@@ -1,4 +1,5 @@
 using System.Collections;
+using Cinemachine;
 using RTLTMPro;
 using DG.Tweening;
 using UnityEngine;
@@ -16,6 +17,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Animator levelFaderAnimator;
     [SerializeField] private GameObject hand;
     private Animator _animator;
+    [Space(40)]
+    [Header("Shop")]
+    [SerializeField] private new CinemachineVirtualCamera camera;
+    private Animator _cameraAnimator;
+  
     
     private bool _isMute = false;
 
@@ -30,6 +36,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        _cameraAnimator = camera.gameObject.GetComponent<Animator>();
         txtLastScore.text = PlayerPrefs.GetInt("Score").ToString();
         txtBestScore.text = PlayerPrefs.GetInt("HighScore").ToString();
     }
@@ -64,15 +71,13 @@ public class MenuManager : MonoBehaviour
 
     private IEnumerator Shop()
     {
-        levelFaderAnimator.SetTrigger("Fade");
-        yield return new WaitForSeconds(0.7f);
-        SceneManager.LoadScene(1);
+        _animator.SetTrigger("FadeOut");
+        yield return new WaitForSecondsRealtime(_animator.GetCurrentAnimatorStateInfo(0).length/1.5f);
+        _cameraAnimator.SetTrigger("ZoomIn");
     }
     private IEnumerator AboutUs()
     {
-        levelFaderAnimator.SetTrigger("Fade");
-        yield return new WaitForSeconds(0.7f);
-        SceneManager.LoadScene(2);
+        yield break;
     }
 
     public void MenuButton(string sceneName)
@@ -80,7 +85,7 @@ public class MenuManager : MonoBehaviour
         switch (sceneName)
         {
             case "shop":
-                StartCoroutine(Shop());
+              StartCoroutine(Shop());
                 break;
             case "aboutUs":
                 StartCoroutine(AboutUs());
@@ -90,7 +95,7 @@ public class MenuManager : MonoBehaviour
 
     private IEnumerator StartGameCoroutine()
     {
-        _animator.Play("MenuUI_FadOut");
+        _animator.SetTrigger("FadeOut");
         hand.transform.DORotateQuaternion(Quaternion.Euler(0, 0, -90), .6f);
         yield return new WaitForSeconds(0.3f);
         IsOnGame = true;
@@ -101,7 +106,9 @@ public class MenuManager : MonoBehaviour
         GameManager.Score = 0;
         PlayerPrefs.SetInt("HeadShots", GameManager.HeadShots);
         PlayerPrefs.SetInt("Score", GameManager.Score);
-        gameUI.SetActive(true);
         menuUI.SetActive(false);
+        gameUI.gameObject.GetComponent<Animator>().SetTrigger("FadeIn");
+        gameUI.SetActive(true);
+     
     }
 }
