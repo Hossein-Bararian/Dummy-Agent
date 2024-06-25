@@ -3,6 +3,7 @@ using Cinemachine;
 using RTLTMPro;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private RTLTextMeshPro txtBestScore;
     [SerializeField] private RTLTextMeshPro txtLastScore;
     [SerializeField] private GameObject gameUI;
+    [SerializeField] private GameObject shopUI;
     [SerializeField] private GameObject menuUI;
     [SerializeField] private PlayerMovement player;
     [SerializeField] private Animator muteButtonAnimator;
@@ -35,7 +37,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
+        _animator = menuUI.GetComponent<Animator>();
         _cameraAnimator = camera.gameObject.GetComponent<Animator>();
         txtLastScore.text = PlayerPrefs.GetInt("Score").ToString();
         txtBestScore.text = PlayerPrefs.GetInt("HighScore").ToString();
@@ -69,11 +71,24 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private IEnumerator Shop()
+    private IEnumerator BackFromShopButton()
     {
+        _cameraAnimator.SetTrigger("ZoomOut");
+        shopUI.GetComponent<Animator>().SetTrigger("FadeOut");
+        yield return new WaitForSeconds(shopUI.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+        shopUI.SetActive(false);
+        menuUI.SetActive(true);
+    }
+
+    private IEnumerator Shop()
+    { 
+        Time.timeScale = 0.3f;
         _animator.SetTrigger("FadeOut");
-        yield return new WaitForSecondsRealtime(_animator.GetCurrentAnimatorStateInfo(0).length/1.5f);
+        yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length/2);
         _cameraAnimator.SetTrigger("ZoomIn");
+        yield return new WaitForSeconds(_cameraAnimator.GetCurrentAnimatorStateInfo(0).length);
+        shopUI.SetActive(true);
+        menuUI.SetActive(false);
     }
     private IEnumerator AboutUs()
     {
@@ -89,10 +104,12 @@ public class MenuManager : MonoBehaviour
                 break;
             case "aboutUs":
                 StartCoroutine(AboutUs());
+                break; 
+            case "back":
+                StartCoroutine(BackFromShopButton());
                 break;
         }
     }
-
     private IEnumerator StartGameCoroutine()
     {
         _animator.SetTrigger("FadeOut");
@@ -107,7 +124,7 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.SetInt("HeadShots", GameManager.HeadShots);
         PlayerPrefs.SetInt("Score", GameManager.Score);
         menuUI.SetActive(false);
-        gameUI.gameObject.GetComponent<Animator>().SetTrigger("FadeIn");
+        gameUI.gameObject.GetComponent<Animator>().Play("GameUI_FadIn");
         gameUI.SetActive(true);
      
     }
