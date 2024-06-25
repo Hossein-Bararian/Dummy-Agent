@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583ba6735071231458d5ca9f2fae6b6c, type: 3}
   m_Name: Nani 1
   m_EditorClassIdentifier: 
+  englishName: Nani bak dor
   name: "\u0646\u0627\u0646\u06CC \u0628\u06A9 \u062F\u0648\u0631 "
   description: "\u0646\u0627\u0646\u06CC \u0628\u06A9 \u062F\u0648\u0631 \u067E\u0633\u0631
     \u062E\u0627\u0644\u0647  \u0645\u0648\u0633\u06CC \u0634\u0639\u0628\u0627\u0646

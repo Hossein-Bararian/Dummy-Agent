@@ -66,7 +66,7 @@ public class TrianManager : MonoBehaviour
     }
     private IEnumerator TrainingAdvice()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         player.runSpeed = 0f;
         hand.DORotateQuaternion(Quaternion.Euler(0, 0,  -180), 0.3f);
         player.gameObject.GetComponent<Animator>().Play("Idle");

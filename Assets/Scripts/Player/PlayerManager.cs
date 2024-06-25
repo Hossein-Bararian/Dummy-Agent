@@ -67,7 +67,7 @@ public class PlayerManager : MonoBehaviour
 
     public void SetUpPlayer()
     {
-        gameObject.name = player.name;
+        gameObject.name = player.englishName;
         head.GetComponent<SpriteRenderer>().sprite = player.head;
         body.GetComponent<SpriteRenderer>().sprite = player.body;
 
