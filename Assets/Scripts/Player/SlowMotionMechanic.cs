@@ -33,7 +33,7 @@ public class SlowMotionMechanic : MonoBehaviour
         // {
         //     RecoverSlowMotionBar();
         // }
-        if(!StopMenuManager.IsGameStop || MenuManager.IsOnGame)
+        if(!StopMenuManager.IsGameStop)
         {
             if (_turnOnSlowMotion)
                 StartSlowMotion(slowTime);

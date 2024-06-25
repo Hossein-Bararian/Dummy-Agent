@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583ba6735071231458d5ca9f2fae6b6c, type: 3}
+  m_Name: Nani 2
+  m_EditorClassIdentifier: 
+  name: "\u0646\u0648\u0646\u06CC \u0628\u06CC\u0633 \u067E\u0648\u0631"
+  description: "\u06CC\u06A9 \u0646\u0698\u0627\u062F \u0646\u06CC\u06AF\u0627 \u0627\u0632 
+    \u062E\u0627\u0646\u0648\u0627\u062F\u0647 \u0646\u0627\u0646\u06CC \u0647\u0627\u0633\u062A
+    \u0627\u0645\u0627 \u0627\u0648\u0646 \u0637\u0631\u062F \u0634\u062F\u0647 \u0627\u0645\u0627
+    \u062F\u0633\u062A \u0628\u0647 \u062A\u0641\u0646\u06AF\u0634 \u062E\u06CC\u0644\u06CC
+    \u0639\u0627\u0644\u06CC\u0647 \u0628\u0647 \u0637\u0648\u0631\u06CC \u06A9\u0647
+    \u0628\u0631\u0627\u062F\u0631 \u062E\u0648\u062F\u0634 \u0631\u0648 \u062A\u0648\u06CC
+    \u06A9\u0648\u062F\u06A9\u06CC \u0627\u0634\u062A\u0628\u0627\u0647\u06CC \u0647\u062F\u0634\u0627\u062A
+    \u06A9\u0631\u062F\u0647 \u0648 \u0627\u0646\u062F\u0627\u062E\u062A\u0647 \u06AF\u0631\u062F\u0646
+    \u06CC\u06A9\u06CC \u0627\u0632 \u067E\u0644\u06CC\u0633 \u0647\u0627\u06CC \u0645\u062D\u0644\u0647
+    \u0634\u0648\u0646 ."
+  moneyCost: 1500
+  head: {fileID: -2075259348, guid: cd91379f7689e4d4790a1e9f29372023, type: 3}
+  body: {fileID: -882119964, guid: facb93b489b7fc44a8714a8cc626465b, type: 3}
+  eye: {fileID: -801650808, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  mouth: {fileID: -779721211, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  eyBrow: {fileID: -1023273393, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  upHand: {fileID: -838806234, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  lowHand: {fileID: -2120975935, guid: 841c33615c47c5943970ea879c72c57e, type: 3}
+  hand: {fileID: -2120975935, guid: 841c33615c47c5943970ea879c72c57e, type: 3}
+  upLeg: {fileID: -2120975935, guid: 841c33615c47c5943970ea879c72c57e, type: 3}
+  lowLeg: {fileID: -2120975935, guid: 841c33615c47c5943970ea879c72c57e, type: 3}
+  leg: {fileID: 98112488, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}

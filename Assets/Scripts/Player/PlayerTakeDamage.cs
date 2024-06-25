@@ -4,8 +4,6 @@ public class PlayerTakeDamage : MonoBehaviour
 {
     [Header("Dead Face")] [SerializeField] private AssetReferenceSprite deadEyeSprite;
     [SerializeField] private AssetReferenceSprite deadMouthSprite;
-    [SerializeField] private GameObject[] eyes;
-    [SerializeField] private GameObject mouth;
     [Space(10)] [Header("GameOver Management")]
     [SerializeField] private GameOverManager gameOverManager;
     [SerializeField] private ParallaxSystem parallaxSystem;
@@ -52,12 +50,12 @@ public class PlayerTakeDamage : MonoBehaviour
     {
         deadEyeSprite.LoadAssetAsync<Sprite>().Completed += handle =>
         {
-                eyes[0].GetComponent<SpriteRenderer>().sprite = handle.Result;
-                eyes[1].GetComponent<SpriteRenderer>().sprite = handle.Result;
+               _playerManager.eyes[0].GetComponent<SpriteRenderer>().sprite = handle.Result;
+               _playerManager.eyes[1].GetComponent<SpriteRenderer>().sprite = handle.Result;
         };
         deadMouthSprite.LoadAssetAsync<Sprite>().Completed += handle =>
         {
-              mouth.GetComponent<SpriteRenderer>().sprite =handle.Result;
+            _playerManager.mouth.GetComponent<SpriteRenderer>().sprite =handle.Result;
         };
     }
 }

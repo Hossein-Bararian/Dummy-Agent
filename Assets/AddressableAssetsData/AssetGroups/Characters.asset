@@ -97,11 +97,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bd3e37e3ae37ca24eb6eb283ed87441c
-    m_Address: Player
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 742f0e7e34de2ee4fab2c393e5a62533
     m_Address: CoatMan
     m_ReadOnly: 0

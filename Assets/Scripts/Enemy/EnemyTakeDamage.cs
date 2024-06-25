@@ -21,7 +21,7 @@ public class EnemyTakeDamage : MonoBehaviour
         _toggleRagdoll = GetComponent<ToggleRagdoll>();
         _enemyManager = GetComponent<EnemyManager>();
         _gameManager = FindObjectOfType<GameManager>();
-        _playerAnim = GameObject.Find("Player").GetComponent<Animator>();
+        _playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         _toggleRagdoll.Ragdoll(false);
     }
     private void OnCollisionEnter2D(Collision2D other)

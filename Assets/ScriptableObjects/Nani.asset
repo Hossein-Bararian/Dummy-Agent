@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583ba6735071231458d5ca9f2fae6b6c, type: 3}
+  m_Name: Nani
+  m_EditorClassIdentifier: 
+  name: "\u0646\u0627\u0646\u06CC \u062A\u0648\u0631\u06A9\u0647"
+  description: "\u0646\u0627\u0646\u06CC \u0648\u0627\u0646 \u062A\u0648\u0631\u06A9
+    \u06CC\u06A9 \u0641\u0631\u062F \u0639\u0635\u0628\u06CC \u0648 \u062F\u0631
+    \u0639\u06CC\u0646 \u062D\u0627\u0644 \u06AF\u06CC\u062C\u0647  \u0627\u0645\u0627
+    \u0645\u0648\u0627\u0636\u0628 \u0628\u0627\u06CC\u062F \u0628\u0648\u062F \u0648\u0642\u062A\u06CC
+    \u0627\u0648\u0646 \u0686\u0634\u0645 \u0647\u0627\u0634\u0648 \u0645\u06CC\u0628\u0646\u062F\u0647
+    \u0648 \u0628\u0647 \u0633\u0645\u062A \u0627\u062F\u0645\u0627 \u0634\u0644\u06CC\u06A9
+    \u0645\u06CC\u06A9\u0646\u0647 \u0686\u0648\u0646 \u0645\u0645\u06A9\u0646\u0647
+    \u06CC\u06A9\u06CC \u0627\u0632 \u0627\u0648\u0646 \u0627\u062F\u0645\u0627 \u062A\u0648
+    \u0628\u0627\u0634\u06CC !"
+  moneyCost: 900
+  head: {fileID: -1303340151, guid: 4ea5e6767e31de24b92eed94b7f07405, type: 3}
+  body: {fileID: -2133454397, guid: cd91379f7689e4d4790a1e9f29372023, type: 3}
+  eye: {fileID: -801650808, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  mouth: {fileID: -779721211, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  eyBrow: {fileID: -1023273393, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  upHand: {fileID: -838806234, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  lowHand: {fileID: -838806234, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  hand: {fileID: 598419093, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  upLeg: {fileID: 878700383, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  lowLeg: {fileID: 878700383, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  leg: {fileID: 98112488, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}

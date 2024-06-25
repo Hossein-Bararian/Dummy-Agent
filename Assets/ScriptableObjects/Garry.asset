@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583ba6735071231458d5ca9f2fae6b6c, type: 3}
+  m_Name: Garry
+  m_EditorClassIdentifier: 
+  name: "\u06AF\u0631\u06CC \u062C\u0648\u0648\u0646"
+  description: "\u06AF\u0631\u06CC \u06CC\u0647 \u0645\u0631\u062F \u062E\u0633\u062A\u0647
+    \u0627\u0632 \u06A9\u0627\u0631 \u0647\u0627\u06CC \u0631\u0648\u0632\u0645\u0631\u0647
+    \u0648\u0642\u062A\u06CC \u06CC\u0627\u062F \u062C\u0648\u0648\u0646\u06CC\u0627\u0634
+    \u0645\u06CC \u0627\u0641\u062A\u0647 \u0648 \u0642\u0631\u0635 \u0647\u0627\u0634\u0648
+    \u0646\u0645\u06CC\u062E\u0648\u0631\u0647 \u060C \u062F\u06CC\u06AF\u0647 \u06A9\u0633\u06CC
+    \u0646\u0645\u06CC\u062A\u0648\u0646\u0647 \u062C\u0644\u0648\u0634\u0648 \u0628\u06CC\u06AF\u0631\u0647 "
+  moneyCost: 0
+  head: {fileID: 157463899, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  body: {fileID: 260036099, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  eye: {fileID: -801650808, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  mouth: {fileID: -779721211, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  eyBrow: {fileID: -1023273393, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  upHand: {fileID: -838806234, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  lowHand: {fileID: -838806234, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  hand: {fileID: 598419093, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  upLeg: {fileID: 878700383, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  lowLeg: {fileID: 878700383, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  leg: {fileID: 98112488, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
