@@ -66,7 +66,6 @@ public class EnemyTakeDamage : MonoBehaviour
         if (_gameManager != null)
         {
             _gameManager.UpdateScore(1);
-            _gameManager.UpdateHeadShots();
         }
         GameObject bodyBloodParticle = HeadBloodPoolManager.Instance.GetParticle();
         bodyBloodParticle.transform.SetParent(bodyTransform.transform,false);

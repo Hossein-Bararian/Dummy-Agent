@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583ba6735071231458d5ca9f2fae6b6c, type: 3}
   m_Name: Nani 1
   m_EditorClassIdentifier: 
+  characterID: 2
   englishName: Nani bak dor
   name: "\u0646\u0627\u0646\u06CC \u0628\u06A9 \u062F\u0648\u0631 "
   description: "\u0646\u0627\u0646\u06CC \u0628\u06A9 \u062F\u0648\u0631 \u067E\u0633\u0631
@@ -23,11 +24,11 @@ MonoBehaviour:
     \u067E\u0633\u0631 \u062E\u0627\u0644\u0647 \u062E\u0648\u062F\u0634 \u06CC\u06A9\u0645\u06CC
     \u0644\u0627\u062A \u0628\u0634\u0647 \u0648 \u067E\u0648\u0644 \u062F\u0631
     \u0628\u06CC\u0627\u0631\u0647 "
-  moneyCost: 500
+  moneyCost: 5
   head: {fileID: 1924667823, guid: 841c33615c47c5943970ea879c72c57e, type: 3}
   body: {fileID: -16729596, guid: 4ea5e6767e31de24b92eed94b7f07405, type: 3}
-  eye: {fileID: -801650808, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
-  mouth: {fileID: -779721211, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
+  eye: {fileID: 1252791814, guid: cd91379f7689e4d4790a1e9f29372023, type: 3}
+  mouth: {fileID: 464161073, guid: 4728c543c22a90341a082be17190ddfb, type: 3}
   eyBrow: {fileID: -1023273393, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
   upHand: {fileID: -838806234, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}
   lowHand: {fileID: -838806234, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}

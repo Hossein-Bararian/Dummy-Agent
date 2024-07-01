@@ -22,6 +22,7 @@ public class MenuManager : MonoBehaviour
     [Space(40)]
     [Header("Shop")]
     [SerializeField] private new CinemachineVirtualCamera camera;
+    [SerializeField] ShopManager shopManager;
     private Animator _cameraAnimator;
   
     
@@ -73,6 +74,7 @@ public class MenuManager : MonoBehaviour
 
     private IEnumerator BackFromShopButton()
     {
+        shopManager.SetSelectedCharacter();
         _cameraAnimator.SetTrigger("ZoomOut");
         shopUI.GetComponent<Animator>().SetTrigger("FadeOut");
         yield return new WaitForSeconds(shopUI.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
@@ -119,9 +121,7 @@ public class MenuManager : MonoBehaviour
         player.gameObject.GetComponent<Animator>().Play("Walk");
         player.runSpeed = 8;
         yield return new WaitForSeconds(0.2f);
-        GameManager.HeadShots = 0;
         GameManager.Score = 0;
-        PlayerPrefs.SetInt("HeadShots", GameManager.HeadShots);
         PlayerPrefs.SetInt("Score", GameManager.Score);
         menuUI.SetActive(false);
         gameUI.gameObject.GetComponent<Animator>().Play("GameUI_FadIn");

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -6,6 +5,7 @@ public class PlayerManager : MonoBehaviour
     public static bool IsDead;
     public PlayerTemplate player;
 
+    [SerializeField] private ShopManager shopManager; 
     [SerializeField] private GameObject head,
         body,
         rightUpHand,
@@ -32,7 +32,36 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+        LoadSelectedCharacter();
         SetUpPlayer();
+    }
+
+    private void LoadSelectedCharacter()
+    {
+        if (PlayerPrefs.HasKey("_selectedCharactersIndex"))
+        {
+            int selectedCharacterId = PlayerPrefs.GetInt("_selectedCharactersIndex");
+            player = GetPlayerTemplateById(selectedCharacterId);
+        }
+        else
+        {
+            player = GetDefaultPlayerTemplate();
+        }
+    }
+
+    private PlayerTemplate GetPlayerTemplateById(int characterId)
+    {
+        foreach (var character in shopManager.characters)
+        {
+            if (character.characterID == characterId)
+                return character;
+        }
+        return null;
+    }
+
+    private PlayerTemplate GetDefaultPlayerTemplate()
+    {
+        return shopManager.characters[0]; 
     }
 
     public void DeActiveScripts()

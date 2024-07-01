@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583ba6735071231458d5ca9f2fae6b6c, type: 3}
   m_Name: Nani 2
   m_EditorClassIdentifier: 
+  characterID: 3
   englishName: Nani base nooni
   name: "\u0646\u0648\u0646\u06CC \u0628\u06CC\u0633 \u067E\u0648\u0631"
   description: "\u06CC\u06A9 \u0646\u0698\u0627\u062F \u0646\u06CC\u06AF\u0627 \u0627\u0632 
@@ -24,7 +25,7 @@ MonoBehaviour:
     \u06A9\u0631\u062F\u0647 \u0648 \u0627\u0646\u062F\u0627\u062E\u062A\u0647 \u06AF\u0631\u062F\u0646
     \u06CC\u06A9\u06CC \u0627\u0632 \u067E\u0644\u06CC\u0633 \u0647\u0627\u06CC \u0645\u062D\u0644\u0647
     \u0634\u0648\u0646 ."
-  moneyCost: 1500
+  moneyCost: 6
   head: {fileID: -2075259348, guid: cd91379f7689e4d4790a1e9f29372023, type: 3}
   body: {fileID: -882119964, guid: facb93b489b7fc44a8714a8cc626465b, type: 3}
   eye: {fileID: -801650808, guid: 17e941431f8aeac4c9f1ba32680332c9, type: 3}

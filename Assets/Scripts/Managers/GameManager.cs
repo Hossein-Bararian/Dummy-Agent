@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image[] menuImage;
     [Space(35)]
     [SerializeField] private RTLTextMeshPro txtScore;
+    
+    public static int Coin;
     public static int Score;
-    public static int HeadShots;
     private Animator _scoreAnimator;
 
     private void Start()
@@ -37,12 +38,6 @@ public class GameManager : MonoBehaviour
         _scoreAnimator.Play("GetScore");
         PlayerPrefs.SetInt("Score",Score);
     }
-    public  void UpdateHeadShots()
-    {
-        HeadShots++;
-        PlayerPrefs.SetInt("HeadShots",HeadShots);
-    }
-
     private void TutorialCheck()
     {
         if (PlayerPrefs.GetInt("Tutorial") == 0)

@@ -3,10 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PlayerTemplate", fileName = "New Player")]
 public class PlayerTemplate : ScriptableObject
 {
-    [SerializeField] public string englishName;
-    [SerializeField] public new string name;
-    [SerializeField] public string description;
-    [SerializeField] public int moneyCost;
+    public int characterID;
+    
+    public string englishName;
+    public new string name;
+    public string description;
+    public int moneyCost;
 
     public Sprite head;
     public Sprite body;
