@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image[] menuImage;
     [Space(35)]
     [SerializeField] private RTLTextMeshPro txtScore;
+    [SerializeField] private RTLTextMeshPro txtCoin;
     
     public static int Coin;
     public static int Score;
@@ -25,9 +26,22 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        txtCoin.text=PlayerPrefs.GetInt("Coin").ToString();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        } 
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            print("Reset");
+            PlayerPrefs.SetInt("_selectedCharactersIndex", 0);
+            PlayerPrefs.SetString("OwnCharacters", "0");
+            GameManager.Coin = 0;
+            PlayerPrefs.SetInt("Coin",0);
+            print( "Coin number : "+GameManager.Coin);
+            print("Coin prefs : "+PlayerPrefs.GetInt("Coin"));
+            print("Coin prefs : "+PlayerPrefs.GetInt("_selectedCharactersIndex"));
+            print("Coin prefs : "+PlayerPrefs.GetString("OwnCharacters"));
         }
     }
 

@@ -1,7 +1,8 @@
-using System;
 using UnityEngine;
 using RTLTMPro;
 using System.Collections.Generic;
+using Unity.Collections;
+using Unity.VisualScripting;
 
 public class ShopManager : MonoBehaviour
 {
@@ -22,8 +23,6 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     { 
-        PlayerPrefs.SetInt("_selectedCharactersIndex", 0);
-       PlayerPrefs.SetString("OwnCharacters", "0");
         if (!PlayerPrefs.HasKey("OwnCharacters"))
         {
             PlayerPrefs.SetString("OwnCharacters", "0");
@@ -56,7 +55,7 @@ public class ShopManager : MonoBehaviour
                 return i;
             }
         }
-        return 0; // Return default character index if not found
+        return 0;
     }
 
     private void LoadOwnedCharacters()
@@ -118,15 +117,14 @@ public class ShopManager : MonoBehaviour
                 SaveOwnedCharacters();
                 _selectedCharactersIndex = characters[_characterIndex].characterID;
                 PlayerPrefs.SetInt("_selectedCharactersIndex", _selectedCharactersIndex);
-                SetCharacter(_characterIndex); // به‌روزرسانی نمایش کاراکتر
-                UpdateButtonState(); // به‌روزرسانی وضعیت دکمه‌ها
+                SetCharacter(_characterIndex);
+                UpdateButtonState();
             }
             else
             {
                 print("You don't have enough money!");
             }
         }
-        print(_selectedCharactersIndex);
     }
 
     public void SetSelectedCharacter()
@@ -135,6 +133,7 @@ public class ShopManager : MonoBehaviour
         playerManager.player = characters[_characterIndex];
         playerManager.SetUpPlayer();
         SetUpPlayerAttribute();
+        UpdateButtonState();
     }
 
     private void SaveOwnedCharacters()
@@ -146,7 +145,17 @@ public class ShopManager : MonoBehaviour
 
     private void UpdateButtonState()
     {
-        btnBuyAnim.Play(CheckCharacterIsOwn() ? "ButtonSelectStatus" : "ButtonBuyStatus");
+        if (CheckCharacterIsOwn())
+        {
+            if (PlayerPrefs.GetInt("_selectedCharactersIndex") == characters[_characterIndex].characterID)
+            {
+                btnBuyAnim.Play("ButtonSelectedStatus"); 
+                return;
+            }
+            btnBuyAnim.Play("ButtonUnSelectStatus");
+        }
+        else
+            btnBuyAnim.Play("ButtonBuyStatus"); 
     }
 
     private void SetUpPlayerAttribute()
