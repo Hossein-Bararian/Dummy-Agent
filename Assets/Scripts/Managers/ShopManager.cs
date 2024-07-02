@@ -20,6 +20,7 @@ public class ShopManager : MonoBehaviour
     private List<int> _ownedCharacterIds;
     
     [SerializeField] private RTLTextMeshPro txtCoin;
+    [SerializeField] private Animator coinAnimator;
 
     private void Start()
     { 
@@ -101,7 +102,6 @@ public class ShopManager : MonoBehaviour
     {
         if (CheckCharacterIsOwn())
         {
-            print("Selected ! ");
             _selectedCharactersIndex = characters[_characterIndex].characterID;
             PlayerPrefs.SetInt("_selectedCharactersIndex", _selectedCharactersIndex);
             UpdateButtonState();
@@ -110,7 +110,6 @@ public class ShopManager : MonoBehaviour
         {
             if (GameManager.Coin >= characters[_characterIndex].moneyCost)
             {
-                print("You Buy it !");
                 GameManager.Coin -= characters[_characterIndex].moneyCost;
                 PlayerPrefs.SetInt("Coin",GameManager.Coin);
                 _ownedCharacterIds.Add(characters[_characterIndex].characterID);
@@ -122,7 +121,7 @@ public class ShopManager : MonoBehaviour
             }
             else
             {
-                print("You don't have enough money!");
+                coinAnimator.SetTrigger("NoMoney");
             }
         }
     }

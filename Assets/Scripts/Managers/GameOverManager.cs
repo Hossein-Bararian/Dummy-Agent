@@ -25,6 +25,7 @@ public class GameOverManager : MonoBehaviour
         gameOverButtons.SetActive(true);
         gameOverButtons.GetComponent<Animator>().Play("ButtonsPanel_FadeIn");
         txtScore.text =PlayerPrefs.GetInt("Score").ToString();
+        GameManager.Coin=PlayerPrefs.GetInt("Coin");
         GameManager.Coin += PlayerPrefs.GetInt("Score");
         PlayerPrefs.SetInt("Coin",GameManager.Coin);
         yield return new WaitForSeconds(0.2f);
